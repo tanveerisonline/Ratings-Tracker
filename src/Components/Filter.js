@@ -7,7 +7,10 @@ import GroupFilter from "./Filters/GroupFilter";
 const Filter = () => {
   return (
     <div className="filter">
-      <h5>Filters</h5>
+      <div className="filter-inner">
+        <i className="fas fa-filter"></i>
+        <h4>Filters</h4>
+      </div>
       <DateFilter />
       <ReviewFilter />
       <PortfolioFilter />

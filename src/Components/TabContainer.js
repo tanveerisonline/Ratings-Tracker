@@ -59,7 +59,7 @@ const useStyles = makeStyles((theme) => ({
     backgroundColor: "#919aab",
     "&.Mui-selected": {
       backgroundColor: "white",
-      color: "red",
+      color: "#c93e46",
     },
   },
 }));
@@ -91,10 +91,10 @@ export default function TabContainer() {
       </Tabs>
       {/* </AppBar> */}
       <TabPanel value={value} index={0}>
-        Item One
+        This is first tab
       </TabPanel>
       <TabPanel value={value} index={1}>
-        Item Two
+        This is second tab
       </TabPanel>
     </div>
   );
