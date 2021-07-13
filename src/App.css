@@ -37,6 +37,30 @@
 }
 .filter {
   width: 20%;
+  margin-top: 73px;
+}
+.filter-inner {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #ccccd3;
+}
+.filter-inner h4 {
+  margin-left: 10px;
+}
+.fa-filter {
+  height: 25px;
+  width: 25px;
+  border-radius: 4px;
+  color: #fff;
+  /* border: 2px solid red; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #2b3b5c;
+  padding: 1px;
+  /* margin: auto; */
+  /* margin-top: 5px; */
 }
 /* Header background-color:#383e4c,
   body background-color:#eff1f3,
@@ -45,8 +69,10 @@
       on clicking tabs text = color:#c43131,
        tabs body background-color:#c43131 */
 
-
 /* .makeStyles-tabItem-3.Mui-selected {
   background-color: greenyellow !important;
   color: blue !important;
 } */
+/* filter 
+heading background-color:#ccccd3;  
+filter body background-color:#eaeaed; */
