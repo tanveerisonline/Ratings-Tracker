@@ -44,15 +44,17 @@ const useStyles = makeStyles((theme) => ({
   root: {
     flexGrow: 1,
     backgroundColor: theme.palette.background.paper,
-    marginLeft: "10px",
+    marginLeft: "25px",
+    marginTop: "25px",
   },
   tabs: {
-    backgroundColor: "lightgray",
+    backgroundColor: "#eff1f3",
   },
   tabItem: {
     borderRadius: "10px 10px 0px 0px",
     color: "white",
-    backgroundColor: "gray",
+    fontWeight: "600",
+    backgroundColor: "#919aab",
     "&.Mui-selected": {
       backgroundColor: "white",
       color: "red",
