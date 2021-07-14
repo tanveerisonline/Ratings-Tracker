@@ -8,81 +8,48 @@ import {
   KeyboardTimePicker,
   KeyboardDatePicker,
 } from "@material-ui/pickers";
-
+import TextField from "@material-ui/core/TextField";
 const useStyles = makeStyles((theme) => ({
-  root: {},
-  input: {
-    width: "160px",
-    backgroundColor: "#fff",
-    borderRadius: "10px",
-    fontSize: "12px",
+  container: {
+    display: "flex",
+    flexWrap: "wrap",
   },
-
-  // .datepicker-1::-webkit-input-placeholder{
-  //   font-size: 50px;
-  // }
-  "input::-webkitplaceholder": {
-    fontSize: "16px",
+  textField: {
+    marginLeft: theme.spacing(1),
+    marginRight: theme.spacing(1),
+    width: 200,
   },
+  // input: {
+  //   width: "160px",
+  //   backgroundColor: "#fff",
+  //   borderRadius: "10px",
+  //   fontSize: "12px",
+  // },
 }));
 
 export default function DateFilter() {
   const classes = useStyles();
-
-  // The first commit of Material-UI
-  const [selectedDate, setSelectedDate] = React.useState([null, null]);
-  // new Date("2014-08-18T21:11:54")
-  // );
-
-  const handleDateChange = (date) => {
-    setSelectedDate(date);
-  };
-
   return (
-    <div className="date-filter">
+    <Grid item xs={12} className="date-filter">
       <h4>SHOW RATINGS FOR:</h4>
-      <MuiPickersUtilsProvider utils={DateFnsUtils}>
-        <Grid container justifyContent="space-around">
-          <KeyboardDatePicker
-            className={classes.input}
-            disableToolbar
-            variant="inline"
-            format="MM/dd/yyyy"
-            placeholder="MM/DD/YYYY"
-            margin="normal"
-            id="date-picker-inline"
-            // label="Date picker inline"
-            value={selectedDate}
-            onChange={handleDateChange}
-            KeyboardButtonProps={{
-              "aria-label": "change date",
-            }}
-          />
-          TO
-          <KeyboardDatePicker
-            margin="normal"
-            id="date-picker-dialog"
-            // label="Date picker dialog"
-            format="MM/dd/yyyy"
-            placeholder="MM/DD/YYYY"
-            value={selectedDate}
-            onChange={handleDateChange}
-            KeyboardButtonProps={{
-              "aria-label": "change date",
-            }}
-          />
-          {/* <KeyboardTimePicker
-          margin="normal"
-          id="time-picker"
-          label="Time picker"
-          value={selectedDate}
-          onChange={handleDateChange}
-          KeyboardButtonProps={{
-            'aria-label': 'change time',
-          }}
-        /> */}
-        </Grid>
-      </MuiPickersUtilsProvider>
-    </div>
+      <TextField
+        id="date"
+        type="date"
+        className={classes.textField}
+        InputLabelProps={{
+          shrink: true,
+        }}
+      />
+      TO
+      <TextField
+        id="date"
+        type="date"
+        className={classes.textField}
+        InputLabelProps={{
+          shrink: true,
+        }}
+      />
+      <button> APPLY </button>
+    </Grid>
   );
 }

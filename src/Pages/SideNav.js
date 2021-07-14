@@ -1,11 +1,12 @@
-import React from 'react'
+import { Grid } from "@material-ui/core";
+import React from "react";
 
 const SideNav = () => {
-    return (
-        <div className="side-bar">
-            SIDENAV
-        </div>
-    )
-}
+  return (
+    <Grid className="sidenav" item xs={12}>
+      SIDENAV
+    </Grid>
+  );
+};
 
-export default SideNav
+export default SideNav;

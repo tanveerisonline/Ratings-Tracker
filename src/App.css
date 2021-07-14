@@ -1,29 +1,18 @@
 .App {
-  height: 100vh;
-  width: 100%;
-  /* margin: 0 auto; */
   display: flex;
   justify-content: center;
   align-items: center;
   background-color: #eff1f3;
 }
-.side-bar {
-  width: 15%;
-  height: 100vh;
+.sidenav {
+  height: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
   color: #fff;
   background-color: #383e4c;
 }
-.main-container {
-  width: 85%;
-  height: 100vh;
-  display: flex;
-  flex-direction: column;
-}
 .header {
-  width: 100%;
   height: 65px;
   display: flex;
   justify-content: center;
@@ -33,13 +22,13 @@
 }
 .home {
   display: flex;
-  width: 100%;
+  flex-direction: row;
 }
 .filter {
-  width: 20%;
   margin-top: 73px;
 }
 .filter-inner {
+  width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -53,26 +42,18 @@
   width: 25px;
   border-radius: 4px;
   color: #fff;
-  /* border: 2px solid red; */
   display: flex;
   justify-content: center;
   align-items: center;
   background-color: #2b3b5c;
   padding: 1px;
-  /* margin: auto; */
-  /* margin-top: 5px; */
 }
-/* Header background-color:#383e4c,
-  body background-color:#eff1f3,
-   Tabs background-color:#919aab, 
-     on click Tabs background-color:#ffffff, 
-      on clicking tabs text = color:#c43131,
-       tabs body background-color:#c43131 */
-
-/* .makeStyles-tabItem-3.Mui-selected {
-  background-color: greenyellow !important;
-  color: blue !important;
-} */
-/* filter 
-heading background-color:#ccccd3;  
-filter body background-color:#eaeaed; */
+.date-filter {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.datepicker-1 {
+  width: 180px;
+}

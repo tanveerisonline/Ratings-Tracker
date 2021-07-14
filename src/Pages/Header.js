@@ -1,11 +1,12 @@
-import React from 'react'
+import { Grid } from "@material-ui/core";
+import React from "react";
 
 const Header = () => {
-    return (
-        <div className="header">
-            HEADER
-        </div>
-    )
-}
+  return (
+    <Grid className="header" item xs={12}>
+      HEADER
+    </Grid>
+  );
+};
 
-export default Header
+export default Header;

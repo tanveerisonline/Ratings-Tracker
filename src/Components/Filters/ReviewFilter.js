@@ -5,6 +5,7 @@ import MenuItem from "@material-ui/core/MenuItem";
 import FormControl from "@material-ui/core/FormControl";
 import Select from "@material-ui/core/Select";
 import Button from "@material-ui/core/Button";
+import { Grid } from "@material-ui/core";
 
 const useStyles = makeStyles((theme) => ({
   button: {
@@ -35,7 +36,7 @@ export default function ReviewFilter() {
   };
 
   return (
-    <div>
+    <Grid item xs={12}>
       <Button className={classes.button} onClick={handleOpen}>
         REVIEW SITES:
       </Button>
@@ -64,6 +65,6 @@ export default function ReviewFilter() {
           <MenuItem value={9}>Yelp</MenuItem>
         </Select>
       </FormControl>
-    </div>
+    </Grid>
   );
 }

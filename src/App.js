@@ -3,16 +3,19 @@ import "./App.css";
 import Header from "./Pages/Header";
 import SideNav from "./Pages/SideNav";
 import HomePage from "./Pages/HomePage";
+import { Grid } from "@material-ui/core";
 
 function App() {
   return (
-    <div className="App">
-      <SideNav />
-      <div className="main-container">
+    <Grid container className="App">
+      <Grid item xs={2}>
+        <SideNav />
+      </Grid>
+      <Grid item xs={10}>
         <Header />
         <HomePage />
-      </div>
-    </div>
+      </Grid>
+    </Grid>
   );
 }
 
