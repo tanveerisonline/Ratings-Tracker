@@ -15,9 +15,10 @@ export default function GroupFilter() {
   };
 
   return (
-    <Grid item xs={12}>
+    <Grid className="group-filter" item xs={12}>
       <FormControl component="fieldset">
-        <FormLabel component="legend">Gender</FormLabel>
+        {/* <FormLabel component="legend">GROUP BY:</FormLabel> */}
+        <h4>GROUP BY:</h4>
         {/* <Typography>Gender</Typography> */}
         <RadioGroup
           aria-label="gender"
@@ -25,9 +26,9 @@ export default function GroupFilter() {
           value={value}
           onChange={handleChange}
         >
-          <FormControlLabel value="female" control={<Radio />} label="Female" />
-          <FormControlLabel value="male" control={<Radio />} label="Male" />
-          <FormControlLabel value="other" control={<Radio />} label="Other" />
+          <FormControlLabel value="female" control={<Radio />} label="Months" />
+          <FormControlLabel value="male" control={<Radio />} label="Quarters" />
+          <FormControlLabel value="other" control={<Radio />} label="Years" />
           {/* <FormControlLabel
           value="disabled"
           disabled

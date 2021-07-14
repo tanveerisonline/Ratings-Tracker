@@ -36,10 +36,11 @@ export default function ReviewFilter() {
   };
 
   return (
-    <Grid item xs={12}>
-      <Button className={classes.button} onClick={handleOpen}>
+    <Grid className="review-filter" item xs={12}>
+      {/* <Button className={classes.button} onClick={handleOpen}>
         REVIEW SITES:
-      </Button>
+      </Button> */}
+      <h4>REVIEW SITES:</h4>
       <FormControl className={classes.formControl}>
         <InputLabel id="demo-controlled-open-select-label">All</InputLabel>
         <Select

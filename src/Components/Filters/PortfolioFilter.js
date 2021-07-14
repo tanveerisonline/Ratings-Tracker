@@ -3,7 +3,8 @@ import { Grid } from "@material-ui/core";
 
 const PortfolioFilter = () => {
   return (
-    <Grid item xs={12} className="portfolio-main">
+    <Grid item xs={12} className="portfolio">
+      <h4>MY PORTFOLIO</h4>
       <div>
         <input type="text" className="portfolio-input" />
         East Region

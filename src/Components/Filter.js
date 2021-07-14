@@ -5,6 +5,7 @@ import PortfolioFilter from "./Filters/PortfolioFilter";
 import GroupFilter from "./Filters/GroupFilter";
 import { Grid } from "@material-ui/core";
 import Divider from "@material-ui/core/Divider";
+import "./Filter.css";
 
 const Filter = () => {
   return (
@@ -13,12 +14,12 @@ const Filter = () => {
         <i className="fas fa-filter"></i>
         <h4>Filters</h4>
       </div>
-      <DateFilter />
+      {/* <DateFilter />
       <Divider />
       <ReviewFilter />
       <PortfolioFilter />
       <GroupFilter />
-      <button>DOWNLOAD DATA</button>
+      <button>DOWNLOAD DATA</button> */}
     </Grid>
   );
 };
