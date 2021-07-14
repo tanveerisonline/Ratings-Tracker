@@ -6,6 +6,11 @@ import Tabs from "@material-ui/core/Tabs";
 import Tab from "@material-ui/core/Tab";
 import Typography from "@material-ui/core/Typography";
 import Box from "@material-ui/core/Box";
+import Graph1 from "./Graphs/Graph1";
+import Graph2 from "./Graphs/Graph2";
+import Graph3 from "./Graphs/Graph3";
+import Graph4 from "./Graphs/Graph4";
+import { Grid } from "@material-ui/core";
 
 function TabPanel(props) {
   const { children, value, index, ...other } = props;
@@ -91,7 +96,21 @@ export default function TabContainer() {
       </Tabs>
       {/* </AppBar> */}
       <TabPanel value={value} index={0}>
-        This is first tab
+        {/* <div className="tab">FIRST TAB</div> */}
+        <Grid container>
+          <Grid item xs={4}>
+            <Graph1 />
+          </Grid>
+          <Grid item xs={4}>
+            <Graph2 />
+          </Grid>
+          <Grid item xs={4}>
+            <Graph3 />
+          </Grid>
+          <Grid item xs={12}>
+            <Graph4 />
+          </Grid>
+        </Grid>
       </TabPanel>
       <TabPanel value={value} index={1}>
         This is second tab
