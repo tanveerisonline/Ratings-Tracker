@@ -1,12 +1,14 @@
 import React from "react";
-import TabContainer from "../Components/TabContainer";
-import Filter from "../Components/Filter";
+import TabContainer from "../components/TabContainer";
+import Filter from "components/Filter";
 import { Grid } from "@material-ui/core";
+import ReviewManagemnt from "views/ReviewManagement/Components/innerRoute";
 const HomePage = () => {
   return (
     <Grid container className="home" xs={12}>
       <Grid item xs={9}>
         <TabContainer />
+        <ReviewManagemnt />
       </Grid>
       <Grid item xs={3}>
         <Filter />
