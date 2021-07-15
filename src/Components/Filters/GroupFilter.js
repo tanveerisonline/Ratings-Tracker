@@ -21,20 +21,18 @@ export default function GroupFilter() {
         <h4>GROUP BY:</h4>
         {/* <Typography>Gender</Typography> */}
         <RadioGroup
-          aria-label="gender"
-          name="gender1"
+          aria-label="group"
+          name="group"
           value={value}
           onChange={handleChange}
         >
-          <FormControlLabel value="female" control={<Radio />} label="Months" />
-          <FormControlLabel value="male" control={<Radio />} label="Quarters" />
-          <FormControlLabel value="other" control={<Radio />} label="Years" />
-          {/* <FormControlLabel
-          value="disabled"
-          disabled
-          control={<Radio />}
-          label="(Disabled option)"
-        /> */}
+          <FormControlLabel value="months" control={<Radio />} label="Months" />
+          <FormControlLabel
+            value="quarters"
+            control={<Radio />}
+            label="Quarters"
+          />
+          <FormControlLabel value="years" control={<Radio />} label="Years" />
         </RadioGroup>
       </FormControl>
     </Grid>

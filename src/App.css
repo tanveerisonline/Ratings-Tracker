@@ -2,8 +2,9 @@
   display: flex;
   justify-content: center;
   align-items: flex-start;
-  background-color: #eff1f3;
+  background-color: #e9e9ec;
   /* height: 100vh; */
+  /* font-family: "Merriweather", serif; */
 }
 .sidenav {
   height: 100vh;

@@ -8,11 +8,12 @@
 }
 .filter-inner {
   width: 100%;
-  height: 60px;
+  height: 65px;
   display: flex;
+  flex-direction: row;
   justify-content: center;
-  align-items: center;
-  background-color: #ccccd3;
+  align-items:center;
+  background-color: #cbcbd3;
   /* background-color: red; */
 }
 .filter-inner h4 {
@@ -30,7 +31,7 @@
   background-color: #2b3b5c;
   padding: 1px;
 }
-.date-filter {
+/* .date-filter {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -38,16 +39,16 @@
 }
 .date-filter h4 {
   color: #2b3b5c;
-}
-.review-filter {
+} */
+/* .review-filter {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-}
-.review-filter h4 {
+} */
+/* .review-filter h4 {
   color: #2b3b5c;
-}
+} */
 .group-filter {
   display: flex;
   flex-direction: column;
@@ -63,6 +64,16 @@
   justify-content: center;
   align-items: center;
 }
+/* .portfolio-form {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+} */
+/* .portfolio-text {
+  display: flex;
+  flex-direction: row;
+} */
 .portfolio h4 {
   color: #2b3b5c;
 }
