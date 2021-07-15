@@ -97,7 +97,7 @@ export default function TabContainer() {
       {/* </AppBar> */}
       <TabPanel value={value} index={0}>
         {/* <div className="tab">FIRST TAB</div> */}
-        <Grid container>
+        <Grid container style={{ minHeight: 200 }}>
           <Grid item xs={4}>
             <Graph1 />
           </Grid>

@@ -1,5 +1,7 @@
 import React from "react";
 import { Grid } from "@material-ui/core";
+import { Button, Typography } from "@material-ui/core";
+import KeyboardArrowRightIcon from "@material-ui/icons/KeyboardArrowRight";
 
 const PortfolioFilter = () => {
   return (
@@ -9,7 +11,15 @@ const PortfolioFilter = () => {
         <input type="text" className="portfolio-input" />
         East Region
       </div>
-      <button>FILTER PROPERTIES</button>
+      <Button
+        onClick={() => console.log("you clicked APPLY button")}
+        type="submit"
+        color="secondary"
+        variant="contained"
+        endIcon={<KeyboardArrowRightIcon />}
+      >
+        FILTER PROPERTIES
+      </Button>
     </Grid>
   );
 };

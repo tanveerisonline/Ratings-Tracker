@@ -3,8 +3,11 @@ import DateFilter from "./Filters/DateFilter";
 import ReviewFilter from "./Filters/ReviewFilter";
 import PortfolioFilter from "./Filters/PortfolioFilter";
 import GroupFilter from "./Filters/GroupFilter";
-import { Grid } from "@material-ui/core";
+import { Grid, Typography } from "@material-ui/core";
 import Divider from "@material-ui/core/Divider";
+import { Button } from "@material-ui/core";
+import SystemUpdateAltOutlinedIcon from "@material-ui/icons/SystemUpdateAltOutlined";
+
 import "./Filter.css";
 
 const Filter = () => {
@@ -12,14 +15,22 @@ const Filter = () => {
     <Grid container className="filter">
       <div className="filter-inner">
         <i className="fas fa-filter"></i>
-        <h4>Filters</h4>
+        <Typography variant="h6">Filters</Typography>
       </div>
-      {/* <DateFilter />
+      <DateFilter />
       <Divider />
       <ReviewFilter />
       <PortfolioFilter />
       <GroupFilter />
-      <button>DOWNLOAD DATA</button> */}
+      <Button
+        onClick={() => console.log("you clicked APPLY button")}
+        type="submit"
+        color="primary"
+        variant="contained"
+        startIcon={<SystemUpdateAltOutlinedIcon />}
+      >
+        DOWNLOAD DATA
+      </Button>
     </Grid>
   );
 };
