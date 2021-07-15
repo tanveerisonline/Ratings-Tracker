@@ -6,6 +6,7 @@ import RatingBar from "views/ReviewManagement/Components/Layouts/RatingBar";
 import RatingStatus from "views/ReviewManagement/Components/Layouts/RatingStatus";
 const useStyles = makeStyles((theme) => ({
   root: {
+    backgroundColor: "gray",
     height: 230,
     maxHeight: 230,
   },

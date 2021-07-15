@@ -8,7 +8,6 @@ const HomePage = () => {
     <Grid container className="home" xs={12}>
       <Grid item xs={9}>
         <TabContainer />
-        <ReviewManagemnt />
       </Grid>
       <Grid item xs={3}>
         <Filter />

@@ -4,7 +4,7 @@
   /* justify-content: center;
   align-items: center; */
   /* margin-left: 30px; */
-  /* height: 81vh; */
+  /* height: 100%; */
 }
 .filter-inner {
   width: 100%;
@@ -16,14 +16,10 @@
   background-color: #cbcbd3;
   /* background-color: red; */
 }
-/* .filter-inner h4 {
-  margin-left: 10px;
-  color: #383e4c;
-} */
 .fa-filter {
-  margin-left: 50px;
-  height: 25px;
-  width: 25px;
+  margin-left: 45px;
+  height: 28px;
+  width: 28px;
   border-radius: 4px;
   color: #fff;
   display: flex;

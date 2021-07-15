@@ -15,15 +15,19 @@ const useStyles = makeStyles((theme) => ({
   // },
   root: {
     // backgroundColor: "red",
-    marginLeft: 50,
+    marginLeft: 45,
   },
   formControl: {
     // margin: theme.spacing(1),
     // backgroundColor: "red",
-    height: 50,
+    display: "inline-flex",
+    justifyContent: "center",
+    // alignItems: "center",
+    height: 45,
+    paddingLeft: "15px",
     borderRadius: 14,
     backgroundColor: "#fff",
-    width: 220,
+    width: 200,
   },
   heading: {
     paddingTop: 30,
@@ -53,19 +57,17 @@ export default function ReviewFilter() {
 
   return (
     <Grid className={classes.root} item xs={12}>
-      {/* <Container> */}
       <Typography className={classes.heading}>REVIEW SITES:</Typography>
       <FormControl className={classes.formControl}>
-        <InputLabel id="demo-controlled-open-select-label">All</InputLabel>
         <Select
-          labelId="demo-controlled-open-select-label"
-          id="demo-controlled-open-select"
-          open={open}
-          onClose={handleClose}
-          onOpen={handleOpen}
           value={review}
           onChange={handleChange}
+          displayEmpty
+          inputProps={{ "aria-label": "Without label" }}
         >
+          <MenuItem value="" disabled>
+            All
+          </MenuItem>
           <MenuItem value={1}>Apartments</MenuItem>
           <MenuItem value={2}>Apartment Guide</MenuItem>
           <MenuItem value={3}>ApartmentRatings</MenuItem>
@@ -77,7 +79,6 @@ export default function ReviewFilter() {
           <MenuItem value={9}>Yelp</MenuItem>
         </Select>
       </FormControl>
-      {/* </Container> */}
     </Grid>
   );
 }

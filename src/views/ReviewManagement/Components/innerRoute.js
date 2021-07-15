@@ -10,11 +10,7 @@ export default function Content() {
 
   return (
     <div style={{}}>
-        <Snapshot
-          
-        />
-    
-     
+      <Snapshot />
     </div>
   );
 }

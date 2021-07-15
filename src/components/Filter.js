@@ -22,7 +22,7 @@ const useStyles = makeStyles((theme) => ({
     fontSize: "12px",
     marginLeft: 50,
     background: "#0da9de",
-    marginTop: 25,
+    marginTop: 30,
     borderRadius: 10,
   },
   downBtn: {
@@ -42,9 +42,10 @@ const useStyles = makeStyles((theme) => ({
     // backgroundColor: "red",
   },
   divider: {
-    color: "red",
-    backgroundColor: "green",
-    fontSize: "22px",
+    backgroundColor: "#6b6d82",
+    width: "80%",
+    marginLeft: "45px",
+    marginTop: "35px",
   },
 }));
 const Filter = () => {
@@ -59,8 +60,9 @@ const Filter = () => {
       <DateFilter />
       <Divider className={classes.divider} variant="middle" />
       <ReviewFilter />
-      <Divider variant="inset" />
+      <Divider className={classes.divider} variant="middle" />
       <PortfolioFilter />
+      <Divider className={classes.divider} variant="middle" />
       <GroupFilter />
       <Button
         className={classes.Dbtn}

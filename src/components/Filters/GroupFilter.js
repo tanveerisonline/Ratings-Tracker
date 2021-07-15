@@ -6,6 +6,7 @@ import FormControlLabel from "@material-ui/core/FormControlLabel";
 import FormControl from "@material-ui/core/FormControl";
 import FormLabel from "@material-ui/core/FormLabel";
 import { Typography } from "@material-ui/core";
+import Divider from "@material-ui/core/Divider";
 import { Grid } from "@material-ui/core";
 const useStyles = makeStyles((theme) => ({
   // button: {
@@ -14,7 +15,8 @@ const useStyles = makeStyles((theme) => ({
   // },
   root: {
     // backgroundColor: "gray",
-    marginLeft: 50,
+    marginLeft: 45,
+    color: "#383e4c",
   },
   heading: {
     paddingTop: 30,
@@ -22,6 +24,10 @@ const useStyles = makeStyles((theme) => ({
     fontSize: 14,
     fontWeight: 700,
     color: "#2b3b5c",
+  },
+  divider: {
+    width: "200%",
+    backgroundColor: "#6b6d82",
   },
 }));
 export default function GroupFilter() {
@@ -45,12 +51,15 @@ export default function GroupFilter() {
           onChange={handleChange}
         >
           <FormControlLabel value="months" control={<Radio />} label="Months" />
+          <Divider className={classes.divider} variant="middle" />
           <FormControlLabel
             value="quarters"
             control={<Radio />}
             label="Quarters"
           />
+          <Divider className={classes.divider} variant="middle" />
           <FormControlLabel value="years" control={<Radio />} label="Years" />
+          <Divider className={classes.divider} variant="middle" />
         </RadioGroup>
       </FormControl>
     </Grid>

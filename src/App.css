@@ -8,7 +8,9 @@
 }
 .sidenav {
   height: 100vh;
+  align-self: stretch;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   color: #fff;
@@ -24,4 +26,12 @@
 }
 .tab {
   height: 74vh;
+}
+.MuiInput-underline::before {
+  border-bottom: none;
+  display: none;
+}
+.MuiInput-underline::after {
+  border-bottom: none;
+  display: none;
 }

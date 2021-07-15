@@ -6,16 +6,19 @@ import KeyboardArrowRightIcon from "@material-ui/icons/KeyboardArrowRight";
 const useStyles = makeStyles((theme) => ({
   root: {
     // backgroundColor: "orange",
-    marginLeft: 50,
+    marginLeft: 45,
   },
   textField: {
     // marginTop: 120,
     // marginBottom: 20,
     // display: "block",
+    justifyContent: "center",
+    paddingLeft: "15px",
+    color: "red",
     backgroundColor: "#ffffff",
     borderRadius: 14,
-    width: 65,
-    height: 50,
+    width: 50,
+    height: 45,
   },
   filBtn: {
     fontSize: 13,
@@ -52,7 +55,7 @@ const useStyles = makeStyles((theme) => ({
     display: "flex",
     fontSize: "12px",
     background: "#8f95a3",
-    marginTop: 20,
+    marginTop: 18,
     borderRadius: 10,
 
     // width: "64%",
@@ -90,12 +93,15 @@ const PortfolioFilter = () => {
       >
         <Grid className={classes.region}>
           <TextField
-            onChange={(e) => setTitle(e.target.value)}
             className={classes.textField}
-            label="378"
+            onChange={(e) => setTitle(e.target.value)}
+            // label="378"
             placeholder="378"
-            variant="outlined"
+            // variant="outlined"
             color="secondary"
+            InputProps={{
+              disableUnderline: true,
+            }}
           />
           <Typography className={classes.title}>East Region</Typography>
         </Grid>

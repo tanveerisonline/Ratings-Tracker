@@ -4,7 +4,7 @@ import React from "react";
 const SideNav = () => {
   return (
     <Grid className="sidenav" item xs={12}>
-      SIDENAV
+      <div>SIDE NAV</div>
     </Grid>
   );
 };
