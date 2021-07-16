@@ -9,8 +9,9 @@ const useStyles = makeStyles((theme) => ({
     borderBottomLeftRadius: 10,
     borderBottomRightRadius: 10,
     marginBottom: 10,
+    backgroundColor: "red",
     boxShadow: "0 5px 8px 2px rgba(0,0,0,0.1)",
-    backgroundColor: "white",
+    // backgroundColor: "white",
     // padding: 18,
   },
   innerTypographyDiv: {

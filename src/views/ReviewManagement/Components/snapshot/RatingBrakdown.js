@@ -7,6 +7,7 @@ import RatingStatus from "views/ReviewManagement/Components/Layouts/RatingStatus
 const useStyles = makeStyles((theme) => ({
   root: {
     backgroundColor: "gray",
+    borderRadius: "15px",
     height: 230,
     maxHeight: 230,
   },

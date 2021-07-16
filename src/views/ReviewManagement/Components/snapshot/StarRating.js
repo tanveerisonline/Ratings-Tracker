@@ -6,6 +6,7 @@ const useStyles = makeStyles((theme) => ({
   root: {
     height: 230,
     maxHeight: 230,
+    backgroundColor: "red",
   },
   percentGrid: {
     paddingLeft: 20,

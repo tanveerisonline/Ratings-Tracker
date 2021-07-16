@@ -7,6 +7,8 @@ import Radio from "components/form/RadioButton/SimpleRadio";
 const useStyles = makeStyles((theme) => ({
   root: {
     minHeight: 430,
+    backgroundColor: "gray",
+    borderRadius: "20px",
     // maxHeight: 230,
   },
   title: {
