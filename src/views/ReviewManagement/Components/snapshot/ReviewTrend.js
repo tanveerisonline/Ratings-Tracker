@@ -7,7 +7,7 @@ import Radio from "components/form/RadioButton/SimpleRadio";
 const useStyles = makeStyles((theme) => ({
   root: {
     minHeight: 430,
-    backgroundColor: "gray",
+    // backgroundColor: "yellow",
     borderRadius: "15px",
     // maxHeight: 230,
   },
@@ -15,6 +15,12 @@ const useStyles = makeStyles((theme) => ({
     fontSize: 14,
     fontWeight: 700,
     marginTop: "3%",
+    color: "red",
+  },
+  areaGraph: {
+    backgroundColor: "#fff",
+    borderRadius: "10px",
+    // height: "30px",
   },
 }));
 export default function ReviewTrend({
@@ -29,8 +35,8 @@ export default function ReviewTrend({
   return (
     <Grid
       style={{
-        marginBottom: 10,
-        minHeight: 500,
+        // marginBottom: 10,
+        minHeight: 300,
       }}
     >
       <Grid
@@ -68,13 +74,15 @@ export default function ReviewTrend({
           <Typography className={classes.title}> No Records Found</Typography>
         </Box>
       ) : (
-        <Box mt={5} pl={2} pr={2} mb={2}>
+        <Box mt={3} pl={0} pr={0} mb={0}>
           <AreaGraph
+            className={classes.areaGraph}
             graphData={constant?.RatingGraph.graphs}
             mainData={constant?.RatingGraph.inputData.data}
-            height={400}
+            height={340}
             AdditonalLegendsStyles={{
               marginTop: -20,
+              // display: "flex",
             }}
           />
         </Box>

@@ -11,7 +11,6 @@ import KeyboardArrowDownIcon from "@material-ui/icons/KeyboardArrowDown";
 import { ArrowLeft, CenterFocusStrong } from "@material-ui/icons";
 import ReactDatePicker from "react-datepicker";
 import DatePicker from "react-datepicker";
-
 import "react-datepicker/dist/react-datepicker.css";
 
 const useStyles = makeStyles((theme) => ({
@@ -23,15 +22,34 @@ const useStyles = makeStyles((theme) => ({
     display: "flex",
     flexWrap: "wrap",
   },
+  inner: {
+    display: "flex",
+    backgroundColor: "#fff",
+    height: 45,
+    width: 220,
+    borderRadius: 14,
+    // justifyContent: "center",
+    alignItems: "center",
+  },
+  downIcon: {
+    display: "flex",
+    justifyContent: "center",
+    alignItems: "center",
+    color: "#8f9fa3",
+    cursor: "pointer",
+
+    // display:"none"
+  },
   textField: {
     // marginLeft: theme.spacing(2),
     // marginRight: theme.spacing(2),
+    cursor: "pointer",
     display: "inline-flex",
     justifyContent: "center",
     fontSize: "13px",
     fontWeight: "600",
     paddingLeft: "15px",
-    width: 200,
+    // width: 200,
     height: 45,
     // display: "none",
     borderRadius: 14,
@@ -93,29 +111,34 @@ export default function DateFilter() {
     <Grid item xs={12} className={classes.root}>
       {/* <Container className={classes.root}> */}
       <Typography className={classes.heading}>SHOW RATINGS FOR:</Typography>
-      <DatePicker
-        className={classes.textField}
-        placeholderText="MM/DD/YYYY"
-        dateFormat="MM/dd/yyyy"
-        selected={startDate}
-        onChange={(date) => setStartDate(date)}
-        selectsStart
-        startDate={startDate}
-        endDate={endDate}
-        endIcon={<KeyboardArrowRightIcon />}
-      />
+      <div className={classes.inner}>
+        <DatePicker
+          className={classes.textField}
+          placeholderText="MM/DD/YYYY"
+          dateFormat="MM/dd/yyyy"
+          selected={startDate}
+          onChange={(date) => setStartDate(date)}
+          selectsStart
+          startDate={startDate}
+          endDate={endDate}
+        />
+        <KeyboardArrowDownIcon className={classes.downIcon} />
+      </div>
       <Typography className={classes.to}>TO</Typography>
-      <DatePicker
-        className={classes.textField}
-        placeholderText="MM/DD/YYYY"
-        dateFormat="MM/dd/yyyy"
-        selected={endDate}
-        onChange={(date) => setEndDate(date)}
-        selectsEnd
-        startDate={startDate}
-        endDate={endDate}
-        minDate={startDate}
-      />
+      <div className={classes.inner}>
+        <DatePicker
+          className={classes.textField}
+          placeholderText="MM/DD/YYYY"
+          dateFormat="MM/dd/yyyy"
+          selected={endDate}
+          onChange={(date) => setEndDate(date)}
+          selectsEnd
+          startDate={startDate}
+          endDate={endDate}
+          minDate={startDate}
+        />
+        <KeyboardArrowDownIcon className={classes.downIcon} />
+      </div>
       <Button
         className={classes.btn}
         onClick={() => console.log("you clicked APPLY button")}

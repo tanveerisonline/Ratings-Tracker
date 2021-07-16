@@ -6,9 +6,9 @@ import RatingBar from "views/ReviewManagement/Components/Layouts/RatingBar";
 import RatingStatus from "views/ReviewManagement/Components/Layouts/RatingStatus";
 const useStyles = makeStyles((theme) => ({
   root: {
-    backgroundColor: "gray",
-    borderRadius: "15px",
-    height: 230,
+    backgroundColor: "#fff",
+    borderRadius: "10px",
+    height: 220,
     maxHeight: 230,
   },
   TopGrip: {

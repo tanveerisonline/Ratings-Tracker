@@ -57,7 +57,7 @@ const useStyles = makeStyles((theme) => ({
     borderRadius: "10px 10px 0px 0px",
     color: "white",
     fontWeight: "600",
-    backgroundColor: "#919aab",
+    backgroundColor: "#8f95a3",
     "&.Mui-selected": {
       backgroundColor: "white",
       color: "#c93e46",

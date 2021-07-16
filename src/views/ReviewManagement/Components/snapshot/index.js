@@ -6,11 +6,15 @@ import { Box, Divider, Grid } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles";
 import ReviewTrend from "views/ReviewManagement/Components/snapshot/ReviewTrend";
 import BoxLayout from "views/ReviewManagement/Components/Layouts/BoxLayout";
+import FilterListOutlinedIcon from "@material-ui/icons/FilterListOutlined";
 
 const useStyles = makeStyles((theme) => ({
   root: {
     flexGrow: 1,
     marginTop: 20,
+  },
+  starRating: {
+    color: "red",
   },
 }));
 export default function Index({
@@ -29,8 +33,9 @@ export default function Index({
   const classes = useStyles();
   return (
     <Grid style={{ marginTop: 10 }} xs={12}>
-      <Divider />
+      {/* <Divider /> */}
       <div className={classes.root}>
+        {/* <div className={classes.starRating}> */}
         <Grid item container spacing={1}>
           <Grid item xs={3}>
             <BoxLayout label="Star Rating">
@@ -38,13 +43,13 @@ export default function Index({
             </BoxLayout>
           </Grid>
 
-          <Grid item xs={5}>
-            <BoxLayout label="Rating Breakdown">
+          <Grid item xs={4}>
+            <BoxLayout label="Ratings Rollup">
               <RatingBreakdown />
             </BoxLayout>
           </Grid>
-          <Grid item xs={4}>
-            <BoxLayout label="Sentiments Breakdown">
+          <Grid item xs={5}>
+            <BoxLayout label="Ratings Breakdown">
               <Sentiments />
             </BoxLayout>
           </Grid>

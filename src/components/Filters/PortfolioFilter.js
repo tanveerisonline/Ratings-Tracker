@@ -13,6 +13,7 @@ const useStyles = makeStyles((theme) => ({
     // marginBottom: 20,
     // display: "block",
     justifyContent: "center",
+    // alignItems: "center",
     paddingLeft: "15px",
     color: "red",
     backgroundColor: "#ffffff",
@@ -49,7 +50,7 @@ const useStyles = makeStyles((theme) => ({
     alignItems: "center",
   },
   btn: {
-    width: "72%",
+    width: "75%",
     height: "40px",
     color: "#fff",
     display: "flex",

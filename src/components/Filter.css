@@ -1,6 +1,7 @@
 .filter {
   margin-top: 73px;
-  /* overflow-y: scroll; */
+  height: 100vh;
+  overflow-y: scroll;
   /* justify-content: center;
   align-items: center; */
   /* margin-left: 30px; */

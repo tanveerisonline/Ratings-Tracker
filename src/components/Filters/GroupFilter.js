@@ -26,7 +26,7 @@ const useStyles = makeStyles((theme) => ({
     color: "#2b3b5c",
   },
   divider: {
-    width: "200%",
+    width: "210%",
     backgroundColor: "#6b6d82",
   },
 }));
@@ -41,9 +41,7 @@ export default function GroupFilter() {
   return (
     <Grid className={classes.root} item xs={12}>
       <FormControl component="fieldset">
-        {/* <FormLabel component="legend">GROUP BY:</FormLabel> */}
         <Typography className={classes.heading}>GROUP BY:</Typography>
-        {/* <Typography>Gender</Typography> */}
         <RadioGroup
           aria-label="group"
           name="group"

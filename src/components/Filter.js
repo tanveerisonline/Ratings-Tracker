@@ -43,7 +43,7 @@ const useStyles = makeStyles((theme) => ({
   },
   divider: {
     backgroundColor: "#6b6d82",
-    width: "80%",
+    width: "78%",
     marginLeft: "45px",
     marginTop: "35px",
   },

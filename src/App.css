@@ -7,7 +7,7 @@
   /* font-family: "Merriweather", serif; */
 }
 .sidenav {
-  height: 100vh;
+  height: 150vh;
   align-self: stretch;
   display: flex;
   flex-direction: column;

@@ -4,10 +4,10 @@ import BarGraph from "components/GraphsNew/Bar/index";
 import * as constant from "views/ReviewManagement/constant";
 const useStyles = makeStyles((theme) => ({
   root: {
-    height: 230,
+    height: 220,
     maxHeight: 230,
-    backgroundColor: "gray",
-    borderRadius: "15px",
+    backgroundColor: "#fff",
+    borderRadius: "10px",
   },
   title: {
     fontSize: 14,
