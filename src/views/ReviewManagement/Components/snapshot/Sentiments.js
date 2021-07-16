@@ -7,6 +7,7 @@ const useStyles = makeStyles((theme) => ({
     height: 230,
     maxHeight: 230,
     backgroundColor: "gray",
+    borderRadius: "15px",
   },
   title: {
     fontSize: 14,

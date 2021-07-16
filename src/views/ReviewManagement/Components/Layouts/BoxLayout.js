@@ -3,6 +3,7 @@ import React from "react";
 
 const useStyles = makeStyles((theme) => ({
   mainGrid: {
+    // width: "120%",
     // border: "1px solid",
     borderTopLeftRadius: 10,
     borderTopRightRadius: 10,

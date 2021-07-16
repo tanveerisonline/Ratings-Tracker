@@ -8,7 +8,7 @@ const useStyles = makeStyles((theme) => ({
   root: {
     minHeight: 430,
     backgroundColor: "gray",
-    borderRadius: "20px",
+    borderRadius: "15px",
     // maxHeight: 230,
   },
   title: {
