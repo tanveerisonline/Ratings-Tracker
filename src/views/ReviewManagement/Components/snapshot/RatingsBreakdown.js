@@ -15,7 +15,7 @@ const useStyles = makeStyles((theme) => ({
     marginTop: "7%",
   },
 }));
-export default function Sentiments({ data }) {
+export default function RatingsBreakdown({ data }) {
   const classes = useStyles();
 
   return (

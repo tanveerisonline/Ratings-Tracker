@@ -29,7 +29,7 @@ const useStyles = makeStyles((theme) => ({
     fontWeight: 700,
   },
 }));
-export default function RatingBreakdown({ ratingBreakdownData }) {
+export default function RatingsRollup({ ratingBreakdownData }) {
   var i = 10;
   const classes = useStyles();
 

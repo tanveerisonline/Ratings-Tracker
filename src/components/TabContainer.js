@@ -57,10 +57,11 @@ const useStyles = makeStyles((theme) => ({
     borderRadius: "10px 10px 0px 0px",
     color: "white",
     fontWeight: "600",
-    backgroundColor: "#8f95a3",
+    opacity: 1,
+    backgroundColor: "#c2212a",
     "&.Mui-selected": {
-      backgroundColor: "white",
-      color: "#c93e46",
+      backgroundColor: "#fff",
+      color: "#c2212a",
     },
   },
 }));

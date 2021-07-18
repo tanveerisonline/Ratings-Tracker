@@ -71,7 +71,7 @@
 // }
 
 //
-import { Grid, Typography, makeStyles } from "@material-ui/core";
+import { Grid, Typography, makeStyles, Box } from "@material-ui/core";
 import React from "react";
 import CircularProgress from "@material-ui/core/CircularProgress";
 import Divider from "@material-ui/core/Divider";
@@ -80,8 +80,8 @@ const useStyles = makeStyles((theme) => ({
   paper: {},
   root: {
     display: "flex",
-    height: 220,
-    maxHeight: 230,
+    // height: 220,
+    // maxHeight: 230,
     backgroundColor: "#fff",
     borderRadius: "10px",
     paddingLeft: 10,
@@ -91,17 +91,15 @@ const useStyles = makeStyles((theme) => ({
     display: "flex",
     flexDirection: "column",
     flexWrap: "nowrap",
-    justifyContent: "space-around",
+    justifyContent: "center",
     alignItems: "center",
   },
   rating: {
     display: "flex",
     flexDirection: "column",
     flexWrap: "nowrap",
-    justifyContent: "space-around",
+    justifyContent: "center",
     alignItems: "center",
-    paddingBottom: "10px",
-    paddingTop: "10px",
   },
   percentage: {
     fontSize: 30,
@@ -109,37 +107,34 @@ const useStyles = makeStyles((theme) => ({
     fontWeight: 800,
   },
   rated: {
-    fontSize: 50,
+    fontSize: "64px",
     color: "#c2302a",
     fontWeight: 800,
-    marginTop: "26px",
-    paddingBottom: "36px",
+    marginBottom: "10px",
   },
   overAllRating: {
-    color: "#2b3b5c",
+    color: "#2f3f5f",
     fontSize: 12,
     fontWeight: 800,
     marginBottom: "10px",
-    paddingRight: "20px",
+    // paddingRight: "20px",
     // display: "flex",
   },
   reviews: {
-    color: "#2b3b5c",
+    color: "#2f3f5f",
     fontSize: 12,
     fontWeight: 800,
   },
   progressBar: {
     // backgroundColor: "red",
     color: "#0fa9de",
+    marginBottom: "10px",
     // transform: "rotate(180deg)",
   },
   rate: {
-    fontSize: "28px",
-    fontWeight: "800",
+    fontSize: "36px",
+    fontWeight: "600",
     color: "#8f95a3",
-    position: "relative",
-    top: "64px",
-    left: "12px",
   },
   divider: {
     marginTop: "40px",
@@ -161,20 +156,44 @@ export default function StarRating({ StarRatingData }) {
     };
   }, []);
 
+  function CircularProgressWithLabel() {
+    return (
+      <Box position="relative" display="inline-flex">
+        <CircularProgress
+          variant="determinate"
+          value={progress}
+          size="6.5rem"
+          className={classes.progressBar}
+          thickness="2"
+        />
+        <Box
+          top={0}
+          left={0}
+          bottom={0}
+          right={0}
+          position="absolute"
+          display="flex"
+          alignItems="center"
+          justifyContent="center"
+        >
+          <Typography
+            variant="caption"
+            component="div"
+            // color="textSecondary"
+            className={classes.rate}
+          >
+            3.75
+          </Typography>
+        </Box>
+      </Box>
+    );
+  }
+
   return (
     <Grid xs={12} className={classes.root}>
       <Grid xs={8} className={classes.percent}>
-        <Typography className={classes.percentage}>
-          <Typography className={classes.rate}>3.75</Typography>
-          <CircularProgress
-            variant="determinate"
-            value={progress}
-            size="5.5rem"
-            className={classes.progressBar}
-          />
-        </Typography>
+        <CircularProgressWithLabel />
         <Typography className={classes.overAllRating}>
-          {" "}
           OVERALL RATING
         </Typography>
       </Grid>
@@ -191,3 +210,4 @@ export default function StarRating({ StarRatingData }) {
     </Grid>
   );
 }
+// {"mode":"full","isActive":false}

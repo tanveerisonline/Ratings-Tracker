@@ -1,12 +1,15 @@
 import React, { useState } from "react";
 import StarRating from "./StarRating";
-import RatingBreakdown from "./RatingBrakdown";
-import Sentiments from "./Sentiments";
+import RatingBreakdown from "./RatingsRollup";
+import Sentiments from "./RatingsBreakdown";
 import { Box, Divider, Grid } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles";
 import ReviewTrend from "views/ReviewManagement/Components/snapshot/ReviewTrend";
 import BoxLayout from "views/ReviewManagement/Components/Layouts/BoxLayout";
 import FilterListOutlinedIcon from "@material-ui/icons/FilterListOutlined";
+import RatingsRollup from "./RatingsRollup";
+import RatingsBreakdown from "./RatingsBreakdown";
+import StarRateRoundedIcon from "@material-ui/icons/StarRateRounded";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -14,8 +17,16 @@ const useStyles = makeStyles((theme) => ({
     marginTop: 20,
   },
   starRating: {
-    color: "red",
+    color: "pink",
   },
+  // fa-star: {
+  // height: "26px",
+  // width: "26px",
+  // borderRadius: "5px",
+  // // fontSize: "22px",
+  // backgroundColor: "green",
+  // color: "#fff",
+  // },
 }));
 export default function Index({
   GroupByData,
@@ -36,21 +47,27 @@ export default function Index({
       {/* <Divider /> */}
       <div className={classes.root}>
         {/* <div className={classes.starRating}> */}
-        <Grid item container spacing={1}>
+        <Grid item container spacing={3}>
           <Grid item xs={3}>
-            <BoxLayout label="Star Rating">
+            <BoxLayout
+              className={classes.starRating}
+              label="Star Rating"
+              white={true}
+            >
+              {/* <StarRateRoundedIcon className={classes.star} /> */}
+              <i className="fas fa-star"></i>
               <StarRating />
             </BoxLayout>
           </Grid>
 
           <Grid item xs={4}>
             <BoxLayout label="Ratings Rollup">
-              <RatingBreakdown />
+              <RatingsRollup />
             </BoxLayout>
           </Grid>
           <Grid item xs={5}>
             <BoxLayout label="Ratings Breakdown">
-              <Sentiments />
+              <RatingsBreakdown />
             </BoxLayout>
           </Grid>
         </Grid>
@@ -63,3 +80,4 @@ export default function Index({
     </Grid>
   );
 }
+// {"mode":"full","isActive":false}

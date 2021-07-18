@@ -35,3 +35,11 @@
   border-bottom: none;
   display: none;
 }
+.fa-star {
+  height: "26px";
+  width: "26px";
+  border-radius: "5px";
+  /*fontSize: "22px", */
+  background-color: "green";
+  color: "#fff";
+}
