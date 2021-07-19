@@ -1,5 +1,7 @@
 // import "./styles.css";
 import React, { useState, useEffect } from "react";
+// import { makeStyles } from "@material-ui/core";
+
 import {
   XAxis,
   YAxis,
@@ -14,7 +16,8 @@ import {
 } from "recharts";
 import PropTypes from "prop-types";
 import WrappedLegends from "components/GraphsNew/Legends/circularLegend";
-import RectangularLegend from "components/GraphsNew/Legends/rectangular.js"
+import RectangularLegend from "components/GraphsNew/Legends/rectangular.js";
+import { ClassNames } from "@emotion/react";
 export default function AreaChartComponent(props) {
   const {
     graphData,
@@ -33,6 +36,8 @@ export default function AreaChartComponent(props) {
   } = props;
   const [isDisabled, setIsDisabled] = useState([]);
   const [render, setRerender] = useState(false);
+  // const classes = useStyles();
+
 
   const hideShowGraphLegendClick = (payload) => {
     let disabledGraph = [];
@@ -45,7 +50,6 @@ export default function AreaChartComponent(props) {
     }
     setIsDisabled(disabledGraph);
 
-    
     render ? setRerender(false) : setRerender(true);
   };
   useEffect(() => {}, [render]);
@@ -54,41 +58,39 @@ export default function AreaChartComponent(props) {
       <AreaChart width={width} height={height} data={mainData} {...rest}>
         <CartesianGrid vertical={false} />
         <XAxis dataKey="name" />
-        <YAxis axisLine={false}   />
+        <YAxis axisLine={false} />
         <Tooltip />
         {ShowLegends && (
           <Legend
+            // className={classes.example}
             iconSize={22}
             verticalAlign={legendVerticalAlign}
             align={legendalign}
+            margin={{ bottom: 20 }}
             layout={legendlayout}
             onClick={(e) => legendalign(e)}
             content={
-              legendType == "circular" ? 
-          
+              legendType == "circular" ? (
                 <WrappedLegends
                   legendalign={legendalign}
                   hideShowGraphLegendClick={hideShowGraphLegendClick}
                   isDisabled={isDisabled}
                   AdditionalStyles={AdditonalLegendsStyles}
-
                 />
-              : 
-              <RectangularLegend 
-              legendalign={legendalign}
-              hideShowGraphLegendClick={hideShowGraphLegendClick}
-              isDisabled={isDisabled}
-              AdditionalStyles={AdditonalLegendsStyles}
-              
-              />
-              
+              ) : (
+                <RectangularLegend
+                  legendalign={legendalign}
+                  hideShowGraphLegendClick={hideShowGraphLegendClick}
+                  isDisabled={isDisabled}
+                  AdditionalStyles={AdditonalLegendsStyles}
+                />
+              )
             }
             {...legendsProps}
           />
         )}
 
         {graphData?.map((item, index) => {
-          
           return (
             <Area
               key={index}
@@ -110,9 +112,9 @@ export default function AreaChartComponent(props) {
 AreaChartComponent.propTypes = {};
 
 AreaChartComponent.defaultProps = {
-  legendVerticalAlign: "middle",
-  legendlayout: "vertical",
-  legendalign: "left",
+  legendVerticalAlign: "bottom",
+  legendlayout: "horizontal",
+  legendalign: "center",
   height: 400,
   width: window.innerWidth,
   legendType: "Rectangular",

@@ -3,7 +3,13 @@ import AreaGraph from "components/GraphsNew/Area/index";
 import * as constant from "views/ReviewManagement/constant";
 import { Box, Grid, Typography, makeStyles } from "@material-ui/core";
 import Radio from "components/form/RadioButton/SimpleRadio";
-
+import RadioGroup from "@material-ui/core/RadioGroup";
+import FormControlLabel from "@material-ui/core/FormControlLabel";
+import FormControl from "@material-ui/core/FormControl";
+import FormLabel from "@material-ui/core/FormLabel";
+// import { Typography } from "@material-ui/core";
+import Divider from "@material-ui/core/Divider";
+// import { Grid } from "@material-ui/core";
 const useStyles = makeStyles((theme) => ({
   root: {
     minHeight: 430,
@@ -19,8 +25,13 @@ const useStyles = makeStyles((theme) => ({
   },
   areaGraph: {
     backgroundColor: "#fff",
-    borderRadius: "10px",
+    borderRadius: "6px",
     // height: "30px",
+  },
+  exam: {
+    color: "#fff",
+    backgroundColor: "#4f5b75",
+    borderRadius: "5px",
   },
 }));
 export default function ReviewTrend({
@@ -29,22 +40,32 @@ export default function ReviewTrend({
   setFilterSelected,
   filterData,
 }) {
+  const [value, setValue] = React.useState("1");
   const classes = useStyles();
 
-  console.log(filterData);
+  const handleChange = (event) => {
+    setValue(event.target.value);
+  };
+  // const classes = useStyles();
+
+  // console.log(filterData);
   return (
     <Grid
+      container
+      direction="row"
       style={{
         // marginBottom: 10,
-        minHeight: 300,
+        height: 340,
       }}
     >
       <Grid
+        className={classes.exam}
         container
-        // spacing={2}
-        direction="row"
-        justify="flex-end"
-        style={{ paddingRight: 30, marginTop: -20 }}
+        item
+        xs={3}
+        direction="column"
+        justify="flex-start"
+        style={{ paddingTop: 10 }}
       >
         {filterData?.map((item) => (
           <Grid item>
@@ -52,9 +73,12 @@ export default function ReviewTrend({
               isChecked={filterSelected == item.id}
               label={item.value}
               value="1"
-              additionalStyles={{}}
+              additionalStyles={{
+                color: "#fff",
+                height: "16px",
+              }}
               labelStyles={{
-                fontSize: 10,
+                fontSize: 12,
               }}
               handleChange={(data) => {
                 setFilterSelected(item.id);
@@ -63,30 +87,32 @@ export default function ReviewTrend({
           </Grid>
         ))}
       </Grid>
-
-      {constant?.RatingGraph == null ? (
-        <Box
-          flexWrap="wrap"
-          display="flex"
-          alignItems="center"
-          justifyContent="center"
-        >
-          <Typography className={classes.title}> No Records Found</Typography>
-        </Box>
-      ) : (
-        <Box mt={3} pl={0} pr={0} mb={0}>
-          <AreaGraph
-            className={classes.areaGraph}
-            graphData={constant?.RatingGraph.graphs}
-            mainData={constant?.RatingGraph.inputData.data}
-            height={340}
-            AdditonalLegendsStyles={{
-              marginTop: -20,
-              // display: "flex",
-            }}
-          />
-        </Box>
-      )}
+      <Grid item xs={9}>
+        {constant?.RatingGraph == null ? (
+          <Box
+            flexWrap="wrap"
+            display="flex"
+            alignItems="center"
+            justifyContent="center"
+          >
+            <Typography className={classes.title}> No Records Found</Typography>
+          </Box>
+        ) : (
+          <Box mt={0} pl={0.7} pr={0} mb={0}>
+            <AreaGraph
+              className={classes.areaGraph}
+              graphData={constant?.RatingGraph.graphs}
+              mainData={constant?.RatingGraph.inputData.data}
+              height={340}
+              // width={52}
+              AdditonalLegendsStyles={{
+                marginTop: -20,
+                // display: "flex",
+              }}
+            />
+          </Box>
+        )}
+      </Grid>
     </Grid>
   );
 }
