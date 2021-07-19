@@ -7,9 +7,16 @@ import { Grid, Typography } from "@material-ui/core";
 import Divider from "@material-ui/core/Divider";
 import { makeStyles } from "@material-ui/core/styles";
 import { Button } from "@material-ui/core";
+import FilterImage2 from "./FilterImage2.png";
 import SystemUpdateAltOutlinedIcon from "@material-ui/icons/SystemUpdateAltOutlined";
-
+import KeyboardArrowRightIcon from "@material-ui/icons/KeyboardArrowRight";
+import MenuItem from "@material-ui/core/MenuItem";
+import FormControl from "@material-ui/core/FormControl";
+import Select from "@material-ui/core/Select";
 import "./Filter.css";
+import FilterTitle from "./Filters/FilterTitle";
+import KeyboardArrowDownIcon from "@material-ui/icons/KeyboardArrowDown";
+
 const useStyles = makeStyles((theme) => ({
   root: {
     textDecoration: "none",
@@ -20,13 +27,14 @@ const useStyles = makeStyles((theme) => ({
     color: "#fff",
     display: "flex",
     fontSize: "12px",
-    marginLeft: 50,
+    marginLeft: 45,
     background: "#0da9de",
-    marginTop: 30,
+    marginTop: 15,
     borderRadius: 10,
+    marginBottom: 15,
   },
   downBtn: {
-    // marginLeft: 10,
+    marginLeft: 2,
     fontSize: 13,
     color: "#fff",
     fontWeight: 600,
@@ -34,29 +42,72 @@ const useStyles = makeStyles((theme) => ({
     //   backgroundColor: "#777b89",
     // },
   },
-  filterTitle: {
-    marginLeft: "10px",
-    fontWeight: 800,
-    color: "#383e4c",
-    fontSize: "15px",
-    // backgroundColor: "red",
-  },
   divider: {
     backgroundColor: "#6b6d82",
     width: "78%",
     marginLeft: "45px",
-    marginTop: "35px",
+    marginTop: "30px",
+  },
+  apply: {
+    marginLeft: 0,
+    fontSize: 13,
+    color: "#fff",
+    fontWeight: 600,
+  },
+  btn: {
+    width: "64%",
+    height: "40px",
+    color: "#fff",
+    display: "flex",
+    fontSize: "12px",
+    justifyContent: "center",
+    alignItems: "center",
+    background: "#7bb42d",
+    marginTop: 18,
+    borderRadius: 10,
+    marginLeft: 45,
+  },
+  filterImg: {
+    height: 20,
+    width: 20,
+    // border: "1px solid red",
+  },
+  formControl: {
+    // margin: theme.spacing(1),
+    // backgroundColor: "red",
+    display: "inline-flex",
+    justifyContent: "center",
+    // alignItems: "center",
+    height: 45,
+    paddingLeft: "15px",
+    borderRadius: 14,
+    backgroundColor: "#fff",
+    width: 200,
+    marginLeft: 45,
+  },
+  rightIcon: {
+    marginLeft:12
   },
 }));
 const Filter = () => {
   const classes = useStyles();
+  const [review, setReview] = React.useState("");
+  const [open, setOpen] = React.useState(false);
 
+  const handleChange = (event) => {
+    setReview(event.target.value);
+  };
+
+  const handleClose = () => {
+    setOpen(false);
+  };
+
+  const handleOpen = () => {
+    setOpen(true);
+  };
   return (
     <Grid container className="filter">
-      <div className="filter-inner">
-        <i className="fas fa-filter"></i>
-        <Typography className={classes.filterTitle}>Filters</Typography>
-      </div>
+      <FilterTitle />
       <DateFilter />
       <Divider className={classes.divider} variant="middle" />
       <ReviewFilter />
@@ -64,6 +115,22 @@ const Filter = () => {
       <PortfolioFilter />
       <Divider className={classes.divider} variant="middle" />
       <GroupFilter />
+      {/* / */}
+      <Button
+        className={classes.btn}
+        onClick={() => console.log("you clicked APPLY button")}
+        type="submit"
+        variant="contained"
+        marginTop="10"
+        color="primary"
+        startIcon={
+          <img src={FilterImage2} alt="Img" className={classes.filterImg} />
+        }
+        endIcon={<KeyboardArrowRightIcon className={classes.rightIcon} />}
+      >
+        <Typography className={classes.apply}>APPLY FILTER</Typography>
+      </Button>
+      {/* / */}
       <Button
         className={classes.Dbtn}
         onClick={() => console.log("you clicked APPLY button")}
@@ -74,6 +141,28 @@ const Filter = () => {
       >
         <Typography className={classes.downBtn}>DOWNLOAD DATA</Typography>
       </Button>
+      <FormControl className={classes.formControl}>
+        <Select
+          value={review}
+          onChange={handleChange}
+          displayEmpty
+          inputProps={{ "aria-label": "Without label" }}
+          IconComponent={KeyboardArrowDownIcon}
+        >
+          <MenuItem value="" disabled>
+            All
+          </MenuItem>
+          <MenuItem value={1}>Apartments</MenuItem>
+          <MenuItem value={2}>Apartment Guide</MenuItem>
+          <MenuItem value={3}>ApartmentRatings</MenuItem>
+          <MenuItem value={4}>Facebook</MenuItem>
+          <MenuItem value={5}>Google</MenuItem>
+          <MenuItem value={6}>Modern Message</MenuItem>
+          <MenuItem value={7}>Rent</MenuItem>
+          <MenuItem value={8}>Yellow Pages</MenuItem>
+          <MenuItem value={9}>Yelp</MenuItem>
+        </Select>
+      </FormControl>
     </Grid>
   );
 };

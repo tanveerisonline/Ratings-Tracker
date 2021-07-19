@@ -5,7 +5,7 @@ import { makeStyles } from "@material-ui/core/styles";
 import Grid from "@material-ui/core/Grid";
 import TextField from "@material-ui/core/TextField";
 import { Button, Typography, Container } from "@material-ui/core";
-import KeyboardArrowRightIcon from "@material-ui/icons/KeyboardArrowRight";
+// import KeyboardArrowRightIcon from "@material-ui/icons/KeyboardArrowRight";
 import KeyboardArrowDownIcon from "@material-ui/icons/KeyboardArrowDown";
 // import KeyboardArrowDownOutlinedIcon from "@material-ui/icons/KeyboardArrowDownOutlined";
 import { ArrowLeft, CenterFocusStrong } from "@material-ui/icons";
@@ -50,7 +50,7 @@ const useStyles = makeStyles((theme) => ({
     fontWeight: "600",
     paddingLeft: "15px",
     // width: 200,
-    height: 45,
+    height: 43,
     // display: "none",
     borderRadius: 14,
     background: "#fff",
@@ -83,24 +83,6 @@ const useStyles = makeStyles((theme) => ({
     paddingBottom: 12,
     alignContent: "left",
   },
-  apply: {
-    marginLeft: 10,
-    fontSize: 13,
-    color: "#fff",
-    fontWeight: 600,
-  },
-  btn: {
-    width: "35%",
-    height: "40px",
-    color: "#fff",
-    display: "flex",
-    fontSize: "12px",
-    justifyContent: "center",
-    alignItems: "center",
-    background: "#8f95a3",
-    marginTop: 18,
-    borderRadius: 10,
-  },
 }));
 
 export default function DateFilter() {
@@ -109,7 +91,6 @@ export default function DateFilter() {
   const [endDate, setEndDate] = useState(null);
   return (
     <Grid item xs={12} className={classes.root}>
-      {/* <Container className={classes.root}> */}
       <Typography className={classes.heading}>SHOW RATINGS FOR:</Typography>
       <div className={classes.inner}>
         <DatePicker
@@ -139,18 +120,6 @@ export default function DateFilter() {
         />
         <KeyboardArrowDownIcon className={classes.downIcon} />
       </div>
-      <Button
-        className={classes.btn}
-        onClick={() => console.log("you clicked APPLY button")}
-        type="submit"
-        variant="contained"
-        marginTop="10"
-        color="primary"
-        endIcon={<KeyboardArrowRightIcon />}
-      >
-        <Typography className={classes.apply}>APPLY</Typography>
-      </Button>
-      {/* </Container> */}
     </Grid>
   );
 }
