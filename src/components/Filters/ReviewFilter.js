@@ -7,6 +7,7 @@ import FormControl from "@material-ui/core/FormControl";
 import Select from "@material-ui/core/Select";
 import Button from "@material-ui/core/Button";
 import { Grid } from "@material-ui/core";
+import "./ReviewFilter.css";
 
 import KeyboardArrowDownIcon from "@material-ui/icons/KeyboardArrowDown";
 const useStyles = makeStyles((theme) => ({
@@ -70,15 +71,42 @@ export default function ReviewFilter() {
           <MenuItem value="" disabled>
             All
           </MenuItem>
-          <MenuItem value={1}>Apartments</MenuItem>
-          <MenuItem value={2}>Apartment Guide</MenuItem>
-          <MenuItem value={3}>ApartmentRatings</MenuItem>
-          <MenuItem value={4}>Facebook</MenuItem>
-          <MenuItem value={5}>Google</MenuItem>
-          <MenuItem value={6}>Modern Message</MenuItem>
-          <MenuItem value={7}>Rent</MenuItem>
-          <MenuItem value={8}>Yellow Pages</MenuItem>
-          <MenuItem value={9}>Yelp</MenuItem>
+          <MenuItem value={1}>
+            <span className="apartments"></span>
+            <span>Apartments</span>
+          </MenuItem>
+          <MenuItem value={2}>
+            <span className="apartment-guide"></span>
+            <span>Apartment Guide</span>
+          </MenuItem>
+          <MenuItem value={3}>
+            <span className="apartment-ratings"></span>
+            <span>ApartmentRatings</span>
+          </MenuItem>
+          <MenuItem value={4}>
+            <span className="facebook"></span>
+            <span>Facebook</span>
+          </MenuItem>
+          <MenuItem value={5}>
+            <span className="google"></span>
+            <span>Google</span>
+          </MenuItem>
+          <MenuItem value={6}>
+            <span className="modern-message"></span>
+            <span>Modern Message</span>
+          </MenuItem>
+          <MenuItem value={7}>
+            <span className="rent"></span>
+            <span>Rent</span>
+          </MenuItem>
+          <MenuItem value={8}>
+            <span className="yellow-pages"></span>
+            <span>Yellow Pages</span>
+          </MenuItem>
+          <MenuItem value={9}>
+            <span className="yelp"></span>
+            <span>Yelp</span>
+          </MenuItem>
         </Select>
       </FormControl>
     </Grid>

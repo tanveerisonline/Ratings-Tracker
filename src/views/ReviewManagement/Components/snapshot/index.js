@@ -50,23 +50,28 @@ export default function Index({
   const RADIO_DATA = [
     {
       id: 1,
-      value: "Average Star Rating",
+      value: false,
+      label: "Average Star Rating",
     },
     {
       id: 2,
-      value: "Number of Reviews",
+      value: true,
+      label: "Number of Reviews",
     },
     {
       id: 3,
-      value: "Number of Responses",
+      value: false,
+      label: "Number of Responses",
     },
     {
       id: 4,
-      value: "Responses Pending Approval",
+      value: false,
+      label: "Responses Pending Approval",
     },
     {
       id: 5,
-      value: "Problem Responses",
+      value: false,
+      label: "Problem Responses",
     },
   ];
   const classes = useStyles();

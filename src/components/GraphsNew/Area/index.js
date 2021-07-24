@@ -1,7 +1,7 @@
 // import "./styles.css";
 import React, { useState, useEffect } from "react";
 // import { makeStyles } from "@material-ui/core";
-
+import Divider from "@material-ui/core/Divider";
 import {
   XAxis,
   YAxis,
@@ -38,7 +38,6 @@ export default function AreaChartComponent(props) {
   const [render, setRerender] = useState(false);
   // const classes = useStyles();
 
-
   const hideShowGraphLegendClick = (payload) => {
     let disabledGraph = [];
     disabledGraph = isDisabled;
@@ -55,7 +54,13 @@ export default function AreaChartComponent(props) {
   useEffect(() => {}, [render]);
   return (
     <ResponsiveContainer height={height}>
-      <AreaChart width={width} height={height} data={mainData} {...rest}>
+      <AreaChart
+        width={width}
+        height={height}
+        data={mainData}
+        {...rest}
+        margin={{ top: 30, right: 30, left: 0, bottom: 30 }}
+      >
         <CartesianGrid vertical={false} />
         <XAxis dataKey="name" />
         <YAxis axisLine={false} />
@@ -76,6 +81,9 @@ export default function AreaChartComponent(props) {
                   hideShowGraphLegendClick={hideShowGraphLegendClick}
                   isDisabled={isDisabled}
                   AdditionalStyles={AdditonalLegendsStyles}
+                  LabelLegendsStyles={{
+                    marginBottom: 80,
+                  }}
                 />
               ) : (
                 <RectangularLegend
@@ -105,6 +113,7 @@ export default function AreaChartComponent(props) {
           );
         })}
       </AreaChart>
+      {/* <Divider variant="middle" /> */}
     </ResponsiveContainer>
   );
 }
@@ -117,6 +126,6 @@ AreaChartComponent.defaultProps = {
   legendalign: "center",
   height: 400,
   width: window.innerWidth,
-  legendType: "Rectangular",
+  legendType: "circular",
   ShowLegends: true,
 };

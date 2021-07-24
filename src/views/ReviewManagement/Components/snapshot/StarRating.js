@@ -80,6 +80,8 @@ const useStyles = makeStyles((theme) => ({
   paper: {},
   root: {
     height: 160,
+    // width: "311px",
+    // height: "248px",
     display: "flex",
     backgroundColor: "#fff",
     borderRadius: "10px",
@@ -106,16 +108,17 @@ const useStyles = makeStyles((theme) => ({
     alignItems: "center",
   },
   rated: {
-    fontSize: "48px",
+    fontSize: "50px",
     color: "#c2302a",
-    fontWeight: 800,
-    marginBottom: "15px",
+    fontWeight: 600,
+    marginTop: "16px",
+    marginBottom: "12px",
   },
   overAllRating: {
     color: "#2f3f5f",
     fontSize: 12,
     fontWeight: 800,
-    marginBottom: "10px",
+    marginBottom: "0px",
   },
   reviews: {
     color: "#2f3f5f",
@@ -163,9 +166,9 @@ export default function StarRating({ StarRatingData }) {
         <CircularProgress
           variant="determinate"
           value={progress}
-          size="5rem"
+          size="5.5rem"
           className={classes.progressBar}
-          thickness="3.5"
+          thickness="2.5"
           background="gray"
         />
         <Box

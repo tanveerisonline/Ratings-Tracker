@@ -18,6 +18,13 @@ import FilterTitle from "./Filters/FilterTitle";
 import KeyboardArrowDownIcon from "@material-ui/icons/KeyboardArrowDown";
 
 const useStyles = makeStyles((theme) => ({
+  filter: {
+    marginTop: "76px",
+    // width: "301px",
+    // height: "70px",
+    /* overflow-y: scroll; */
+  },
+
   root: {
     textDecoration: "none",
   },
@@ -72,6 +79,25 @@ const useStyles = makeStyles((theme) => ({
     width: 20,
     // border: "1px solid red",
   },
+  resetMain: {
+    width: "64%",
+    height: "40px",
+    color: "#fff",
+    display: "flex",
+    // fontSize: "12px",
+    justifyContent: "center",
+    alignItems: "center",
+    background: "#8f95a3",
+    marginTop: 18,
+    borderRadius: 10,
+    marginLeft: 45,
+  },
+  resetText: {
+    marginLeft: 0,
+    fontSize: 13,
+    color: "#fff",
+    fontWeight: 600,
+  },
   formControl: {
     // margin: theme.spacing(1),
     // backgroundColor: "red",
@@ -86,14 +112,24 @@ const useStyles = makeStyles((theme) => ({
     marginLeft: 45,
   },
   rightIcon: {
-    marginLeft:12
+    marginLeft: 12,
   },
 }));
 const Filter = () => {
   const classes = useStyles();
   const [review, setReview] = React.useState("");
   const [open, setOpen] = React.useState(false);
-
+  const [filterData, setFilterData] = React.useState({
+    startDate: null,
+    endDate: null,
+  });
+  const { startDate, endDate } = filterData;
+  const handleStartDateChange = (date) => {
+    setFilterData({ ...filterData, startDate: date });
+  };
+  const handleEndDateChange = (date) => {
+    setFilterData({ ...filterData, endDate: date });
+  };
   const handleChange = (event) => {
     setReview(event.target.value);
   };
@@ -106,9 +142,14 @@ const Filter = () => {
     setOpen(true);
   };
   return (
-    <Grid container className="filter">
+    <Grid container className={classes.filter}>
       <FilterTitle />
-      <DateFilter />
+      <DateFilter
+        startDate={startDate}
+        endDate={endDate}
+        handleChange={handleStartDateChange}
+        handleChange2={handleEndDateChange}
+      />
       <Divider className={classes.divider} variant="middle" />
       <ReviewFilter />
       <Divider className={classes.divider} variant="middle" />
@@ -118,11 +159,11 @@ const Filter = () => {
       {/* / */}
       <Button
         className={classes.btn}
-        onClick={() => console.log("you clicked APPLY button")}
+        onClick={() => console.log(filterData)}
         type="submit"
         variant="contained"
         marginTop="10"
-        color="primary"
+        color="secondary"
         startIcon={
           <img src={FilterImage2} alt="Img" className={classes.filterImg} />
         }
@@ -130,12 +171,26 @@ const Filter = () => {
       >
         <Typography className={classes.apply}>APPLY FILTER</Typography>
       </Button>
+      <Button
+        className={classes.resetMain}
+        onClick={() => console.log(filterData)}
+        type="submit"
+        variant="contained"
+        marginTop="10"
+        color="primary"
+        // startIcon={
+        //   <img src={FilterImage2} alt="Img" className={classes.filterImg} />
+        // }
+        endIcon={<KeyboardArrowRightIcon className={classes.rightIcon} />}
+      >
+        <Typography className={classes.resetText}>RESET</Typography>
+      </Button>
       {/* / */}
       <Button
         className={classes.Dbtn}
         onClick={() => console.log("you clicked APPLY button")}
         type="submit"
-        color="secondary"
+        color="main"
         variant="contained"
         startIcon={<SystemUpdateAltOutlinedIcon />}
       >
@@ -152,15 +207,42 @@ const Filter = () => {
           <MenuItem value="" disabled>
             All
           </MenuItem>
-          <MenuItem value={1}>Apartments</MenuItem>
-          <MenuItem value={2}>Apartment Guide</MenuItem>
-          <MenuItem value={3}>ApartmentRatings</MenuItem>
-          <MenuItem value={4}>Facebook</MenuItem>
-          <MenuItem value={5}>Google</MenuItem>
-          <MenuItem value={6}>Modern Message</MenuItem>
-          <MenuItem value={7}>Rent</MenuItem>
-          <MenuItem value={8}>Yellow Pages</MenuItem>
-          <MenuItem value={9}>Yelp</MenuItem>
+          <MenuItem value={1}>
+            <span className="apartments"></span>
+            <span>Apartments</span>
+          </MenuItem>
+          <MenuItem value={2}>
+            <span className="apartment-guide"></span>
+            <span>Apartment Guide</span>
+          </MenuItem>
+          <MenuItem value={3}>
+            <span className="apartment-ratings"></span>
+            <span>ApartmentRatings</span>
+          </MenuItem>
+          <MenuItem value={4}>
+            <span className="facebook"></span>
+            <span>Facebook</span>
+          </MenuItem>
+          <MenuItem value={5}>
+            <span className="google"></span>
+            <span>Google</span>
+          </MenuItem>
+          <MenuItem value={6}>
+            <span className="modern-message"></span>
+            <span>Modern Message</span>
+          </MenuItem>
+          <MenuItem value={7}>
+            <span className="rent"></span>
+            <span>Rent</span>
+          </MenuItem>
+          <MenuItem value={8}>
+            <span className="yellow-pages"></span>
+            <span>Yellow Pages</span>
+          </MenuItem>
+          <MenuItem value={9}>
+            <span className="yelp"></span>
+            <span>Yelp</span>
+          </MenuItem>
         </Select>
       </FormControl>
     </Grid>

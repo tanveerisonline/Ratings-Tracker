@@ -12,7 +12,9 @@ import Divider from "@material-ui/core/Divider";
 // import { Grid } from "@material-ui/core";
 const useStyles = makeStyles((theme) => ({
   root: {
-    minHeight: 430,
+    // minHeight: 430,
+    width: "1192px",
+    height: "491px",
     // backgroundColor: "yellow",
     borderRadius: "15px",
     // maxHeight: 230,
@@ -33,6 +35,9 @@ const useStyles = makeStyles((theme) => ({
     backgroundColor: "#4f5b75",
     borderRadius: "5px",
   },
+  divide: {
+    backgroundColor: "gray",
+  },
 }));
 export default function ReviewTrend({
   reviewTrendData,
@@ -40,7 +45,7 @@ export default function ReviewTrend({
   setFilterSelected,
   filterData,
 }) {
-  const [value, setValue] = React.useState("1");
+  const [value, setValue] = React.useState();
   const classes = useStyles();
 
   const handleChange = (event) => {
@@ -65,14 +70,14 @@ export default function ReviewTrend({
         xs={3}
         direction="column"
         justify="flex-start"
-        style={{ paddingTop: 10 }}
+        style={{ paddingTop: 12 }}
       >
         {filterData?.map((item) => (
           <Grid item>
             <Radio
-              isChecked={filterSelected == item.id}
-              label={item.value}
-              value="1"
+              isChecked={item.value}
+              label={item.label}
+              // value="1"
               additionalStyles={{
                 color: "#fff",
                 height: "16px",
@@ -80,10 +85,11 @@ export default function ReviewTrend({
               labelStyles={{
                 fontSize: 12,
               }}
-              handleChange={(data) => {
-                setFilterSelected(item.id);
-              }}
+              // handleChange={(data) => {
+              //   setFilterSelected(item.id);
+              // }}
             />
+            <Divider className={classes.divide} variant="middle" />
           </Grid>
         ))}
       </Grid>
@@ -106,8 +112,8 @@ export default function ReviewTrend({
               height={340}
               // width={52}
               AdditonalLegendsStyles={{
-                marginTop: -20,
-                // display: "flex",
+                marginTop: 10,
+                marginLeft: 40,
               }}
             />
           </Box>
