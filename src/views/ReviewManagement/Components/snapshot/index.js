@@ -10,14 +10,21 @@ import FilterListOutlinedIcon from "@material-ui/icons/FilterListOutlined";
 import RatingsRollup from "./RatingsRollup";
 import RatingsBreakdown from "./RatingsBreakdown";
 import StarRateRoundedIcon from "@material-ui/icons/StarRateRounded";
-
 const useStyles = makeStyles((theme) => ({
   root: {
     flexGrow: 1,
     marginTop: 20,
   },
-  starRating: {
-    color: "pink",
+  starDiv: {
+    display: "flex",
+    flexDirection: "row",
+  },
+  star: {
+    color: "green",
+    // height: "22px",
+    // width: "22px",
+    backgroundColor: "yellow",
+    borderRadius: "5px",
   },
   // fa-star: {
   // height: "26px",
@@ -40,22 +47,35 @@ export default function Index({
   const [sitesSelected, setSitesSelected] = useState("");
   const [propertyFilter, setSelectedAdvancesPropeerties] = useState(null);
   const [reviewTrendFilter, setReviewTrendFilter] = useState("N_O_R");
-
+  const RADIO_DATA = [
+    {
+      id: 1,
+      value: "Average Star Rating",
+    },
+    {
+      id: 2,
+      value: "Number of Reviews",
+    },
+    {
+      id: 3,
+      value: "Number of Responses",
+    },
+    {
+      id: 4,
+      value: "Responses Pending Approval",
+    },
+    {
+      id: 5,
+      value: "Problem Responses",
+    },
+  ];
   const classes = useStyles();
   return (
     <Grid style={{ marginTop: 10 }} xs={12}>
-      {/* <Divider /> */}
       <div className={classes.root}>
-        {/* <div className={classes.starRating}> */}
-        <Grid item container spacing={3}>
+        <Grid item container spacing={2}>
           <Grid item xs={3}>
-            <BoxLayout
-              className={classes.starRating}
-              label="Star Rating"
-              white={true}
-            >
-              {/* <StarRateRoundedIcon className={classes.star} /> */}
-              <i className="fas fa-star"></i>
+            <BoxLayout label="Star Rating" white={true}>
               <StarRating />
             </BoxLayout>
           </Grid>
@@ -74,10 +94,9 @@ export default function Index({
       </div>
       <div style={{ marginTop: 20 }}>
         <BoxLayout label="Review Trends">
-          <ReviewTrend />
+          <ReviewTrend filterData={RADIO_DATA} />
         </BoxLayout>
       </div>
     </Grid>
   );
 }
-// {"mode":"full","isActive":false}

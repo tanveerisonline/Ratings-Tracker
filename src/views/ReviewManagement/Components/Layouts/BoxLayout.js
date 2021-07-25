@@ -1,7 +1,9 @@
 import { Grid, makeStyles, Box } from "@material-ui/core";
-import { red } from "@material-ui/core/colors";
+import { green, red } from "@material-ui/core/colors";
 import React from "react";
-
+import StarRoundedIcon from "@material-ui/icons/StarRounded";
+import starIcon from "./starIcon.png";
+import { Autocomplete } from "@material-ui/lab";
 const useStyles = makeStyles((theme) => ({
   mainGrid: {
     borderRadius: "15px",
@@ -14,24 +16,40 @@ const useStyles = makeStyles((theme) => ({
   mainGridWhite: {
     borderRadius: "15px",
     marginBottom: 10,
-    backgroundColor: "red",
+    backgroundColor: "#fff",
     padding: "8px",
     boxShadow: "0 5px 8px 2px rgba(0,0,0,0.1)",
   },
   innerTypographyDiv: {
-    // alignItems: "center",
-    // borderTopLeftRadius: 10,
-    // borderTopRightRadius: 10,
-    // paddingLeft: 15,
-    // paddingTop: 20,
-    // display: "flex",
+    display: "flex",
+    flexDirection: "row",
+    justifyContent: "flex-start",
+    alignItems: "center",
   },
 
   dataText: {
     color: "#fff",
-    fontSize: 14,
-    fontWeight: 600,
+    fontSize: 16,
+    fontWeight: 500,
     padding: "10px 20px",
+  },
+  dataTextWhite: {
+    color: "#8f95a3",
+    fontSize: 16,
+    fontWeight: 500,
+    padding: "10px 12px",
+  },
+  starIconImg: {
+    height: 25,
+    width: 25,
+    borderRadius: "5px",
+    paddingLeft: "9px",
+    paddingTop: "4px",
+    paddingBottom: "1px",
+    backgroundColor: "#2b3b5c",
+    "& img": {
+      maxWidth: "60%",
+    },
   },
 }));
 
@@ -43,10 +61,16 @@ export default function BoxLayout(props) {
   return (
     <Grid className={white ? classes.mainGridWhite : classes.mainGrid}>
       <div className={classes.innerTypographyDiv}>
-        <Box className={classes.dataText}>{label}</Box>
+        {white ? (
+          <div className={classes.starIconImg}>
+            <img src={starIcon} alt="Img" />
+          </div>
+        ) : null}
+        <Box className={white ? classes.dataTextWhite : classes.dataText}>
+          {label}
+        </Box>
       </div>
       {children}
     </Grid>
   );
 }
-// {"mode":"full","isActive":false}

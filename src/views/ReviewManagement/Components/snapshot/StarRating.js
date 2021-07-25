@@ -79,9 +79,8 @@ import Divider from "@material-ui/core/Divider";
 const useStyles = makeStyles((theme) => ({
   paper: {},
   root: {
+    height: 160,
     display: "flex",
-    // height: 220,
-    // maxHeight: 230,
     backgroundColor: "#fff",
     borderRadius: "10px",
     paddingLeft: 10,
@@ -94,6 +93,11 @@ const useStyles = makeStyles((theme) => ({
     justifyContent: "center",
     alignItems: "center",
   },
+  percentage: {
+    fontSize: 30,
+    color: "#e2e2e2",
+    fontWeight: 800,
+  },
   rating: {
     display: "flex",
     flexDirection: "column",
@@ -101,44 +105,41 @@ const useStyles = makeStyles((theme) => ({
     justifyContent: "center",
     alignItems: "center",
   },
-  percentage: {
-    fontSize: 30,
-    color: "#e2e2e2",
-    fontWeight: 800,
-  },
   rated: {
-    fontSize: "64px",
+    fontSize: "48px",
     color: "#c2302a",
     fontWeight: 800,
-    marginBottom: "10px",
+    marginBottom: "15px",
   },
   overAllRating: {
     color: "#2f3f5f",
     fontSize: 12,
     fontWeight: 800,
     marginBottom: "10px",
-    // paddingRight: "20px",
-    // display: "flex",
   },
   reviews: {
     color: "#2f3f5f",
     fontSize: 12,
     fontWeight: 800,
-  },
-  progressBar: {
-    // backgroundColor: "red",
-    color: "#0fa9de",
-    marginBottom: "10px",
-    // transform: "rotate(180deg)",
+    marginBottom: 10,
   },
   rate: {
-    fontSize: "36px",
-    fontWeight: "600",
+    fontSize: "24px",
+    fontWeight: "800",
     color: "#8f95a3",
   },
+  progressBar: {
+    color: "#0fa9de",
+    marginBottom: "10px",
+    // color: theme.palette.grey[theme.palette.type === "light" ? 200 : 700],
+    // backgroundColor: "red",
+    // fontWeight: 800,
+    // transform: "rotate(180deg)",
+  },
   divider: {
-    marginTop: "40px",
-    height: "160px",
+    backgroundColor: "lightgray",
+    marginTop: "5px",
+    height: "150px",
   },
 }));
 
@@ -162,14 +163,15 @@ export default function StarRating({ StarRatingData }) {
         <CircularProgress
           variant="determinate"
           value={progress}
-          size="6.5rem"
+          size="5rem"
           className={classes.progressBar}
-          thickness="2"
+          thickness="3.5"
+          background="gray"
         />
         <Box
           top={0}
           left={0}
-          bottom={0}
+          bottom={10}
           right={0}
           position="absolute"
           display="flex"
@@ -210,4 +212,3 @@ export default function StarRating({ StarRatingData }) {
     </Grid>
   );
 }
-// {"mode":"full","isActive":false}

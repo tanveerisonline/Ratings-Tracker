@@ -4,8 +4,9 @@ import BarGraph from "components/GraphsNew/Bar/index";
 import * as constant from "views/ReviewManagement/constant";
 const useStyles = makeStyles((theme) => ({
   root: {
-    height: 220,
-    maxHeight: 230,
+    // height: 220,
+    // maxHeight: 230,
+    height: 160,
     backgroundColor: "#fff",
     borderRadius: "10px",
   },
@@ -43,7 +44,7 @@ export default function RatingsBreakdown({ data }) {
         >
           <BarGraph
             // data={constant.graphData}
-            height={200}
+            height={150}
             legendVerticalAlign="top"
             legendalign="center"
             graphData={constant.graphData.graphs}

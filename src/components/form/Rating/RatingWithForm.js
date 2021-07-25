@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Rating as MURating, FormControlLabel, FormControl, FormLabel, FormHelperText } from '@material-ui/core';
-import { wrapperProps } from '../CheckboxField/multiple-choice-list.js.js.js';
+import { wrapperProps } from '../CheckboxField/multiple-choice-list.js.js.js.js';
 import { makeStyles } from '@material-ui/core/styles';
 import {meta,input} from "components/forms/prop-types-templates"
 import useFieldApi from "../ArrayField/node_modules/components/forms/hooks/use-field-api";
