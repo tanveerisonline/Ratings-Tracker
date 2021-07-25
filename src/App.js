@@ -12,6 +12,7 @@ const theme = createTheme({
     },
     secondary: {
       main: "#0da9de",
+      dark: "#558b2f",
     },
   },
   typography: {
@@ -26,7 +27,7 @@ const theme = createTheme({
 function App() {
   return (
     <ThemeProvider theme={theme}>
-      <Grid container className="App">
+      <Grid className="App">
         <Grid item xs={2}>
           <SideNav />
         </Grid>

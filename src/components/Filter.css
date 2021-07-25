@@ -1,5 +1,6 @@
-.filter {
+/* .filter {
   margin-top: 73px;
+<<<<<<< HEAD
   height: 120vh;
   overflow-y: scroll;
   /* justify-content: center;
@@ -56,4 +57,8 @@
 } */
 /* .portfolio h4 {
   color: #2b3b5c;
+=======
+  width: 301px;
+  height: 70px;
+>>>>>>> 0c25c27d8a678eb6ed4d5d5c2425947df4b9c6a0
 } */

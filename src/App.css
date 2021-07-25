@@ -3,11 +3,13 @@
   justify-content: center;
   align-items: flex-start;
   background-color: #e9e9ec;
-  /* height: 100vh; */
+  /* width: 1920px; */
+  height: 1245px;
+  /* height: 160vh; */
   /* font-family: "Merriweather", serif; */
 }
 .sidenav {
-  height: 150vh;
+  height: 160vh;
   align-self: stretch;
   display: flex;
   flex-direction: column;
@@ -16,7 +18,13 @@
   color: #fff;
   background-color: #383e4c;
 }
+.home {
+  /* width: 1624px;
+  height: 1114px; */
+  background-color: #e9e9ec;
+}
 .header {
+  /* width: 1643px; */
   height: 65px;
   display: flex;
   justify-content: center;

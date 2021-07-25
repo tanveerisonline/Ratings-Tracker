@@ -1,6 +1,13 @@
 .filter-inner {
+<<<<<<< HEAD
   width: 100%;
   height: 65px;
+=======
+  /* top: 160px;
+  left: 1619px; */
+  width: 320px;
+  height: 75px;
+>>>>>>> 0c25c27d8a678eb6ed4d5d5c2425947df4b9c6a0
   display: flex;
   flex-direction: row;
   /* justify-content: center; */

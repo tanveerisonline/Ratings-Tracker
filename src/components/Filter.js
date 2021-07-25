@@ -18,6 +18,13 @@ import FilterTitle from "./Filters/FilterTitle";
 import KeyboardArrowDownIcon from "@material-ui/icons/KeyboardArrowDown";
 
 const useStyles = makeStyles((theme) => ({
+  filter: {
+    marginTop: "76px",
+    // width: "301px",
+    // height: "70px",
+    /* overflow-y: scroll; */
+  },
+
   root: {
     textDecoration: "none",
   },
@@ -72,6 +79,28 @@ const useStyles = makeStyles((theme) => ({
     width: 20,
     // border: "1px solid red",
   },
+<<<<<<< HEAD
+=======
+  resetMain: {
+    width: "64%",
+    height: "40px",
+    color: "#fff",
+    display: "flex",
+    // fontSize: "12px",
+    justifyContent: "center",
+    alignItems: "center",
+    background: "#8f95a3",
+    marginTop: 18,
+    borderRadius: 10,
+    marginLeft: 45,
+  },
+  resetText: {
+    marginLeft: 0,
+    fontSize: 13,
+    color: "#fff",
+    fontWeight: 600,
+  },
+>>>>>>> 0c25c27d8a678eb6ed4d5d5c2425947df4b9c6a0
   formControl: {
     // margin: theme.spacing(1),
     // backgroundColor: "red",
@@ -86,13 +115,18 @@ const useStyles = makeStyles((theme) => ({
     marginLeft: 45,
   },
   rightIcon: {
+<<<<<<< HEAD
     marginLeft:12
+=======
+    marginLeft: 12,
+>>>>>>> 0c25c27d8a678eb6ed4d5d5c2425947df4b9c6a0
   },
 }));
 const Filter = () => {
   const classes = useStyles();
   const [review, setReview] = React.useState("");
   const [open, setOpen] = React.useState(false);
+<<<<<<< HEAD
 
   const handleChange = (event) => {
     setReview(event.target.value);
@@ -102,13 +136,45 @@ const Filter = () => {
     setOpen(false);
   };
 
+=======
+  const [filterData, setFilterData] = React.useState({
+    startDate: null,
+    endDate: null,
+  });
+  const { startDate, endDate } = filterData;
+  const handleStartDateChange = (date) => {
+    setFilterData({ ...filterData, startDate: date });
+  };
+  const handleEndDateChange = (date) => {
+    setFilterData({ ...filterData, endDate: date });
+  };
+  const handleChange = (event) => {
+    setReview(event.target.value);
+  };
+
+  const handleClose = () => {
+    setOpen(false);
+  };
+
+>>>>>>> 0c25c27d8a678eb6ed4d5d5c2425947df4b9c6a0
   const handleOpen = () => {
     setOpen(true);
   };
   return (
+<<<<<<< HEAD
     <Grid container className="filter">
       <FilterTitle />
       <DateFilter />
+=======
+    <Grid container className={classes.filter}>
+      <FilterTitle />
+      <DateFilter
+        startDate={startDate}
+        endDate={endDate}
+        handleChange={handleStartDateChange}
+        handleChange2={handleEndDateChange}
+      />
+>>>>>>> 0c25c27d8a678eb6ed4d5d5c2425947df4b9c6a0
       <Divider className={classes.divider} variant="middle" />
       <ReviewFilter />
       <Divider className={classes.divider} variant="middle" />
@@ -118,11 +184,19 @@ const Filter = () => {
       {/* / */}
       <Button
         className={classes.btn}
+<<<<<<< HEAD
         onClick={() => console.log("you clicked APPLY button")}
         type="submit"
         variant="contained"
         marginTop="10"
         color="primary"
+=======
+        onClick={() => console.log(filterData)}
+        type="submit"
+        variant="contained"
+        marginTop="10"
+        color="secondary"
+>>>>>>> 0c25c27d8a678eb6ed4d5d5c2425947df4b9c6a0
         startIcon={
           <img src={FilterImage2} alt="Img" className={classes.filterImg} />
         }
@@ -130,12 +204,29 @@ const Filter = () => {
       >
         <Typography className={classes.apply}>APPLY FILTER</Typography>
       </Button>
+<<<<<<< HEAD
+=======
+      <Button
+        className={classes.resetMain}
+        onClick={() => console.log(filterData)}
+        type="submit"
+        variant="contained"
+        marginTop="10"
+        color="primary"
+        // startIcon={
+        //   <img src={FilterImage2} alt="Img" className={classes.filterImg} />
+        // }
+        endIcon={<KeyboardArrowRightIcon className={classes.rightIcon} />}
+      >
+        <Typography className={classes.resetText}>RESET</Typography>
+      </Button>
+>>>>>>> 0c25c27d8a678eb6ed4d5d5c2425947df4b9c6a0
       {/* / */}
       <Button
         className={classes.Dbtn}
         onClick={() => console.log("you clicked APPLY button")}
         type="submit"
-        color="secondary"
+        color="main"
         variant="contained"
         startIcon={<SystemUpdateAltOutlinedIcon />}
       >
@@ -152,6 +243,7 @@ const Filter = () => {
           <MenuItem value="" disabled>
             All
           </MenuItem>
+<<<<<<< HEAD
           <MenuItem value={1}>Apartments</MenuItem>
           <MenuItem value={2}>Apartment Guide</MenuItem>
           <MenuItem value={3}>ApartmentRatings</MenuItem>
@@ -161,6 +253,44 @@ const Filter = () => {
           <MenuItem value={7}>Rent</MenuItem>
           <MenuItem value={8}>Yellow Pages</MenuItem>
           <MenuItem value={9}>Yelp</MenuItem>
+=======
+          <MenuItem value={1}>
+            <span className="apartments"></span>
+            <span>Apartments</span>
+          </MenuItem>
+          <MenuItem value={2}>
+            <span className="apartment-guide"></span>
+            <span>Apartment Guide</span>
+          </MenuItem>
+          <MenuItem value={3}>
+            <span className="apartment-ratings"></span>
+            <span>ApartmentRatings</span>
+          </MenuItem>
+          <MenuItem value={4}>
+            <span className="facebook"></span>
+            <span>Facebook</span>
+          </MenuItem>
+          <MenuItem value={5}>
+            <span className="google"></span>
+            <span>Google</span>
+          </MenuItem>
+          <MenuItem value={6}>
+            <span className="modern-message"></span>
+            <span>Modern Message</span>
+          </MenuItem>
+          <MenuItem value={7}>
+            <span className="rent"></span>
+            <span>Rent</span>
+          </MenuItem>
+          <MenuItem value={8}>
+            <span className="yellow-pages"></span>
+            <span>Yellow Pages</span>
+          </MenuItem>
+          <MenuItem value={9}>
+            <span className="yelp"></span>
+            <span>Yelp</span>
+          </MenuItem>
+>>>>>>> 0c25c27d8a678eb6ed4d5d5c2425947df4b9c6a0
         </Select>
       </FormControl>
     </Grid>

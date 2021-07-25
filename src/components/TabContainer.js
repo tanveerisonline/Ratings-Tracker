@@ -54,6 +54,10 @@ const useStyles = makeStyles((theme) => ({
     backgroundColor: "#e9e9ec",
   },
   tabItem: {
+    // top: "110px",
+    // left: "323px",
+    // width: "188px",
+    // height: "51px",
     borderRadius: "10px 10px 0px 0px",
     color: "white",
     fontWeight: "600",

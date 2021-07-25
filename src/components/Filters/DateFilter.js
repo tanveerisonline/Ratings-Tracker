@@ -85,20 +85,23 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function DateFilter() {
+export default function DateFilter(props) {
   const classes = useStyles();
-  const [startDate, setStartDate] = useState(null);
-  const [endDate, setEndDate] = useState(null);
+  const { startDate, endDate, handleChange, handleChange2 } = props;
+  // const [startDate, setStartDate] = useState(null);
+  // const [endDate, setEndDate] = useState(null);
   return (
     <Grid item xs={12} className={classes.root}>
       <Typography className={classes.heading}>SHOW RATINGS FOR:</Typography>
       <div className={classes.inner}>
         <DatePicker
+          name="startDate"
           className={classes.textField}
           placeholderText="MM/DD/YYYY"
           dateFormat="MM/dd/yyyy"
           selected={startDate}
-          onChange={(date) => setStartDate(date)}
+          // onChange={handleChange}
+          onChange={(date) => handleChange(date)}
           selectsStart
           startDate={startDate}
           endDate={endDate}
@@ -112,11 +115,13 @@ export default function DateFilter() {
           placeholderText="MM/DD/YYYY"
           dateFormat="MM/dd/yyyy"
           selected={endDate}
-          onChange={(date) => setEndDate(date)}
+          // onChange={handleChange}
+          onChange={(date) => handleChange2(date)}
           selectsEnd
           startDate={startDate}
           endDate={endDate}
           minDate={startDate}
+          name="endDate"
         />
         <KeyboardArrowDownIcon className={classes.downIcon} />
       </div>
