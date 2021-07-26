@@ -10,14 +10,14 @@ import KeyboardArrowRightIcon from "@material-ui/icons/KeyboardArrowRight";
 const useStyles = makeStyles((theme) => ({
   btn: {
     width: "64%",
-    height: "40px",
+    height: "38px",
     color: "#fff",
     display: "flex",
     fontSize: "12px",
     justifyContent: "center",
     alignItems: "center",
     background: "#7bb42d",
-    marginTop: 18,
+    marginTop: 25,
     borderRadius: 10,
     marginLeft: 30,
   },

@@ -8,38 +8,113 @@ import {
 import PopupContent from "./PopupContent";
 import { Grid } from "@material-ui/core";
 import PopupSidenav from "./PopupSidenav";
+// import { makeStyles } from "@material-ui/core/styles";
 import IconButton from "@material-ui/core/IconButton";
 import CloseIcon from "@material-ui/icons/Close";
 import "./Popup.css";
-// const useStyles = makeStyles((theme) => ({
-//   dialogWrapper: {},
-// }));
+import popupIcon from "./popupIcon.svg";
+
+const useStyles = makeStyles((theme) => ({
+  rootHeader: {
+    height: "80px",
+    display: "flex",
+    flexDirection: "row",
+    justifyContent: "space-between",
+    alignItems: "center",
+  },
+  inner1: {
+    display: "flex",
+    flexDirection: "row",
+    justifyContent: "center",
+    alignItems: "center",
+  },
+  iconBtn: {
+    // marginLeft: "10px",
+    marginRight: "20px",
+    backgroundColor: "#2b3b5c",
+    height: "36px",
+    width: "36px",
+    borderRadius: 6,
+    // display: "flex",
+    // flexDirection: "row",
+    // justifyContent: "center",
+    // alignItems: "center",
+    border: "none",
+  },
+  iconImg: {
+    // marginTop: "4px",
+  },
+  title: {
+    color: "#383e4c",
+    fontSize: "16px",
+    fontWeight: 800,
+  },
+  inner2: {
+    width: "50%",
+    display: "flex",
+    flexDirection: "row",
+    justifyContent: "flex-end",
+    alignItems: "center",
+  },
+  property: {
+    width: "30%",
+    height: "35px",
+    color: "#fff",
+    display: "flex",
+    fontSize: "14px",
+    justifyContent: "center",
+    alignItems: "center",
+    background: "#0DA9DE",
+    // marginTop: 18,
+    borderRadius: 10,
+    marginRight: 30,
+  },
+  close: {
+    background: "#fff",
+    borderRadius: "50px",
+    marginRight: 50,
+  },
+}));
 const Popup = (props) => {
   const { close } = props;
+  const classes = useStyles();
 
   return (
     <Grid container xs={12}>
       <Grid className="popup-main" item xs={12}>
-        <DialogTitle>
-          <span>
-            <i className="fas fa-sort-amount-up-alt"></i>
-          </span>
-          <span className="popup-title">
-            Filter by Portfolio / Distribution
-          </span>
-        </DialogTitle>
-        <span className="popup-select"># PROPERTIES SELECTED</span>
-        <span className="popup-close">
-          {close ? (
-            <IconButton
-              aria-label="close"
-              // className={classes.closeButton}
-              onClick={close}
-            >
-              <CloseIcon />
-            </IconButton>
-          ) : null}
-        </span>
+        <Grid className={classes.rootHeader}>
+          <DialogTitle className={classes.inner1}>
+            <span>
+              <button className={classes.iconBtn}>
+                <img
+                  src={popupIcon}
+                  height={22}
+                  width={22}
+                  alt="Img"
+                  className={classes.iconImg}
+                />
+              </button>
+              {/* <i className="fas fa-sort-amount-up-alt"></i> */}
+            </span>
+            <span className={classes.title}>
+              Filter by Portfolio / Distribution
+            </span>
+          </DialogTitle>
+          <div className={classes.inner2}>
+            <span className={classes.property}># PROPERTIES SELECTED</span>
+            <span className={classes.close}>
+              {close ? (
+                <IconButton
+                  aria-label="close"
+                  // className={classes.closeButton}
+                  onClick={close}
+                >
+                  <CloseIcon />
+                </IconButton>
+              ) : null}
+            </span>
+          </div>
+        </Grid>
       </Grid>
       <Grid container xs={12}>
         <Grid item xs={3}>

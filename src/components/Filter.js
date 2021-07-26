@@ -16,7 +16,7 @@ import Select from "@material-ui/core/Select";
 import "./Filter.css";
 import FilterTitle from "./Filters/FilterTitle";
 import KeyboardArrowDownIcon from "@material-ui/icons/KeyboardArrowDown";
-
+const queryString = require("query-string");
 const useStyles = makeStyles((theme) => ({
   // filter: {
   //   marginTop: "76px",
@@ -114,6 +114,10 @@ const useStyles = makeStyles((theme) => ({
   rightIcon: {
     marginLeft: 12,
   },
+  selectAll: {},
+  select: {
+    marginTop: "5px",
+  },
 }));
 const Filter = () => {
   const classes = useStyles();
@@ -133,13 +137,23 @@ const Filter = () => {
   const handleChange = (event) => {
     setReview(event.target.value);
   };
-
-  const handleClose = () => {
-    setOpen(false);
+  const resetHandler = () => {
+    const stringified = queryString.stringify(null);
+    document.location.search = stringified;
   };
+  // const handleClose = () => {
+  //   setOpen(false);
+  // };
 
-  const handleOpen = () => {
-    setOpen(true);
+  // const handleOpen = () => {
+  //   setOpen(true);
+  // };
+  const filterDataSubmit = (filterData) => {
+    const stringified = queryString.stringify(filterData);
+    document.location.search = stringified;
+    console.log(document.location.search);
+    console.log(filterData);
+    console.log(stringified);
   };
   return (
     <Grid container className="filter">
@@ -159,7 +173,7 @@ const Filter = () => {
       {/* / */}
       <Button
         className={classes.btn}
-        onClick={() => console.log(filterData)}
+        onClick={() => console.log(filterDataSubmit(filterData))}
         type="submit"
         variant="contained"
         marginTop="10"
@@ -173,7 +187,7 @@ const Filter = () => {
       </Button>
       <Button
         className={classes.resetMain}
-        onClick={() => console.log(filterData)}
+        onClick={resetHandler}
         type="submit"
         variant="contained"
         marginTop="10"
@@ -198,6 +212,7 @@ const Filter = () => {
       </Button>
       <FormControl className={classes.formControl}>
         <Select
+          className={classes.selectAll}
           value={review}
           onChange={handleChange}
           displayEmpty
@@ -207,42 +222,52 @@ const Filter = () => {
           <MenuItem value="" disabled>
             All
           </MenuItem>
-          <MenuItem value={1}>
+          <Divider />
+          <MenuItem className={classes.select} value={1}>
             <span className="apartments"></span>
             <span>Apartments</span>
           </MenuItem>
+          <Divider />
           <MenuItem value={2}>
             <span className="apartment-guide"></span>
             <span>Apartment Guide</span>
           </MenuItem>
+          <Divider />
           <MenuItem value={3}>
             <span className="apartment-ratings"></span>
             <span>ApartmentRatings</span>
           </MenuItem>
+          <Divider />
           <MenuItem value={4}>
             <span className="facebook"></span>
             <span>Facebook</span>
           </MenuItem>
+          <Divider />
           <MenuItem value={5}>
             <span className="google"></span>
             <span>Google</span>
-          </MenuItem>
+          </MenuItem>{" "}
+          <Divider />
           <MenuItem value={6}>
             <span className="modern-message"></span>
             <span>Modern Message</span>
-          </MenuItem>
+          </MenuItem>{" "}
+          <Divider />
           <MenuItem value={7}>
             <span className="rent"></span>
             <span>Rent</span>
-          </MenuItem>
+          </MenuItem>{" "}
+          <Divider />
           <MenuItem value={8}>
             <span className="yellow-pages"></span>
             <span>Yellow Pages</span>
-          </MenuItem>
+          </MenuItem>{" "}
+          <Divider />
           <MenuItem value={9}>
             <span className="yelp"></span>
             <span>Yelp</span>
-          </MenuItem>
+          </MenuItem>{" "}
+          {/* <Divider /> */}
         </Select>
       </FormControl>
     </Grid>

@@ -14,6 +14,11 @@ const useStyles = makeStyles({
       backgroundColor: "transparent",
     },
   },
+  PopupContentMain: {
+    height: "100vh",
+    columns: "3 auto",
+    overflowY: "scroll",
+  },
 });
 const PopupContent = () => {
   //   const [checked, setChecked] = React.useState(true);
@@ -24,7 +29,7 @@ const PopupContent = () => {
   };
   const classes = useStyles();
   return (
-    <div className="popup-content">
+    <div className={classes.PopupContentMain}>
       {/* {PostData.map(({ name, id }) => (
            {id},{name}
           ))} */}
