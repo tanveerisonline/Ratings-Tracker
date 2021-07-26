@@ -50,6 +50,14 @@ export default function Index({
   const [radioData, setRadioData] = useState([
     {
       id: 1,
+<<<<<<< HEAD
+      value: "Average Star Rating",
+    },
+    {
+      id: 2,
+      value: "Number of Reviews",
+=======
+<<<<<<< HEAD
       value: "Average Star Rating",
     },
     {
@@ -67,6 +75,33 @@ export default function Index({
     {
       id: 5,
       value: "Problem Responses",
+=======
+      value: false,
+      label: "Average Star Rating",
+    },
+    {
+      id: 2,
+      value: false,
+      label: "Number of Reviews",
+>>>>>>> d0983a52345829f334c541f0f55c6ebad7b3473e
+    },
+    {
+      id: 3,
+      value: "Number of Responses",
+    },
+    {
+      id: 4,
+      value: "Responses Pending Approval",
+    },
+    {
+      id: 5,
+<<<<<<< HEAD
+      value: "Problem Responses",
+=======
+      value: false,
+      label: "Problem Responses",
+>>>>>>> 0c25c27d8a678eb6ed4d5d5c2425947df4b9c6a0
+>>>>>>> d0983a52345829f334c541f0f55c6ebad7b3473e
     },
   ]);
   const classes = useStyles();

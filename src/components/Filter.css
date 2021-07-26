@@ -1,6 +1,76 @@
 .filter {
   margin-top: 73px;
+<<<<<<< HEAD
+  height: 120vh;
+  overflow-y: scroll;
+  /* justify-content: center;
+  align-items: center; */
+  /* margin-left: 30px; */
+  /* height: 100%; */
+}
+/* .fa-filter{
+  color: red;
+  background-color: saddlebrown;
+} */
+/* .date-filter {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.date-filter h4 {
+  color: #2b3b5c;
+} */
+/* .review-filter {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+} */
+/* .review-filter h4 {
+  color: #2b3b5c;
+} */
+/* .group-filter {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.group-filter h4 {
+  color: #2b3b5c;
+} */
+/* .portfolio {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+} */
+/* .portfolio-form {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+} */
+/* .portfolio-text {
+  display: flex;
+  flex-direction: row;
+} */
+/* .portfolio h4 {
+  color: #2b3b5c;
+=======
   width: 301px;
+<<<<<<< HEAD
   height: 100vh;
   overflow-y: scroll;
 }
+=======
+<<<<<<< HEAD
+  height: 100vh;
+  overflow-y: scroll;
+}
+=======
+  height: 70px;
+>>>>>>> 0c25c27d8a678eb6ed4d5d5c2425947df4b9c6a0
+} */
+>>>>>>> af10f361d809c105208d790f73c57a10736362e8
+>>>>>>> d0983a52345829f334c541f0f55c6ebad7b3473e
