@@ -85,9 +85,9 @@ export default function ReviewTrend({
               labelStyles={{
                 fontSize: 12,
               }}
-              // handleChange={(data) => {
-              //   setFilterSelected(item.id);
-              // }}
+              handleChange={(data) => {
+                setFilterSelected(item.id);
+              }}
             />
             <Divider className={classes.divide} variant="middle" />
           </Grid>

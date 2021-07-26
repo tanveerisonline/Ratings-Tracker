@@ -18,12 +18,12 @@ import FilterTitle from "./Filters/FilterTitle";
 import KeyboardArrowDownIcon from "@material-ui/icons/KeyboardArrowDown";
 
 const useStyles = makeStyles((theme) => ({
-  filter: {
-    marginTop: "76px",
-    // width: "301px",
-    // height: "70px",
-    /* overflow-y: scroll; */
-  },
+  // filter: {
+  //   marginTop: "76px",
+  // width: "301px",
+  // height: "70px",
+  // overflowY: "scroll",
+  // },
 
   root: {
     textDecoration: "none",
@@ -142,7 +142,7 @@ const Filter = () => {
     setOpen(true);
   };
   return (
-    <Grid container className={classes.filter}>
+    <Grid container className="filter">
       <FilterTitle />
       <DateFilter
         startDate={startDate}

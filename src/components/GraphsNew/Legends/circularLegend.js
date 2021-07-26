@@ -3,15 +3,15 @@ import React from "react";
 import { Surface, Symbols } from "recharts";
 
 const useStyles = makeStyles((theme) => ({
- legendText: {
-   fontSize : 14,
-   fontWeight : 400,
-   textTransform : "capitalize",
-   marginLeft : 4
- }
+  legendText: {
+    fontSize: 16,
+    fontWeight: 400,
+    textTransform: "capitalize",
+    marginLeft: 4,
+  },
 }));
 export default function WrappedLegends(props) {
-  const classes = useStyles()
+  const classes = useStyles();
   const {
     payload,
     hideShowGraphLegendClick,
@@ -19,6 +19,7 @@ export default function WrappedLegends(props) {
     legendalign,
     AdditionalStyles,
   } = props;
+  console.log(payload);
   return (
     <div
       style={{
