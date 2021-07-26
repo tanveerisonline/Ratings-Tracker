@@ -1,4 +1,5 @@
 import { makeStyles } from "@material-ui/core";
+// import { id } from "date-fns/locale";
 import React from "react";
 import { Surface, Symbols } from "recharts";
 
@@ -19,7 +20,7 @@ export default function WrappedLegends(props) {
     legendalign,
     AdditionalStyles,
   } = props;
-  console.log(payload);
+  // console.log(payload);
   return (
     <div
       style={{
@@ -28,7 +29,7 @@ export default function WrappedLegends(props) {
     >
       {payload?.map((entry) => {
         const { dataKey, color } = entry;
-        const active = ""; //_.includes(this.state.disabled, dataKey);
+        // const active = ""; //_.includes(this.state.disabled, dataKey);
         const style = {
           marginRight: 10,
           color: isDisabled?.includes(dataKey) ? "#AAA" : "#000",
@@ -36,6 +37,7 @@ export default function WrappedLegends(props) {
 
         return (
           <span
+            key={dataKey}
             className="legend-item"
             onClick={() => hideShowGraphLegendClick(dataKey)}
             style={style}
@@ -47,7 +49,7 @@ export default function WrappedLegends(props) {
               )}
             </Surface>
             <span className={classes.legendText}>{dataKey}</span>
-            {legendalign == "left" && <br />}
+            {legendalign === "left" && <br />}
           </span>
         );
       })}

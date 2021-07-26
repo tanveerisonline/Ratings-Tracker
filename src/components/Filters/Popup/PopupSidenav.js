@@ -5,7 +5,6 @@ import { makeStyles } from "@material-ui/core/styles";
 import { Button } from "@material-ui/core";
 import Divider from "@material-ui/core/Divider";
 import FilterImage2 from "../../FilterImage2.png";
-import ArrowForwardIosIcon from "@material-ui/icons/ArrowForwardIos";
 import KeyboardArrowRightIcon from "@material-ui/icons/KeyboardArrowRight";
 const useStyles = makeStyles((theme) => ({
   btn: {
@@ -43,7 +42,7 @@ const PopupSidenav = () => {
     <Grid className="popup-sidenav">
       <div className="side-names1">
         <span>
-          <a>My Portfolio</a>
+          <a href="#myPortfolio">My Portfolio</a>
         </span>
         <span className="right-icon">
           <KeyboardArrowRightIcon />
@@ -52,7 +51,7 @@ const PopupSidenav = () => {
       {/* <Divider variant="middle" /> */}
       <div className="side-names2">
         <span>
-          <a>SVP</a>
+          <a href="#svp">SVP</a>
         </span>
         <span className="right-icon">
           <KeyboardArrowRightIcon />
@@ -62,7 +61,7 @@ const PopupSidenav = () => {
 
       <div className="side-names3">
         <span>
-          <a>SRLTD</a>
+          <a href="#srltd">SRLTD</a>
         </span>
         <span className="right-icon">
           <KeyboardArrowRightIcon />
@@ -71,7 +70,7 @@ const PopupSidenav = () => {
       <Divider variant="middle" />
       <div className="side-names4">
         <span>
-          <a>RLTD</a>
+          <a href="#rltd">RLTD</a>
         </span>
         <span className="right-icon">
           <KeyboardArrowRightIcon />
@@ -80,7 +79,7 @@ const PopupSidenav = () => {
       <Divider variant="middle" />
       <div className="side-names5">
         <span>
-          <a>RVP</a>
+          <a href="#rvp">RVP</a>
         </span>
         <span className="right-icon">
           <KeyboardArrowRightIcon />
@@ -89,7 +88,7 @@ const PopupSidenav = () => {
       <Divider variant="middle" />
       <div className="side-names6">
         <span>
-          <a>RM</a>
+          <a href="#rm">RM</a>
         </span>
         <span className="right-icon">
           <KeyboardArrowRightIcon />
@@ -98,7 +97,7 @@ const PopupSidenav = () => {
       <Divider variant="middle" />
       <div className="side-names7">
         <span>
-          <a>Manager</a>
+          <a href="#manager">Manager</a>
         </span>
         <span className="right-icon">
           <KeyboardArrowRightIcon />
@@ -107,7 +106,7 @@ const PopupSidenav = () => {
       <Divider variant="middle" />
       <div className="side-names8">
         <span>
-          <a>Additional User (Reader)</a>
+          <a href="#additionalUserReader">Additional User (Reader)</a>
         </span>
         <span className="right-icon">
           <KeyboardArrowRightIcon />
@@ -116,7 +115,7 @@ const PopupSidenav = () => {
       <Divider variant="middle" />
       <div className="side-names9">
         <span>
-          <a>Additional User (Publisher)</a>
+          <a href="#additionalUserPublisher">Additional User (Publisher)</a>
         </span>
         <span className="right-icon">
           <KeyboardArrowRightIcon />
@@ -125,7 +124,7 @@ const PopupSidenav = () => {
       <Divider variant="middle" />
       <div className="side-names10">
         <span>
-          <a>Additional User 3</a>
+          <a href="#additionalUser3">Additional User 3</a>
         </span>
         <span className="right-icon">
           <KeyboardArrowRightIcon />
@@ -134,7 +133,7 @@ const PopupSidenav = () => {
       <Divider variant="middle" />
       <div className="side-names11">
         <span>
-          <a>Additional User 4</a>
+          <a href="#additional4">Additional User 4</a>
         </span>
         <span className="right-icon">
           <KeyboardArrowRightIcon />

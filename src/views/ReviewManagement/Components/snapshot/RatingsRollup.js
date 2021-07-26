@@ -1,115 +1,14 @@
-// import { Box, Grid, Typography, makeStyles } from "@material-ui/core";
-// import React from "react";
-// import Rating from "components/form/Rating/ReadOnly";
-// import ProgressBar from "components/Progress/ProgressBar";
-// import RatingBar from "views/ReviewManagement/Components/Layouts/RatingBar";
-// import RatingStatus from "views/ReviewManagement/Components/Layouts/RatingStatus";
-// const useStyles = makeStyles((theme) => ({
-//   root: {
-//     backgroundColor: "#fff",
-//     borderRadius: "10px",
-//     height: 220,
-//     maxHeight: 230,
-//   },
-//   TopGrip: {
-//     paddingTop: 10,
-//   },
-//   barGrid: {
-//     paddingTop: 15,
-//     paddingLeft: 10,
-//   },
-//   contentGrid: {
-//     paddingBottm: 20,
-//     paddingTop: 14,
-//     paddingLeft: 10,
-//     paddingRight: 10,
-//   },
-//   title: {
-//     fontSize: 14,
-//     fontWeight: 700,
-//   },
-// }));
-// export default function RatingsRollup({ ratingBreakdownData }) {
-//   var i = 10;
-//   const classes = useStyles();
-
-//   return (
-//     <Grid xs={12} className={classes.root}>
-//       <Grid
-//         xs={12}
-//         item
-//         direction="row"
-//         container
-//         alignItems="center"
-//         justify="center"
-//         className={classes.barGrid}
-//       >
-//         {ratingBreakdownData?.ratingCategory?.map((items) => (
-//           <Grid
-//             item
-//             xs={3}
-//             sm={3}
-//             md={3}
-//             container
-//             alignItems="center"
-//             justify="center"
-//           >
-//             <RatingStatus
-//               value={items?.value}
-//               color={items?.color}
-//               label={items?.label}
-//             />
-//           </Grid>
-//         ))}
-//       </Grid>
-//       <Grid
-//         item
-//         direction="column"
-//         container
-//         xs={12}
-//         className={classes.contentGrid}
-//       >
-//         {ratingBreakdownData?.ratingBreakdown?.map((items) => (
-//           <RatingBar
-//             starValue={items?.value}
-//             progressValue={items?.percentage}
-//             percentageValue={items?.percentage}
-//             numberValue={items?.count}
-//           />
-//         ))}
-//       </Grid>
-//       {(ratingBreakdownData?.ratingCategory == null ||
-//         ratingBreakdownData?.ratingBreakdown == null) && (
-//         <Box
-//           flexWrap="wrap"
-//           display="flex"
-//           alignItems="center"
-//           justifyContent="center"
-//         >
-//           <Typography className={classes.title}> No Records Found</Typography>
-//         </Box>
-//       )}
-//     </Grid>
-//   );
-// }
-
-import { Box, Grid, Typography, makeStyles } from "@material-ui/core";
+import { Box, Grid, makeStyles } from "@material-ui/core";
 import React, { useState, useEffect } from "react";
-import Rating from "components/form/Rating/ReadOnly";
 import RollUpProgress from "./RollUpProgress";
-import StarOutlineIcon from "@material-ui/icons/StarOutline";
 import StarIcon from "@material-ui/icons/Star";
-// import ProgressBar from "components/Progress/ProgressBar";
 import RatingBar from "views/ReviewManagement/Components/Layouts/RatingBar";
 import RatingStatus from "views/ReviewManagement/Components/Layouts/RatingStatus";
-import { CenterFocusStrong } from "@material-ui/icons";
 const useStyles = makeStyles((theme) => ({
   root: {
     backgroundColor: "#fff",
     borderRadius: "10px",
     height: 160,
-    // height: 220,
-    // maxHeight: 230,
   },
   TopGrip: {
     paddingTop: 10,
@@ -117,12 +16,6 @@ const useStyles = makeStyles((theme) => ({
   barGrid: {
     paddingTop: 10,
     paddingLeft: 10,
-  },
-  contentGrid: {
-    // paddingBottm: 20,
-    // paddingTop: 14,
-    // paddingLeft: 10,
-    // paddingRight: 10,
   },
   title: {
     fontSize: 14,
@@ -141,7 +34,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 export default function RatingsRollup({ ratingBreakdownData }) {
-  var i = 10;
+  // var i = 10;
   const classes = useStyles();
   const [completedFirst, setCompletedFirst] = useState(0);
   const [completedSecond, setCompletedSecond] = useState(0);
@@ -175,7 +68,7 @@ export default function RatingsRollup({ ratingBreakdownData }) {
         direction="row"
         container
         alignItems="center"
-        justify="center"
+        justifyContent="center"
         className={classes.barGrid}
       >
         {ratingBreakdownData?.ratingCategory?.map((items) => (
@@ -186,7 +79,7 @@ export default function RatingsRollup({ ratingBreakdownData }) {
             md={3}
             container
             alignItems="center"
-            justify="center"
+            justifyContent="center"
           >
             <RatingStatus
               value={items?.value}
@@ -220,9 +113,9 @@ export default function RatingsRollup({ ratingBreakdownData }) {
           alignItems="center"
           justifyContent="center"
         >
-          <Typography className={classes.title}>
+          <div className={classes.title}>
             {/* No Records Found */}
-            <ul listStyleType="none">
+            <ul liststyletype="none">
               <li className={classes.indexing}>
                 5
                 <StarIcon
@@ -299,7 +192,7 @@ export default function RatingsRollup({ ratingBreakdownData }) {
                 14<span className={classes.percent}>(36.48%)</span>
               </li>
             </ul>
-          </Typography>
+          </div>
         </Box>
       )}
     </Grid>

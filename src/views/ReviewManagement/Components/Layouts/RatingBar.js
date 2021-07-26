@@ -1,4 +1,4 @@
-import { Grid, Typography, makeStyles, Box } from "@material-ui/core";
+import { Grid, Typography, makeStyles } from "@material-ui/core";
 import Rating from "components/form/Rating/ReadOnly";
 import ProgressBar from "components/Progress/ProgressBar";
 import React from "react";

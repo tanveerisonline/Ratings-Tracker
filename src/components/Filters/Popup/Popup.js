@@ -1,14 +1,8 @@
 import React from "react";
-import {
-  Dialog,
-  DialogTitle,
-  DialogContent,
-  makeStyles,
-} from "@material-ui/core";
+import { DialogTitle, DialogContent, makeStyles } from "@material-ui/core";
 import PopupContent from "./PopupContent";
 import { Grid } from "@material-ui/core";
 import PopupSidenav from "./PopupSidenav";
-// import { makeStyles } from "@material-ui/core/styles";
 import IconButton from "@material-ui/core/IconButton";
 import CloseIcon from "@material-ui/icons/Close";
 import "./Popup.css";
@@ -29,16 +23,11 @@ const useStyles = makeStyles((theme) => ({
     alignItems: "center",
   },
   iconBtn: {
-    // marginLeft: "10px",
     marginRight: "20px",
     backgroundColor: "#2b3b5c",
     height: "36px",
     width: "36px",
     borderRadius: 6,
-    // display: "flex",
-    // flexDirection: "row",
-    // justifyContent: "center",
-    // alignItems: "center",
     border: "none",
   },
   iconImg: {
@@ -65,7 +54,6 @@ const useStyles = makeStyles((theme) => ({
     justifyContent: "center",
     alignItems: "center",
     background: "#0DA9DE",
-    // marginTop: 18,
     borderRadius: 10,
     marginRight: 30,
   },
@@ -94,7 +82,6 @@ const Popup = (props) => {
                   className={classes.iconImg}
                 />
               </button>
-              {/* <i className="fas fa-sort-amount-up-alt"></i> */}
             </span>
             <span className={classes.title}>
               Filter by Portfolio / Distribution
@@ -104,11 +91,7 @@ const Popup = (props) => {
             <span className={classes.property}># PROPERTIES SELECTED</span>
             <span className={classes.close}>
               {close ? (
-                <IconButton
-                  aria-label="close"
-                  // className={classes.closeButton}
-                  onClick={close}
-                >
+                <IconButton aria-label="close" onClick={close}>
                   <CloseIcon />
                 </IconButton>
               ) : null}

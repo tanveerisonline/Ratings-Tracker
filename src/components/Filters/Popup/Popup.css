@@ -26,6 +26,23 @@
   justify-content: space-between;
   /* width: 100px; */
 }
+.side-names1 a {
+  text-decoration: none;
+  color: #0da9de;
+}
+.side-names2 a,
+.side-names3 a,
+.side-names4 a,
+.side-names5 a,
+.side-names6 a,
+.side-names7 a,
+.side-names8 a,
+.side-names9 a,
+.side-names10 a,
+.side-names11 a {
+  text-decoration: none;
+  color: #383e4c;
+}
 .side-names2,
 .side-names3,
 .side-names4,

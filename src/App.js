@@ -1,10 +1,8 @@
-import logo from "./logo.svg";
 import "./App.css";
 import Header from "./Pages/Header";
 import SideNav from "./Pages/SideNav";
 import HomePage from "./Pages/HomePage";
 import { createTheme, Grid, ThemeProvider } from "@material-ui/core";
-import { purple } from "@material-ui/core/colors";
 const theme = createTheme({
   palette: {
     primary: {

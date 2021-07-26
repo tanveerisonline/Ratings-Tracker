@@ -1,31 +1,23 @@
 import React from "react";
 import { makeStyles } from "@material-ui/core/styles";
-import { Typography, Container } from "@material-ui/core";
-import InputLabel from "@material-ui/core/InputLabel";
+import { Typography } from "@material-ui/core";
 import MenuItem from "@material-ui/core/MenuItem";
 import FormControl from "@material-ui/core/FormControl";
 import Select from "@material-ui/core/Select";
 import Divider from "@material-ui/core/Divider";
-import Button from "@material-ui/core/Button";
 import { Grid } from "@material-ui/core";
 import "./ReviewFilter.css";
 
 import KeyboardArrowDownIcon from "@material-ui/icons/KeyboardArrowDown";
 const useStyles = makeStyles((theme) => ({
-  // button: {
-  //   display: "block",
-  //   marginTop: theme.spacing(2),
-  // },
   root: {
     // backgroundColor: "red",
     marginLeft: 45,
   },
   formControl: {
     // margin: theme.spacing(1),
-    // backgroundColor: "red",
     display: "inline-flex",
     justifyContent: "center",
-    // alignItems: "center",
     height: 45,
     paddingLeft: "15px",
     borderRadius: 14,
@@ -47,26 +39,17 @@ const useStyles = makeStyles((theme) => ({
 export default function ReviewFilter() {
   const classes = useStyles();
   const [review, setReview] = React.useState("");
-  const [open, setOpen] = React.useState(false);
+  // const [open, setOpen] = React.useState(false);
 
   const handleChange = (event) => {
     setReview(event.target.value);
   };
-
-  const handleClose = () => {
-    setOpen(false);
-  };
-
-  const handleOpen = () => {
-    setOpen(true);
-  };
-
   return (
     <Grid className={classes.root} item xs={12}>
       <Typography className={classes.heading}>REVIEW SITES:</Typography>
       <FormControl className={classes.formControl}>
         <Select
-        className={classes.selectAll}
+          className={classes.selectAll}
           value={review}
           onChange={handleChange}
           displayEmpty

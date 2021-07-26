@@ -1,6 +1,6 @@
 import React from "react";
 import LinearProgress from "@material-ui/core/LinearProgress";
-import { makeStyles, withStyles } from "@material-ui/core/styles";
+import { withStyles } from "@material-ui/core/styles";
 
 export default function ProgressBar(props) {
   const { dataValue, color } = props;

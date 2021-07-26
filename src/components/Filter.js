@@ -18,13 +18,6 @@ import FilterTitle from "./Filters/FilterTitle";
 import KeyboardArrowDownIcon from "@material-ui/icons/KeyboardArrowDown";
 const queryString = require("query-string");
 const useStyles = makeStyles((theme) => ({
-  // filter: {
-  //   marginTop: "76px",
-  // width: "301px",
-  // height: "70px",
-  /* overflow-y: scroll; */
-  // },
-
   root: {
     textDecoration: "none",
   },
@@ -45,9 +38,6 @@ const useStyles = makeStyles((theme) => ({
     fontSize: 13,
     color: "#fff",
     fontWeight: 600,
-    // "&:hover": {
-    //   backgroundColor: "#777b89",
-    // },
   },
   divider: {
     backgroundColor: "#6b6d82",
@@ -122,7 +112,6 @@ const useStyles = makeStyles((theme) => ({
 const Filter = () => {
   const classes = useStyles();
   const [review, setReview] = React.useState("");
-  const [open, setOpen] = React.useState(false);
   const [filterData, setFilterData] = React.useState({
     startDate: null,
     endDate: null,
@@ -137,23 +126,16 @@ const Filter = () => {
   const handleChange = (event) => {
     setReview(event.target.value);
   };
-  const resetHandler = () => {
-    const stringified = queryString.stringify(null);
-    document.location.search = stringified;
-  };
-  // const handleClose = () => {
-  //   setOpen(false);
-  // };
-
-  // const handleOpen = () => {
-  //   setOpen(true);
-  // };
   const filterDataSubmit = (filterData) => {
     const stringified = queryString.stringify(filterData);
     document.location.search = stringified;
     console.log(document.location.search);
     console.log(filterData);
     console.log(stringified);
+  };
+  const resetHandler = () => {
+    const stringified = queryString.stringify(null);
+    document.location.search = stringified;
   };
   return (
     <Grid container className="filter">
@@ -170,13 +152,12 @@ const Filter = () => {
       <PortfolioFilter />
       <Divider className={classes.divider} variant="middle" />
       <GroupFilter />
-      {/* / */}
       <Button
         className={classes.btn}
         onClick={() => console.log(filterDataSubmit(filterData))}
         type="submit"
         variant="contained"
-        marginTop="10"
+        // marginTop="10"
         color="secondary"
         startIcon={
           <img src={FilterImage2} alt="Img" className={classes.filterImg} />
@@ -190,21 +171,17 @@ const Filter = () => {
         onClick={resetHandler}
         type="submit"
         variant="contained"
-        marginTop="10"
+        // marginTop="10"
         color="primary"
-        // startIcon={
-        //   <img src={FilterImage2} alt="Img" className={classes.filterImg} />
-        // }
         endIcon={<KeyboardArrowRightIcon className={classes.rightIcon} />}
       >
         <Typography className={classes.resetText}>RESET</Typography>
       </Button>
-      {/* / */}
       <Button
         className={classes.Dbtn}
         onClick={() => console.log("you clicked APPLY button")}
         type="submit"
-        color="main"
+        // color="main"
         variant="contained"
         startIcon={<SystemUpdateAltOutlinedIcon />}
       >

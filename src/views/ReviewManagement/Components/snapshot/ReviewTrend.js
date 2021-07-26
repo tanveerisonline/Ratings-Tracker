@@ -3,21 +3,13 @@ import AreaGraph from "components/GraphsNew/Area/index";
 import * as constant from "views/ReviewManagement/constant";
 import { Box, Grid, Typography, makeStyles } from "@material-ui/core";
 import Radio from "components/form/RadioButton/SimpleRadio";
-import RadioGroup from "@material-ui/core/RadioGroup";
-import FormControlLabel from "@material-ui/core/FormControlLabel";
-import FormControl from "@material-ui/core/FormControl";
-import FormLabel from "@material-ui/core/FormLabel";
-// import { Typography } from "@material-ui/core";
 import Divider from "@material-ui/core/Divider";
-// import { Grid } from "@material-ui/core";
 const useStyles = makeStyles((theme) => ({
   root: {
     // minHeight: 430,
-    width: "1192px",
-    height: "491px",
-    // backgroundColor: "yellow",
+    // width: "1192px",
+    // height: "491px",
     borderRadius: "15px",
-    // maxHeight: 230,
   },
   title: {
     fontSize: 14,
@@ -45,15 +37,7 @@ export default function ReviewTrend({
   setFilterSelected,
   filterData,
 }) {
-  const [value, setValue] = React.useState();
   const classes = useStyles();
-
-  const handleChange = (event) => {
-    setValue(event.target.value);
-  };
-  // const classes = useStyles();
-
-  // console.log(filterData);
   return (
     <Grid
       container
@@ -69,11 +53,11 @@ export default function ReviewTrend({
         item
         xs={3}
         direction="column"
-        justify="flex-start"
+        justifyContent="flex-start"
         style={{ paddingTop: 12 }}
       >
         {filterData?.map((item) => (
-          <Grid item>
+          <Grid key={item.label} item>
             <Radio
               isChecked={item.value}
               label={item.label}

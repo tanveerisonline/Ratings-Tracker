@@ -1,4 +1,4 @@
-import { Box, Grid, Typography, makeStyles } from "@material-ui/core";
+import { Grid, makeStyles } from "@material-ui/core";
 import Radio from "@material-ui/core/Radio";
 import React, { useEffect } from "react";
 
@@ -30,7 +30,7 @@ export default function RadioButton(props) {
     labelStyles,
     ...rest
   } = props;
-  const [selectedValue, setSelectedValue] = React.useState("a");
+  // const [selectedValue, setSelectedValue] = React.useState("a");
 
   useEffect(() => {}, [isChecked]);
   return (
@@ -41,7 +41,7 @@ export default function RadioButton(props) {
           // onChange={handleChange}
           value={value}
           onClick={handleChange}
-          classes={classes.root}
+          className={classes.root}
           style={{ ...additionalStyles }}
           size="small"
           {...rest}

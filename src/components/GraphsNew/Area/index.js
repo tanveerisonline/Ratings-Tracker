@@ -1,7 +1,4 @@
-// import "./styles.css";
 import React, { useState, useEffect } from "react";
-// import { makeStyles } from "@material-ui/core";
-import Divider from "@material-ui/core/Divider";
 import {
   XAxis,
   YAxis,
@@ -10,14 +7,10 @@ import {
   AreaChart,
   Legend,
   Area,
-  Surface,
-  Symbols,
   ResponsiveContainer,
 } from "recharts";
-import PropTypes from "prop-types";
 import WrappedLegends from "components/GraphsNew/Legends/circularLegend";
 import RectangularLegend from "components/GraphsNew/Legends/rectangular.js";
-import { ClassNames } from "@emotion/react";
 export default function AreaChartComponent(props) {
   const {
     graphData,
@@ -36,8 +29,6 @@ export default function AreaChartComponent(props) {
   } = props;
   const [isDisabled, setIsDisabled] = useState([]);
   const [render, setRerender] = useState(false);
-  // const classes = useStyles();
-
   const hideShowGraphLegendClick = (payload) => {
     let disabledGraph = [];
     disabledGraph = isDisabled;
@@ -75,7 +66,7 @@ export default function AreaChartComponent(props) {
             layout={legendlayout}
             onClick={(e) => legendalign(e)}
             content={
-              legendType == "circular" ? (
+              legendType === "circular" ? (
                 <WrappedLegends
                   legendalign={legendalign}
                   hideShowGraphLegendClick={hideShowGraphLegendClick}

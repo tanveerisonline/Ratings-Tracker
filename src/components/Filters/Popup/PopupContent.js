@@ -5,7 +5,7 @@ import Checkbox from "@material-ui/core/Checkbox";
 import "./Popup.css";
 import { makeStyles } from "@material-ui/core/styles";
 
-console.log(PostData);
+// console.log(PostData); 
 const useStyles = makeStyles({
   root: {
     height: "26px",
@@ -30,10 +30,6 @@ const PopupContent = () => {
   const classes = useStyles();
   return (
     <div className={classes.PopupContentMain}>
-      {/* {PostData.map(({ name, id }) => (
-           {id},{name}
-          ))} */}
-
       {PostData?.map((item) => (
         <Grid item>
           <Checkbox

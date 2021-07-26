@@ -1,21 +1,14 @@
 import "date-fns";
-import React, { useState } from "react";
-import Divider from "@material-ui/core/Divider";
+import React from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import Grid from "@material-ui/core/Grid";
-import TextField from "@material-ui/core/TextField";
-import { Button, Typography, Container } from "@material-ui/core";
-// import KeyboardArrowRightIcon from "@material-ui/icons/KeyboardArrowRight";
+import { Typography } from "@material-ui/core";
 import KeyboardArrowDownIcon from "@material-ui/icons/KeyboardArrowDown";
-// import KeyboardArrowDownOutlinedIcon from "@material-ui/icons/KeyboardArrowDownOutlined";
-import { ArrowLeft, CenterFocusStrong } from "@material-ui/icons";
-import ReactDatePicker from "react-datepicker";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 
 const useStyles = makeStyles((theme) => ({
   root: {
-    // backgroundColor: "yellow",
     marginLeft: 45,
   },
   container: {
@@ -28,7 +21,6 @@ const useStyles = makeStyles((theme) => ({
     height: 45,
     width: 220,
     borderRadius: 14,
-    // justifyContent: "center",
     alignItems: "center",
   },
   downIcon: {
@@ -37,12 +29,9 @@ const useStyles = makeStyles((theme) => ({
     alignItems: "center",
     color: "#8f9fa3",
     cursor: "pointer",
-
-    // display:"none"
   },
   textField: {
     // marginLeft: theme.spacing(2),
-    // marginRight: theme.spacing(2),
     cursor: "pointer",
     display: "inline-flex",
     justifyContent: "center",
@@ -51,12 +40,9 @@ const useStyles = makeStyles((theme) => ({
     paddingLeft: "15px",
     // width: 200,
     height: 43,
-    // display: "none",
     borderRadius: 14,
     background: "#fff",
     border: "none",
-    // alignItems: "normal",
-    // paddingTop: 10,
     "&::before": {
       borderBottom: "none",
       display: "none",
@@ -88,8 +74,6 @@ const useStyles = makeStyles((theme) => ({
 export default function DateFilter(props) {
   const classes = useStyles();
   const { startDate, endDate, handleChange, handleChange2 } = props;
-  // const [startDate, setStartDate] = useState(null);
-  // const [endDate, setEndDate] = useState(null);
   return (
     <Grid item xs={12} className={classes.root}>
       <Typography className={classes.heading}>SHOW RATINGS FOR:</Typography>
@@ -100,7 +84,6 @@ export default function DateFilter(props) {
           placeholderText="MM/DD/YYYY"
           dateFormat="MM/dd/yyyy"
           selected={startDate}
-          // onChange={handleChange}
           onChange={(date) => handleChange(date)}
           selectsStart
           startDate={startDate}
@@ -115,7 +98,6 @@ export default function DateFilter(props) {
           placeholderText="MM/DD/YYYY"
           dateFormat="MM/dd/yyyy"
           selected={endDate}
-          // onChange={handleChange}
           onChange={(date) => handleChange2(date)}
           selectsEnd
           startDate={startDate}

@@ -28,7 +28,7 @@ export default function WrappedLegends(props) {
     >
       {payload?.map((entry) => {
         const { dataKey, color } = entry;
-        const active = ""; //_.includes(this.state.disabled, dataKey);
+        // const active = ""; //_.includes(this.state.disabled, dataKey);
         const style = {
           marginRight: 10,
           color: isDisabled?.includes(dataKey) ? "#AAA" : "#000",
@@ -47,7 +47,7 @@ export default function WrappedLegends(props) {
               )}
             </Surface>
             <span className={classes.legendText}>{dataKey}</span>
-            {legendalign == "left" && <br />}
+            {legendalign === "left" && <br />}
           </span>
         );
       })}

@@ -3,7 +3,6 @@ import React from "react";
 
 const useStyles = makeStyles((theme) => ({
   mainGrid: {
-    // border: "1px solid",
     borderTopLeftRadius: 10,
     borderTopRightRadius: 10,
     borderBottomLeftRadius: 10,
@@ -11,7 +10,6 @@ const useStyles = makeStyles((theme) => ({
     marginBottom: 10,
     boxShadow: "0 5px 8px 2px rgba(0,0,0,0.1)",
     backgroundColor: "white",
-    // padding: 18,
   },
   innerTypographyDiv: {
     // backgroundColor: "#383E4C",

@@ -1,15 +1,11 @@
 import React, { useState } from "react";
 import StarRating from "./StarRating";
-import RatingBreakdown from "./RatingsRollup";
-import Sentiments from "./RatingsBreakdown";
-import { Box, Divider, Grid } from "@material-ui/core";
+import { Grid } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles";
 import ReviewTrend from "views/ReviewManagement/Components/snapshot/ReviewTrend";
 import BoxLayout from "views/ReviewManagement/Components/Layouts/BoxLayout";
-import FilterListOutlinedIcon from "@material-ui/icons/FilterListOutlined";
 import RatingsRollup from "./RatingsRollup";
 import RatingsBreakdown from "./RatingsBreakdown";
-import StarRateRoundedIcon from "@material-ui/icons/StarRateRounded";
 const useStyles = makeStyles((theme) => ({
   root: {
     flexGrow: 1,
@@ -26,14 +22,6 @@ const useStyles = makeStyles((theme) => ({
     backgroundColor: "yellow",
     borderRadius: "5px",
   },
-  // fa-star: {
-  // height: "26px",
-  // width: "26px",
-  // borderRadius: "5px",
-  // // fontSize: "22px",
-  // backgroundColor: "green",
-  // color: "#fff",
-  // },
 }));
 export default function Index({
   GroupByData,
@@ -41,12 +29,6 @@ export default function Index({
   reviewTrendFilterOptions,
   tab,
 }) {
-  const [groupBy, setGroupBy] = useState("MONTH");
-  const [StartDate, setStartDate] = useState("");
-  const [EndDate, setEndDate] = useState("");
-  const [sitesSelected, setSitesSelected] = useState("");
-  const [propertyFilter, setSelectedAdvancesPropeerties] = useState(null);
-  const [reviewTrendFilter, setReviewTrendFilter] = useState("N_O_R");
   const [radioData, setRadioData] = useState([
     {
       id: 1,
@@ -79,7 +61,7 @@ export default function Index({
     // e.prevent.default();
     console.log(e);
     let newRadioData = radioData.map((item) => {
-      if (item.id == e) {
+      if (item.id === e) {
         item.value = true;
         return item;
       } else {

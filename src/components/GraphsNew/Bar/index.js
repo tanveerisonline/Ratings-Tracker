@@ -1,21 +1,14 @@
-// import "./styles.css";
 import React, { useState, useEffect } from "react";
 import {
   XAxis,
   YAxis,
   CartesianGrid,
   Tooltip,
-  AreaChart,
   Legend,
-  Area,
-  Surface,
-  Symbols,
   ResponsiveContainer,
   BarChart,
   Bar,
-  Cell,
 } from "recharts";
-import PropTypes from "prop-types";
 import CircularLegend from "components/GraphsNew/Legends/circularLegend";
 
 export default function BarChartComponent(props) {
@@ -53,17 +46,17 @@ export default function BarChartComponent(props) {
     render ? setRerender(false) : setRerender(true);
   };
 
-  console.log(graphData)
-  console.log(mainData)
+  // console.log(graphData);
+  // console.log(mainData);
 
-  useEffect(() => {}, [render,graphData]);
+  useEffect(() => {}, [render, graphData]);
   return (
     <ResponsiveContainer height={height}>
       <BarChart
         width={width}
         height={height}
         data={mainData}
-                margin={{
+        margin={{
           top: 20,
           right: 30,
           // left: 20,
@@ -83,7 +76,7 @@ export default function BarChartComponent(props) {
             layout={legendlayout}
             onClick={(e) => hideShowGraphLegendClick(e)}
             content={
-              legendType == "circular" && (
+              legendType === "circular" && (
                 <CircularLegend
                   legendalign={legendalign}
                   hideShowGraphLegendClick={hideShowGraphLegendClick}
@@ -96,7 +89,7 @@ export default function BarChartComponent(props) {
           />
         )}
         {graphData?.map((item, index) => {
-          console.log(item)
+          // console.log(item);
           return (
             <Bar
               key={index}
