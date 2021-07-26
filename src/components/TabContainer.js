@@ -17,11 +17,7 @@ function TabPanel(props) {
       aria-labelledby={`simple-tab-${index}`}
       {...other}
     >
-      {value === index && (
-        <Box p={3}>
-          {children}
-        </Box>
-      )}
+      {value === index && <Box p={3}>{children}</Box>}
     </div>
   );
 }
@@ -58,7 +54,7 @@ const useStyles = makeStyles((theme) => ({
     color: "white",
     fontWeight: "600",
     opacity: 1,
-    backgroundColor: "yellow",
+    backgroundColor: "#c2212a",
     "&.Mui-selected": {
       backgroundColor: "#fff",
       color: "#c2212a",
