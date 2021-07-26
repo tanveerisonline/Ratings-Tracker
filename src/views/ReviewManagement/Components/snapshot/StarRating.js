@@ -80,8 +80,11 @@ const useStyles = makeStyles((theme) => ({
   paper: {},
   root: {
     height: 160,
+<<<<<<< HEAD
+=======
     // width: "311px",
     // height: "248px",
+>>>>>>> 0c25c27d8a678eb6ed4d5d5c2425947df4b9c6a0
     display: "flex",
     backgroundColor: "#fff",
     borderRadius: "10px",
@@ -108,17 +111,28 @@ const useStyles = makeStyles((theme) => ({
     alignItems: "center",
   },
   rated: {
+<<<<<<< HEAD
+    fontSize: "48px",
+    color: "#c2302a",
+    fontWeight: 800,
+    marginBottom: "15px",
+=======
     fontSize: "50px",
     color: "#c2302a",
     fontWeight: 600,
     marginTop: "16px",
     marginBottom: "12px",
+>>>>>>> 0c25c27d8a678eb6ed4d5d5c2425947df4b9c6a0
   },
   overAllRating: {
     color: "#2f3f5f",
     fontSize: 12,
     fontWeight: 800,
+<<<<<<< HEAD
+    marginBottom: "10px",
+=======
     marginBottom: "0px",
+>>>>>>> 0c25c27d8a678eb6ed4d5d5c2425947df4b9c6a0
   },
   reviews: {
     color: "#2f3f5f",
@@ -166,9 +180,15 @@ export default function StarRating({ StarRatingData }) {
         <CircularProgress
           variant="determinate"
           value={progress}
+<<<<<<< HEAD
+          size="5rem"
+          className={classes.progressBar}
+          thickness="3.5"
+=======
           size="5.5rem"
           className={classes.progressBar}
           thickness="2.5"
+>>>>>>> 0c25c27d8a678eb6ed4d5d5c2425947df4b9c6a0
           background="gray"
         />
         <Box

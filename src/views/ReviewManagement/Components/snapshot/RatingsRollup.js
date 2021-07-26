@@ -108,8 +108,11 @@ const useStyles = makeStyles((theme) => ({
     backgroundColor: "#fff",
     borderRadius: "10px",
     height: 160,
+<<<<<<< HEAD
+=======
     // width: "388px",
     // height: "248px",
+>>>>>>> 0c25c27d8a678eb6ed4d5d5c2425947df4b9c6a0
     // height: 220,
     // maxHeight: 230,
   },

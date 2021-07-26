@@ -79,6 +79,8 @@ const useStyles = makeStyles((theme) => ({
     width: 20,
     // border: "1px solid red",
   },
+<<<<<<< HEAD
+=======
   resetMain: {
     width: "64%",
     height: "40px",
@@ -98,6 +100,7 @@ const useStyles = makeStyles((theme) => ({
     color: "#fff",
     fontWeight: 600,
   },
+>>>>>>> 0c25c27d8a678eb6ed4d5d5c2425947df4b9c6a0
   formControl: {
     // margin: theme.spacing(1),
     // backgroundColor: "red",
@@ -112,13 +115,28 @@ const useStyles = makeStyles((theme) => ({
     marginLeft: 45,
   },
   rightIcon: {
+<<<<<<< HEAD
+    marginLeft:12
+=======
     marginLeft: 12,
+>>>>>>> 0c25c27d8a678eb6ed4d5d5c2425947df4b9c6a0
   },
 }));
 const Filter = () => {
   const classes = useStyles();
   const [review, setReview] = React.useState("");
   const [open, setOpen] = React.useState(false);
+<<<<<<< HEAD
+
+  const handleChange = (event) => {
+    setReview(event.target.value);
+  };
+
+  const handleClose = () => {
+    setOpen(false);
+  };
+
+=======
   const [filterData, setFilterData] = React.useState({
     startDate: null,
     endDate: null,
@@ -138,11 +156,21 @@ const Filter = () => {
     setOpen(false);
   };
 
+>>>>>>> 0c25c27d8a678eb6ed4d5d5c2425947df4b9c6a0
   const handleOpen = () => {
     setOpen(true);
   };
   return (
+<<<<<<< HEAD
     <Grid container className="filter">
+=======
+<<<<<<< HEAD
+    <Grid container className="filter">
+      <FilterTitle />
+      <DateFilter />
+=======
+    <Grid container className={classes.filter}>
+>>>>>>> af10f361d809c105208d790f73c57a10736362e8
       <FilterTitle />
       <DateFilter
         startDate={startDate}
@@ -150,6 +178,7 @@ const Filter = () => {
         handleChange={handleStartDateChange}
         handleChange2={handleEndDateChange}
       />
+>>>>>>> 0c25c27d8a678eb6ed4d5d5c2425947df4b9c6a0
       <Divider className={classes.divider} variant="middle" />
       <ReviewFilter />
       <Divider className={classes.divider} variant="middle" />
@@ -159,11 +188,19 @@ const Filter = () => {
       {/* / */}
       <Button
         className={classes.btn}
+<<<<<<< HEAD
+        onClick={() => console.log("you clicked APPLY button")}
+        type="submit"
+        variant="contained"
+        marginTop="10"
+        color="primary"
+=======
         onClick={() => console.log(filterData)}
         type="submit"
         variant="contained"
         marginTop="10"
         color="secondary"
+>>>>>>> 0c25c27d8a678eb6ed4d5d5c2425947df4b9c6a0
         startIcon={
           <img src={FilterImage2} alt="Img" className={classes.filterImg} />
         }
@@ -171,6 +208,8 @@ const Filter = () => {
       >
         <Typography className={classes.apply}>APPLY FILTER</Typography>
       </Button>
+<<<<<<< HEAD
+=======
       <Button
         className={classes.resetMain}
         onClick={() => console.log(filterData)}
@@ -185,6 +224,7 @@ const Filter = () => {
       >
         <Typography className={classes.resetText}>RESET</Typography>
       </Button>
+>>>>>>> 0c25c27d8a678eb6ed4d5d5c2425947df4b9c6a0
       {/* / */}
       <Button
         className={classes.Dbtn}
@@ -207,6 +247,17 @@ const Filter = () => {
           <MenuItem value="" disabled>
             All
           </MenuItem>
+<<<<<<< HEAD
+          <MenuItem value={1}>Apartments</MenuItem>
+          <MenuItem value={2}>Apartment Guide</MenuItem>
+          <MenuItem value={3}>ApartmentRatings</MenuItem>
+          <MenuItem value={4}>Facebook</MenuItem>
+          <MenuItem value={5}>Google</MenuItem>
+          <MenuItem value={6}>Modern Message</MenuItem>
+          <MenuItem value={7}>Rent</MenuItem>
+          <MenuItem value={8}>Yellow Pages</MenuItem>
+          <MenuItem value={9}>Yelp</MenuItem>
+=======
           <MenuItem value={1}>
             <span className="apartments"></span>
             <span>Apartments</span>
@@ -243,6 +294,7 @@ const Filter = () => {
             <span className="yelp"></span>
             <span>Yelp</span>
           </MenuItem>
+>>>>>>> 0c25c27d8a678eb6ed4d5d5c2425947df4b9c6a0
         </Select>
       </FormControl>
     </Grid>
