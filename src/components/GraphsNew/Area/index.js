@@ -1,11 +1,7 @@
 // import "./styles.css";
 import React, { useState, useEffect } from "react";
 // import { makeStyles } from "@material-ui/core";
-<<<<<<< HEAD
-
-=======
 import Divider from "@material-ui/core/Divider";
->>>>>>> 0c25c27d8a678eb6ed4d5d5c2425947df4b9c6a0
 import {
   XAxis,
   YAxis,
@@ -41,10 +37,6 @@ export default function AreaChartComponent(props) {
   const [isDisabled, setIsDisabled] = useState([]);
   const [render, setRerender] = useState(false);
   // const classes = useStyles();
-<<<<<<< HEAD
-
-=======
->>>>>>> 0c25c27d8a678eb6ed4d5d5c2425947df4b9c6a0
 
   const hideShowGraphLegendClick = (payload) => {
     let disabledGraph = [];
@@ -89,16 +81,6 @@ export default function AreaChartComponent(props) {
                   hideShowGraphLegendClick={hideShowGraphLegendClick}
                   isDisabled={isDisabled}
                   AdditionalStyles={AdditonalLegendsStyles}
-<<<<<<< HEAD
-                />
-              ) : (
-                <RectangularLegend
-                  legendalign={legendalign}
-                  hideShowGraphLegendClick={hideShowGraphLegendClick}
-                  isDisabled={isDisabled}
-                  AdditionalStyles={AdditonalLegendsStyles}
-                />
-=======
                   LabelLegendsStyles={{
                     marginBottom: 80,
                   }}
@@ -110,7 +92,6 @@ export default function AreaChartComponent(props) {
                   isDisabled={isDisabled}
                   AdditionalStyles={AdditonalLegendsStyles}
                 />
->>>>>>> 0c25c27d8a678eb6ed4d5d5c2425947df4b9c6a0
               )
             }
             {...legendsProps}

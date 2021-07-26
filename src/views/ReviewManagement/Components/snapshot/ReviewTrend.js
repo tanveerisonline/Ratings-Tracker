@@ -35,12 +35,9 @@ const useStyles = makeStyles((theme) => ({
     backgroundColor: "#4f5b75",
     borderRadius: "5px",
   },
-<<<<<<< HEAD
-=======
   divide: {
     backgroundColor: "gray",
   },
->>>>>>> 0c25c27d8a678eb6ed4d5d5c2425947df4b9c6a0
 }));
 export default function ReviewTrend({
   reviewTrendData,
@@ -48,11 +45,7 @@ export default function ReviewTrend({
   setFilterSelected,
   filterData,
 }) {
-<<<<<<< HEAD
-  const [value, setValue] = React.useState("1");
-=======
   const [value, setValue] = React.useState();
->>>>>>> 0c25c27d8a678eb6ed4d5d5c2425947df4b9c6a0
   const classes = useStyles();
 
   const handleChange = (event) => {
@@ -77,33 +70,17 @@ export default function ReviewTrend({
         xs={3}
         direction="column"
         justify="flex-start"
-<<<<<<< HEAD
-        style={{ paddingTop: 10 }}
-=======
         style={{ paddingTop: 12 }}
->>>>>>> 0c25c27d8a678eb6ed4d5d5c2425947df4b9c6a0
       >
         {filterData?.map((item) => (
           <Grid item>
             <Radio
-<<<<<<< HEAD
-              isChecked={filterSelected == item.id}
-              label={item.value}
-              value="1"
-              additionalStyles={{
-                color: "#fff",
-                height: "16px",
-              }}
-              labelStyles={{
-                fontSize: 12,
-=======
               isChecked={item.value}
               label={item.label}
               // value="1"
               additionalStyles={{
                 color: "#fff",
                 height: "16px",
->>>>>>> 0c25c27d8a678eb6ed4d5d5c2425947df4b9c6a0
               }}
               labelStyles={{
                 fontSize: 12,
@@ -135,13 +112,8 @@ export default function ReviewTrend({
               height={340}
               // width={52}
               AdditonalLegendsStyles={{
-<<<<<<< HEAD
-                marginTop: -20,
-                // display: "flex",
-=======
                 marginTop: 10,
                 marginLeft: 40,
->>>>>>> 0c25c27d8a678eb6ed4d5d5c2425947df4b9c6a0
               }}
             />
           </Box>
