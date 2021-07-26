@@ -18,12 +18,12 @@ import FilterTitle from "./Filters/FilterTitle";
 import KeyboardArrowDownIcon from "@material-ui/icons/KeyboardArrowDown";
 
 const useStyles = makeStyles((theme) => ({
-  filter: {
-    marginTop: "76px",
+  // filter: {
+  //   marginTop: "76px",
     // width: "301px",
     // height: "70px",
     /* overflow-y: scroll; */
-  },
+  // },
 
   root: {
     textDecoration: "none",

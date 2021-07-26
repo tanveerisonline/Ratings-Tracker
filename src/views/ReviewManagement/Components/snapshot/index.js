@@ -47,34 +47,44 @@ export default function Index({
   const [sitesSelected, setSitesSelected] = useState("");
   const [propertyFilter, setSelectedAdvancesPropeerties] = useState(null);
   const [reviewTrendFilter, setReviewTrendFilter] = useState("N_O_R");
-  const RADIO_DATA = [
+  const [radioData, setRadioData] = useState([
     {
       id: 1,
-      value: false,
-      label: "Average Star Rating",
+      value: "Average Star Rating",
     },
     {
       id: 2,
-      value: true,
-      label: "Number of Reviews",
+      value: "Number of Reviews",
     },
     {
       id: 3,
-      value: false,
-      label: "Number of Responses",
+      value: "Number of Responses",
     },
     {
       id: 4,
-      value: false,
-      label: "Responses Pending Approval",
+      value: "Responses Pending Approval",
     },
     {
       id: 5,
-      value: false,
-      label: "Problem Responses",
+      value: "Problem Responses",
     },
-  ];
+  ]);
   const classes = useStyles();
+  const handleRadioChange = (e) => {
+    // e.prevent.default();
+    console.log(e);
+    let newRadioData = radioData.map((item) => {
+      if (item.id == e) {
+        item.value = true;
+        return item;
+      } else {
+        item.value = false;
+        return item;
+      }
+    });
+    setRadioData(newRadioData);
+  };
+
   return (
     <Grid style={{ marginTop: 10 }} xs={12}>
       <div className={classes.root}>
@@ -99,7 +109,10 @@ export default function Index({
       </div>
       <div style={{ marginTop: 20 }}>
         <BoxLayout label="Review Trends">
-          <ReviewTrend filterData={RADIO_DATA} />
+          <ReviewTrend
+            filterData={radioData}
+            setFilterSelected={handleRadioChange}
+          />
         </BoxLayout>
       </div>
     </Grid>
