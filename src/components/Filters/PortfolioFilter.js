@@ -9,6 +9,12 @@ const useStyles = makeStyles((theme) => ({
   root: {
     // backgroundColor: "orange",
     marginLeft: 45,
+    [theme.breakpoints.down("md")]: {
+      marginLeft: "25px",
+    },
+    [theme.breakpoints.down("sm")]: {
+      marginLeft: "10px",
+    },
   },
   textField: {
     justifyContent: "center",
@@ -110,7 +116,6 @@ const PortfolioFilter = () => {
           </Button>
         </form>
       </Grid>
-      {/* / */}
       <Dialog
         open={openPopup}
         maxWidth="lg"
@@ -118,12 +123,6 @@ const PortfolioFilter = () => {
       >
         <Popup close={handleClose} />
       </Dialog>
-      {/* / */}
-      {/* <Popup
-        // title="Filter by Portfolio / Distribution"
-        openPopup={openPopup}
-        setOpenPopup={setOpenPopup}
-      ></Popup> */}
     </>
   );
 };

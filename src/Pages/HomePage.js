@@ -5,11 +5,11 @@ import { Grid } from "@material-ui/core";
 // import ReviewManagemnt from "views/ReviewManagement/Components/innerRoute";
 const HomePage = () => {
   return (
-    <Grid container className="home" item xs={12}>
-      <Grid item xs={9}>
+    <Grid container className="home" xs={12}>
+      <Grid item xs={7} sm={8} md={9}>
         <TabContainer />
       </Grid>
-      <Grid item xs={3}>
+      <Grid item xs={5} sm={4} md={3}>
         <Filter />
       </Grid>
     </Grid>

@@ -17,10 +17,12 @@ import "./Filter.css";
 import FilterTitle from "./Filters/FilterTitle";
 import KeyboardArrowDownIcon from "@material-ui/icons/KeyboardArrowDown";
 const queryString = require("query-string");
+
 const useStyles = makeStyles((theme) => ({
   root: {
     textDecoration: "none",
   },
+
   Dbtn: {
     width: "64%",
     height: "40px",
@@ -28,6 +30,13 @@ const useStyles = makeStyles((theme) => ({
     display: "flex",
     fontSize: "12px",
     marginLeft: 45,
+    [theme.breakpoints.down("md")]: {
+      marginLeft: "25px",
+      width: "190px",
+    },
+    [theme.breakpoints.down("sm")]: {
+      marginLeft: "10px",
+    },
     background: "#0da9de",
     marginTop: 15,
     borderRadius: 10,
@@ -44,6 +53,13 @@ const useStyles = makeStyles((theme) => ({
     width: "78%",
     marginLeft: "45px",
     marginTop: "30px",
+    [theme.breakpoints.down("md")]: {
+      marginLeft: "25px",
+      width: "190px",
+    },
+    [theme.breakpoints.down("sm")]: {
+      marginLeft: "10px",
+    },
   },
   apply: {
     marginLeft: 0,
@@ -63,24 +79,36 @@ const useStyles = makeStyles((theme) => ({
     marginTop: 18,
     borderRadius: 10,
     marginLeft: 45,
+    [theme.breakpoints.down("md")]: {
+      marginLeft: "25px",
+      width: "190px",
+    },
+    [theme.breakpoints.down("sm")]: {
+      marginLeft: "10px",
+    },
   },
   filterImg: {
     height: 20,
     width: 20,
-    // border: "1px solid red",
   },
   resetMain: {
     width: "64%",
     height: "40px",
     color: "#fff",
     display: "flex",
-    // fontSize: "12px",
     justifyContent: "center",
     alignItems: "center",
     background: "#8f95a3",
     marginTop: 18,
     borderRadius: 10,
     marginLeft: 45,
+    [theme.breakpoints.down("md")]: {
+      marginLeft: "25px",
+      width: "190px",
+    },
+    [theme.breakpoints.down("sm")]: {
+      marginLeft: "10px",
+    },
   },
   resetText: {
     marginLeft: 0,
@@ -89,22 +117,25 @@ const useStyles = makeStyles((theme) => ({
     fontWeight: 600,
   },
   formControl: {
-    // margin: theme.spacing(1),
-    // backgroundColor: "red",
     display: "inline-flex",
     justifyContent: "center",
-    // alignItems: "center",
     height: 45,
     paddingLeft: "15px",
     borderRadius: 14,
     backgroundColor: "#fff",
     width: 200,
     marginLeft: 45,
+    [theme.breakpoints.down("md")]: {
+      width: "190px",
+      marginLeft: "25px",
+    },
+    [theme.breakpoints.down("sm")]: {
+      marginLeft: "10px",
+    },
   },
   rightIcon: {
     marginLeft: 12,
   },
-  selectAll: {},
   select: {
     marginTop: "5px",
   },
@@ -138,6 +169,7 @@ const Filter = () => {
     // window.location.href.replace(window.location.search, "");
     document.location.search = "";
   };
+
   return (
     <Grid container className="filter">
       <FilterTitle />
@@ -153,6 +185,7 @@ const Filter = () => {
       <PortfolioFilter />
       <Divider className={classes.divider} variant="middle" />
       <GroupFilter />
+      {/* / */}
       <Button
         className={classes.btn}
         onClick={() => console.log(filterDataSubmit(filterData))}
@@ -178,6 +211,7 @@ const Filter = () => {
       >
         <Typography className={classes.resetText}>RESET</Typography>
       </Button>
+      {/* / */}
       <Button
         className={classes.Dbtn}
         onClick={() => console.log("you clicked APPLY button")}
@@ -190,7 +224,6 @@ const Filter = () => {
       </Button>
       <FormControl className={classes.formControl}>
         <Select
-          className={classes.selectAll}
           value={review}
           onChange={handleChange}
           displayEmpty
@@ -224,28 +257,27 @@ const Filter = () => {
           <MenuItem value={5}>
             <span className="google"></span>
             <span>Google</span>
-          </MenuItem>{" "}
+          </MenuItem>
           <Divider />
           <MenuItem value={6}>
             <span className="modern-message"></span>
             <span>Modern Message</span>
-          </MenuItem>{" "}
+          </MenuItem>
           <Divider />
           <MenuItem value={7}>
             <span className="rent"></span>
             <span>Rent</span>
-          </MenuItem>{" "}
+          </MenuItem>
           <Divider />
           <MenuItem value={8}>
             <span className="yellow-pages"></span>
             <span>Yellow Pages</span>
-          </MenuItem>{" "}
+          </MenuItem>
           <Divider />
           <MenuItem value={9}>
             <span className="yelp"></span>
             <span>Yelp</span>
-          </MenuItem>{" "}
-          {/* <Divider /> */}
+          </MenuItem>
         </Select>
       </FormControl>
     </Grid>

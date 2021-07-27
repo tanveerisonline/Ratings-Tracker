@@ -4,8 +4,8 @@ import { Typography } from "@material-ui/core";
 import MenuItem from "@material-ui/core/MenuItem";
 import FormControl from "@material-ui/core/FormControl";
 import Select from "@material-ui/core/Select";
-import Divider from "@material-ui/core/Divider";
 import { Grid } from "@material-ui/core";
+import Divider from "@material-ui/core/Divider";
 import "./ReviewFilter.css";
 
 import KeyboardArrowDownIcon from "@material-ui/icons/KeyboardArrowDown";
@@ -13,9 +13,14 @@ const useStyles = makeStyles((theme) => ({
   root: {
     // backgroundColor: "red",
     marginLeft: 45,
+    [theme.breakpoints.down("md")]: {
+      marginLeft: "25px",
+    },
+    [theme.breakpoints.down("sm")]: {
+      marginLeft: "10px",
+    },
   },
   formControl: {
-    // margin: theme.spacing(1),
     display: "inline-flex",
     justifyContent: "center",
     height: 45,
@@ -23,6 +28,9 @@ const useStyles = makeStyles((theme) => ({
     borderRadius: 14,
     backgroundColor: "#fff",
     width: 200,
+    [theme.breakpoints.down("md")]: {
+      width: "175px",
+    },
   },
   heading: {
     paddingTop: 30,
@@ -83,28 +91,27 @@ export default function ReviewFilter() {
           <MenuItem value={5}>
             <span className="google"></span>
             <span>Google</span>
-          </MenuItem>{" "}
+          </MenuItem>
           <Divider />
           <MenuItem value={6}>
             <span className="modern-message"></span>
             <span>Modern Message</span>
-          </MenuItem>{" "}
+          </MenuItem>
           <Divider />
           <MenuItem value={7}>
             <span className="rent"></span>
             <span>Rent</span>
-          </MenuItem>{" "}
+          </MenuItem>
           <Divider />
           <MenuItem value={8}>
             <span className="yellow-pages"></span>
             <span>Yellow Pages</span>
-          </MenuItem>{" "}
+          </MenuItem>
           <Divider />
           <MenuItem value={9}>
             <span className="yelp"></span>
             <span>Yelp</span>
-          </MenuItem>{" "}
-          {/* <Divider /> */}
+          </MenuItem>
         </Select>
       </FormControl>
     </Grid>

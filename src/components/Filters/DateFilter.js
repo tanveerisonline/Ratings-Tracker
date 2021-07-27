@@ -9,7 +9,14 @@ import "react-datepicker/dist/react-datepicker.css";
 
 const useStyles = makeStyles((theme) => ({
   root: {
+    // backgroundColor: "yellow",
     marginLeft: 45,
+    [theme.breakpoints.down("md")]: {
+      marginLeft: "25px",
+    },
+    [theme.breakpoints.down("sm")]: {
+      marginLeft: "10px",
+    },
   },
   container: {
     display: "flex",
@@ -22,6 +29,9 @@ const useStyles = makeStyles((theme) => ({
     width: 220,
     borderRadius: 14,
     alignItems: "center",
+    [theme.breakpoints.down("md")]: {
+      width: "190px",
+    },
   },
   downIcon: {
     display: "flex",
@@ -29,9 +39,18 @@ const useStyles = makeStyles((theme) => ({
     alignItems: "center",
     color: "#8f9fa3",
     cursor: "pointer",
+    // [theme.breakpoints.down("md")]: {
+    //   display: "none",
+    // },
+    [theme.breakpoints.down("md")]: {
+      display: "none",
+    },
+
+    // display:"none"
   },
   textField: {
     // marginLeft: theme.spacing(2),
+    // marginRight: theme.spacing(2),
     cursor: "pointer",
     display: "inline-flex",
     justifyContent: "center",
@@ -40,9 +59,12 @@ const useStyles = makeStyles((theme) => ({
     paddingLeft: "15px",
     // width: 200,
     height: 43,
+    // display: "none",
     borderRadius: 14,
     background: "#fff",
     border: "none",
+    // alignItems: "normal",
+    // paddingTop: 10,
     "&::before": {
       borderBottom: "none",
       display: "none",

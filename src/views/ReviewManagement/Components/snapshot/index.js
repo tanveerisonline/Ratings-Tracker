@@ -24,10 +24,10 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 export default function Index({
-  GroupByData,
-  siteFilter,
-  reviewTrendFilterOptions,
-  tab,
+  // GroupByData,
+  // siteFilter,
+  // reviewTrendFilterOptions,
+  // tab,
 }) {
   const [radioData, setRadioData] = useState([
     {
@@ -76,18 +76,18 @@ export default function Index({
     <Grid style={{ marginTop: 10 }} xs={12}>
       <div className={classes.root}>
         <Grid item container spacing={2}>
-          <Grid item xs={3}>
+          <Grid item xs={12} sm={12} md={6} lg={3}>
             <BoxLayout label="Star Rating" white={true}>
               <StarRating />
             </BoxLayout>
           </Grid>
 
-          <Grid item xs={4}>
+          <Grid item xs={12} sm={12} md={6} lg={4}>
             <BoxLayout label="Ratings Rollup">
               <RatingsRollup />
             </BoxLayout>
           </Grid>
-          <Grid item xs={5}>
+          <Grid item xs={12} sm={12} md={12} lg={5}>
             <BoxLayout label="Ratings Breakdown">
               <RatingsBreakdown />
             </BoxLayout>

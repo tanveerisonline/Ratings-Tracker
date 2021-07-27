@@ -7,11 +7,17 @@ import FormControl from "@material-ui/core/FormControl";
 import { Typography } from "@material-ui/core";
 import Divider from "@material-ui/core/Divider";
 import { Grid } from "@material-ui/core";
+
 const useStyles = makeStyles((theme) => ({
   root: {
-    // backgroundColor: "gray",
     marginLeft: 45,
     color: "#383e4c",
+    [theme.breakpoints.down("md")]: {
+      marginLeft: "25px",
+    },
+    [theme.breakpoints.down("sm")]: {
+      marginLeft: "10px",
+    },
   },
   heading: {
     paddingTop: 30,
@@ -23,6 +29,9 @@ const useStyles = makeStyles((theme) => ({
   divider: {
     width: "210%",
     backgroundColor: "#6b6d82",
+    [theme.breakpoints.down("md")]: {
+      width: "185px",
+    },
   },
 }));
 export default function GroupFilter() {
