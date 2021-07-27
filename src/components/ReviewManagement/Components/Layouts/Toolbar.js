@@ -187,30 +187,6 @@ export default function Toolbar({
           allowMultiSelect={tab == "benchmark"}
         />
       </SimpleModal>
-      {/* {tab == "benchmark" && (
-        <Grid xs item>
-        <Box className={classes.filterTitle}>Data</Box>
-        <Grid xs={6} item container direction="row">
-          {  benchmarkFilter?.map((item) => (
-            <Grid xs={4}>
-              <Radio
-                label={item.value}
-                isChecked={Group_By == item.id}
-                value={item.id}
-                handleChange={(data) => {
-                  console.log(Group_By);
-                  setGroupBy(item.id);
-                }}
-                additionalStyles={{}}
-                labelStyles={{
-                  fontSize: 10,
-                }}
-              />
-            </Grid>
-          ))}
-        </Grid>
-      </Grid>
-      )} */}
       <Grid xs item>
         <Box className={classes.filterTitle}>Group By</Box>
         <Grid xs={12} item container direction="row">
@@ -234,7 +210,6 @@ export default function Toolbar({
         </Grid>
       </Grid>
       <Grid item xs={1} container justify="flex-end">
-        {/* <SuccessButton label="Apply" onClick={handleFilterApply} /> */}
         <Tooltip title="Apply Filter">
           <CheckCircleOutlineIcon
             fontSize="small"

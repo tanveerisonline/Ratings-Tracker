@@ -5,9 +5,9 @@ import Checkbox from "@material-ui/core/Checkbox";
 import "./Popup.css";
 import { makeStyles } from "@material-ui/core/styles";
 
-// console.log(PostData); 
+// console.log(PostData);
 const useStyles = makeStyles({
-  root: {
+  checkboxes: {
     height: "26px",
     width: "26px",
     "&:hover": {
@@ -16,6 +16,8 @@ const useStyles = makeStyles({
   },
   PopupContentMain: {
     height: "100vh",
+    // display: "flex",
+    // flexDirection: "column",
     columns: "3 auto",
     overflowY: "scroll",
   },
@@ -33,7 +35,8 @@ const PopupContent = () => {
       {PostData?.map((item) => (
         <Grid item>
           <Checkbox
-            className={classes.root}
+            flexWrap
+            className={classes.checkboxes}
             checked={state.value}
             onChange={handleChange}
             inputProps={{ "aria-label": "primary checkbox" }}

@@ -145,7 +145,7 @@ const PopupSidenav = () => {
         // onClick={() => console.log(filterData)}
         type="submit"
         variant="contained"
-        marginTop="10"
+        margintop="10"
         color="secondary"
         startIcon={
           <img src={FilterImage2} alt="Img" className={classes.filterImg} />

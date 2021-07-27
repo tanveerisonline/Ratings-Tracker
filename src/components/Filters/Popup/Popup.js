@@ -9,6 +9,9 @@ import "./Popup.css";
 import popupIcon from "./popupIcon.svg";
 
 const useStyles = makeStyles((theme) => ({
+  // root: {
+  //   height: "100vh",
+  // },
   rootHeader: {
     height: "80px",
     display: "flex",
@@ -62,13 +65,21 @@ const useStyles = makeStyles((theme) => ({
     borderRadius: "50px",
     marginRight: 50,
   },
+  content: {
+    height: "80px",
+  },
 }));
 const Popup = (props) => {
   const { close } = props;
   const classes = useStyles();
 
   return (
-    <Grid container xs={12}>
+    <Grid
+      className={classes.root}
+      container
+      xs={12}
+      style={{ overflowY: "hidden" }}
+    >
       <Grid className="popup-main" item xs={12}>
         <Grid className={classes.rootHeader}>
           <DialogTitle className={classes.inner1}>
@@ -103,7 +114,7 @@ const Popup = (props) => {
         <Grid item xs={3}>
           <PopupSidenav />
         </Grid>
-        <Grid item xs={9}>
+        <Grid className={classes.content} item xs={9}>
           <DialogContent>
             <PopupContent />
             {/* {children} */}

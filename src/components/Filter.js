@@ -134,8 +134,9 @@ const Filter = () => {
     console.log(stringified);
   };
   const resetHandler = () => {
-    const stringified = queryString.stringify(null);
-    document.location.search = stringified;
+    // const stringified = querstringifyyString.(null);
+    // window.location.href.replace(window.location.search, "");
+    document.location.search = "";
   };
   return (
     <Grid container className="filter">
