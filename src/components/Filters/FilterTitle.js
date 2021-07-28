@@ -8,7 +8,6 @@ const useStyles = makeStyles((theme) => ({
     fontWeight: 800,
     color: "#383e4c",
     fontSize: "15px",
-    // backgroundColor: "red",
   },
 }));
 const FilterTitle = () => {

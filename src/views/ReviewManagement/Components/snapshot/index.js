@@ -17,18 +17,11 @@ const useStyles = makeStyles((theme) => ({
   },
   star: {
     color: "green",
-    // height: "22px",
-    // width: "22px",
     backgroundColor: "yellow",
     borderRadius: "5px",
   },
 }));
-export default function Index({
-  // GroupByData,
-  // siteFilter,
-  // reviewTrendFilterOptions,
-  // tab,
-}) {
+export default function Index() {
   const [radioData, setRadioData] = useState([
     {
       id: 1,

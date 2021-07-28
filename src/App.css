@@ -3,10 +3,7 @@
   justify-content: center;
   align-items: flex-start;
   background-color: #e9e9ec;
-  /* width: 1920px; */
   height: 1245px;
-  /* height: 160vh; */
-  /* font-family: "Merriweather", serif; */
 }
 .sidenav {
   height: 160vh;
@@ -19,12 +16,9 @@
   background-color: #383e4c;
 }
 .home {
-  /* width: 1624px;
-  height: 1114px; */
   background-color: #e9e9ec;
 }
 .header {
-  /* width: 1643px; */
   height: 65px;
   display: flex;
   justify-content: center;
@@ -47,7 +41,6 @@
   height: "26px";
   width: "26px";
   border-radius: "5px";
-  /*fontSize: "22px", */
   background-color: "green";
   color: "#fff";
 }

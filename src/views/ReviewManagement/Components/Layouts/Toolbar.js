@@ -7,7 +7,6 @@ import * as constant from "../../constant";
 import { ContainedButton, SuccessButton, TextButton } from "components/button";
 import SimpleModal from "components/Modal/simpleModal";
 import Radio from "components/form/RadioButton/SimpleRadio";
-// import Filters from "views/ReviewManagement/Components/Layouts/Filters";
 import TodayIcon from "@material-ui/icons/Today";
 import CheckCircleOutlineIcon from "@material-ui/icons/CheckCircleOutline";
 import RotateLeftIcon from "@material-ui/icons/RotateLeft";
@@ -48,7 +47,7 @@ export default function Toolbar({
   handleResetFilter,
   selectedProperties,
   tab,
-  benchmarkFilter
+  benchmarkFilter,
 }) {
   const classes = useStyles();
   const [openDateModal, setOpenDateModal] = useState(false);
@@ -157,7 +156,6 @@ export default function Toolbar({
           />
         </Grid>
       )}
-    
 
       <Grid
         xs={2}
@@ -177,40 +175,7 @@ export default function Toolbar({
         isOpen={filterModal}
         handleClose={() => setFilterModal(false)}
         height="200"
-      >
-        {/* <Filters
-          data={Advancefilters}
-          setSelectedData={(data) => {
-            setPropertiesSelected(data);
-          }}
-          selectedData={propertiesSelected}
-          allowMultiSelect={tab == "benchmark"}
-        /> */}
-      </SimpleModal>
-      {/* {tab == "benchmark" && (
-        <Grid xs item>
-        <Box className={classes.filterTitle}>Data</Box>
-        <Grid xs={6} item container direction="row">
-          {  benchmarkFilter?.map((item) => (
-            <Grid xs={4}>
-              <Radio
-                label={item.value}
-                isChecked={Group_By == item.id}
-                value={item.id}
-                handleChange={(data) => {
-                  console.log(Group_By);
-                  setGroupBy(item.id);
-                }}
-                additionalStyles={{}}
-                labelStyles={{
-                  fontSize: 10,
-                }}
-              />
-            </Grid>
-          ))}
-        </Grid>
-      </Grid>
-      )} */}
+      ></SimpleModal>
       <Grid xs item>
         <Box className={classes.filterTitle}>Group By</Box>
         <Grid xs={12} item container direction="row">

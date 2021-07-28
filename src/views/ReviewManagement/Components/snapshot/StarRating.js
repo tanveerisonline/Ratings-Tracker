@@ -7,8 +7,6 @@ const useStyles = makeStyles((theme) => ({
   paper: {},
   root: {
     height: 160,
-    // width: "311px",
-    // height: "248px",
     display: "flex",
     backgroundColor: "#fff",
     borderRadius: "10px",

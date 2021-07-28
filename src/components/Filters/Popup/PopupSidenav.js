@@ -23,10 +23,6 @@ const useStyles = makeStyles((theme) => ({
   filterImg: {
     height: 20,
     width: 20,
-    // border: "1px solid red",
-  },
-  rightIcon: {
-    // marginLeft: 12,
   },
   apply: {
     marginLeft: 0,
@@ -142,7 +138,6 @@ const PopupSidenav = () => {
       <Divider variant="middle" />
       <Button
         className={classes.btn}
-        // onClick={() => console.log(filterData)}
         type="submit"
         variant="contained"
         margintop="10"

@@ -30,7 +30,6 @@ const useStyles = makeStyles((theme) => ({
     // width: "100%",
     overflow: "auto",
     maxHeight: 310,
-    // minHeight: 310,
   },
   body: {
     maxHeight: 400,
@@ -69,16 +68,6 @@ export default function Filters(props) {
   const [selectedPropertyData, setSelectedPropertyData] = useState([]);
   const [LevelSelected, setLevelSelected] = useState();
   const [headerSelected, setHeaderSelected] = useState(null);
-
-  // const [selectedData, setSelectedData] = useState([]);
-
-  // useEffect(() => {
-  //   // setLevelSelected(Constants.Filter.levels[1].id);
-  //   // setSelectedPropertyData(Constants.Filter.levels[1].details);
-  //   setLevelSelected(data[0]?.id);
-  //   setSelectedPropertyData(data[0]?.details);
-  // }, []);
-
   const handleSelection = (item) => {
     const data = {
       name: item.name,
@@ -160,57 +149,10 @@ export default function Filters(props) {
       }
     }
   };
-  //test
   useEffect(() => {
     setLevelSelected(Constants.Filter.levels[0].id);
     setSelectedPropertyData(Constants.Filter.levels[0].details);
-    // if (selectedData == "") {
-    //   setLevelSelected(Constants.Filter.levels[0].id);
-    //   setSelectedPropertyData(Constants.Filter.levels[0].details);
-    // } else {
-    //   if (selectedData[0].type == "level") {
-    //     setLevelSelected(selectedData[0].Level_id);
-    //     setSelectedPropertyData(selectedData[0].details);
-    //   } else if (selectedData[0].type == "user") {
-    //     data?.map((item) => {
-    //       if (item.Level_id == selectedData.Level_id) {
-    //         setSelectedPropertyData(item.details);
-    //       }
-    //     });
-    //   } else {
-    //     setLevelSelected(selectedData[0].Level_id);
-    //     setSelectedPropertyData(Constants.Filter.levels[0].details);
-    //   }
-    // }
   }, []);
-
-  //prod
-  // useEffect(() => {
-
-  //   if (selectedData == "") {
-  //     setLevelSelected(data[0]?.id);
-  //     setSelectedPropertyData(data[0]?.details);
-  //   } else {
-  //     console.log("selectedData", selectedData);
-  //     if (selectedData[0].type == "level") {
-  //       console.log("level", selectedData);
-  //       setLevelSelected(selectedData[0].Level_id);
-  //       setSelectedPropertyData(selectedData[0].details);
-  //     } else if (selectedData[0].type == "user") {
-  //       console.log("user", selectedData);
-  //       data.map((item) => {
-  //         if (item.Level_id == selectedData.Level_id) {
-  //           setSelectedPropertyData(item.details);
-  //         }
-  //       });
-  //     } else {
-  //       console.log("port", selectedData);
-  //       setLevelSelected(selectedData[0].Level_id);
-  //       setSelectedPropertyData(Constants.Filter.levels[0].details);
-  //     }
-  //   }
-  // }, []);
-
   const InnerItem = ({ inneritem }) => {
     return (
       <Accordion
@@ -253,7 +195,6 @@ export default function Filters(props) {
       </Box>
       <Grid item xs={12} container direction="row">
         <Grid item xs={3} className={classes.body}>
-          {/* Constants.Filter.levels */}
           {Constants.Filter.levels?.map((item) => (
             <Grid
               container
@@ -276,18 +217,13 @@ export default function Filters(props) {
                     // setSelectedPropertyData(item.details);
                     handleSelection(item);
                   }}
-                  isChecked={
-                    // selectedData[0]?.type != "property" &&
-                    // selectedData[0]?.Level_id == item.id\
-                    selectedData.some((obj) => obj.id === item.id)
-                  }
+                  isChecked={selectedData.some((obj) => obj.id === item.id)}
                 />
               </Grid>
               <Grid item>{item.name}</Grid>
             </Grid>
           ))}
         </Grid>
-        {/* <Divider orientation="vertical" /> */}
         {selectedPropertyData && (
           <Grid
             xs={9}

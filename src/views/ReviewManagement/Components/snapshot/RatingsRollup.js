@@ -18,8 +18,7 @@ const useStyles = makeStyles((theme) => ({
     paddingTop: 10,
     paddingLeft: 10,
   },
-  contentGrid: {
-  },
+  contentGrid: {},
   title: {
     fontSize: 14,
     fontWeight: 700,
@@ -117,7 +116,6 @@ export default function RatingsRollup({ ratingBreakdownData }) {
           justifyContent="center"
         >
           <div className={classes.title}>
-            {/* No Records Found */}
             <ul liststyletype="none">
               <li className={classes.indexing}>
                 5

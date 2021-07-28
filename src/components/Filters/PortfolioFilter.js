@@ -7,7 +7,6 @@ import Popup from "./Popup/Popup";
 import { Dialog } from "@material-ui/core";
 const useStyles = makeStyles((theme) => ({
   root: {
-    // backgroundColor: "orange",
     marginLeft: 45,
     [theme.breakpoints.down("md")]: {
       marginLeft: "25px",
@@ -18,7 +17,6 @@ const useStyles = makeStyles((theme) => ({
   },
   textField: {
     justifyContent: "center",
-    // alignItems: "center",
     paddingLeft: "15px",
     color: "red",
     backgroundColor: "#ffffff",
@@ -91,7 +89,6 @@ const PortfolioFilter = () => {
               onChange={(e) => setTitle(e.target.value)}
               // label="378"
               placeholder="378"
-              // variant="outlined"
               color="secondary"
               InputProps={{
                 disableUnderline: true,
@@ -101,9 +98,7 @@ const PortfolioFilter = () => {
           </Grid>
           <Button
             className={classes.btn}
-            // onClick={() => console.log("you clicked button")}
             onClick={() => setOpenPopup(true)}
-            // onClick={handleClickOpen}
             type="submit"
             color="primary"
             variant="contained"

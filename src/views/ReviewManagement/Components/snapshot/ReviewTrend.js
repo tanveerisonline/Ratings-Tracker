@@ -6,9 +6,6 @@ import Radio from "components/form/RadioButton/SimpleRadio";
 import Divider from "@material-ui/core/Divider";
 const useStyles = makeStyles((theme) => ({
   root: {
-    // minHeight: 430,
-    // width: "1192px",
-    // height: "491px",
     borderRadius: "15px",
   },
   title: {
@@ -20,7 +17,6 @@ const useStyles = makeStyles((theme) => ({
   areaGraph: {
     backgroundColor: "#fff",
     borderRadius: "6px",
-    // height: "30px",
   },
   exam: {
     color: "#fff",
@@ -32,8 +28,8 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 export default function ReviewTrend({
-  reviewTrendData,
-  filterSelected,
+  // reviewTrendData,
+  // filterSelected,
   setFilterSelected,
   filterData,
 }) {
@@ -43,7 +39,6 @@ export default function ReviewTrend({
       container
       direction="row"
       style={{
-        // marginBottom: 10,
         height: 340,
       }}
     >

@@ -11,7 +11,6 @@ import "./ReviewFilter.css";
 import KeyboardArrowDownIcon from "@material-ui/icons/KeyboardArrowDown";
 const useStyles = makeStyles((theme) => ({
   root: {
-    // backgroundColor: "red",
     marginLeft: 45,
     [theme.breakpoints.down("md")]: {
       marginLeft: "25px",
@@ -47,8 +46,6 @@ const useStyles = makeStyles((theme) => ({
 export default function ReviewFilter() {
   const classes = useStyles();
   const [review, setReview] = React.useState("");
-  // const [open, setOpen] = React.useState(false);
-
   const handleChange = (event) => {
     setReview(event.target.value);
   };

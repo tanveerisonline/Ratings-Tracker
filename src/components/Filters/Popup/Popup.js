@@ -9,9 +9,6 @@ import "./Popup.css";
 import popupIcon from "./popupIcon.svg";
 
 const useStyles = makeStyles((theme) => ({
-  // root: {
-  //   height: "100vh",
-  // },
   rootHeader: {
     height: "80px",
     display: "flex",
@@ -32,9 +29,6 @@ const useStyles = makeStyles((theme) => ({
     width: "36px",
     borderRadius: 6,
     border: "none",
-  },
-  iconImg: {
-    // marginTop: "4px",
   },
   title: {
     color: "#383e4c",
