@@ -17,7 +17,6 @@ import "./Filter.css";
 import FilterTitle from "./Filters/FilterTitle";
 import KeyboardArrowDownIcon from "@material-ui/icons/KeyboardArrowDown";
 const queryString = require("query-string");
-
 const useStyles = makeStyles((theme) => ({
   root: {
     textDecoration: "none",
@@ -148,6 +147,13 @@ const Filter = () => {
     endDate: null,
   });
   const { startDate, endDate } = filterData;
+  const changeDateFormat = (date) => {
+    let newDate = new Date(date);
+    let dd = newDate.getDate();
+    let mm = newDate.getMonth() + 1;
+    let yyyy = newDate.getFullYear();
+    return `${mm}-${dd}-${yyyy}`;
+  };
   const handleStartDateChange = (date) => {
     setFilterData({ ...filterData, startDate: date });
   };
@@ -157,16 +163,23 @@ const Filter = () => {
   const handleChange = (event) => {
     setReview(event.target.value);
   };
-  const filterDataSubmit = (filterData) => {
-    const stringified = queryString.stringify(filterData);
+  const filterDataSubmit = (e) => {
+    e.preventDefault();
+
+    let formatedStartDate = changeDateFormat(filterData.startDate);
+    let formatedEndDate = changeDateFormat(filterData.endDate);
+
+    const stringified = queryString.stringify({
+      startDate: formatedStartDate,
+      endDate: formatedEndDate,
+    });
+    // console.log(stringified);
     document.location.search = stringified;
-    console.log(document.location.search);
-    console.log(filterData);
-    console.log(stringified);
+    // console.log(document.location.search);
+    // console.log(filterData);
   };
   const resetHandler = () => {
     // const stringified = querstringifyyString.(null);
-    // window.location.href.replace(window.location.search, "");
     document.location.search = "";
   };
 
@@ -188,10 +201,10 @@ const Filter = () => {
       {/* / */}
       <Button
         className={classes.btn}
-        onClick={() => console.log(filterDataSubmit(filterData))}
-        type="submit"
+        // onClick={(e) => filterDataSubmit(e, filterData)}
+        onClick={filterDataSubmit}
+        // type="submit"
         variant="contained"
-        // marginTop="10"
         color="secondary"
         startIcon={
           <img src={FilterImage2} alt="Img" className={classes.filterImg} />
@@ -211,7 +224,6 @@ const Filter = () => {
       >
         <Typography className={classes.resetText}>RESET</Typography>
       </Button>
-      {/* / */}
       <Button
         className={classes.Dbtn}
         onClick={() => console.log("you clicked APPLY button")}
