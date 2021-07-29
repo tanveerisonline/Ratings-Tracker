@@ -6,16 +6,31 @@ import "./Popup.css";
 import { makeStyles } from "@material-ui/core/styles";
 const useStyles = makeStyles({
   checkboxes: {
-    height: "26px",
+    height: "100%",
     width: "26px",
     "&:hover": {
       backgroundColor: "transparent",
     },
   },
   PopupContentMain: {
+    display: "flex",
+    flexWrap: "wrap",
+    justifyContent: "space-between",
+    width: "76%",
     height: "100vh",
-    columns: "3 auto",
-    overflowY: "scroll",
+    // overflowY: "scroll",
+    // "&::-webkit-scrollbar": {
+    //   width: "3px",
+    // },
+    // "&::-webkit-scrollbar-track": {
+    //   backgroundColor: "#e9e9ec",
+    // },
+    // "&::-webkit-scrollbar-thumb": {
+    //   backgroundColor: "gray",
+    // },
+
+    // columns: "3 auto",
+    // overflowY: "scroll",
   },
 });
 const PopupContent = () => {

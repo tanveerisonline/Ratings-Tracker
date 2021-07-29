@@ -4,7 +4,7 @@
 .popup-sidenav {
   background-color: #e9e9ec;
   display: flex;
-  height: 100vh;
+  height: 100%;
   flex-direction: column;
 }
 .side-names1 {

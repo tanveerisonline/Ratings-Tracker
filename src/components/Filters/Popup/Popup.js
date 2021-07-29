@@ -9,6 +9,9 @@ import "./Popup.css";
 import popupIcon from "./popupIcon.svg";
 
 const useStyles = makeStyles((theme) => ({
+  root: {
+    height: "70%",
+  },
   rootHeader: {
     height: "80px",
     display: "flex",
@@ -60,7 +63,8 @@ const useStyles = makeStyles((theme) => ({
     marginRight: 50,
   },
   content: {
-    height: "80px",
+    height: "100%",
+    width: "100%",
   },
 }));
 const Popup = (props) => {
@@ -104,7 +108,7 @@ const Popup = (props) => {
           </div>
         </Grid>
       </Grid>
-      <Grid container xs={12}>
+      <Grid className={classes.combo} container xs={12}>
         <Grid item xs={3}>
           <PopupSidenav />
         </Grid>
