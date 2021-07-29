@@ -1,14 +1,16 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import { Typography } from "@material-ui/core";
 import MenuItem from "@material-ui/core/MenuItem";
+import Input from "@material-ui/core/Input";
+import InputLabel from "@material-ui/core/InputLabel";
 import FormControl from "@material-ui/core/FormControl";
 import Select from "@material-ui/core/Select";
 import { Grid } from "@material-ui/core";
 import Divider from "@material-ui/core/Divider";
 import "./ReviewFilter.css";
-
 import KeyboardArrowDownIcon from "@material-ui/icons/KeyboardArrowDown";
+import { CenterFocusStrong } from "@material-ui/icons";
 const useStyles = makeStyles((theme) => ({
   root: {
     marginLeft: 45,
@@ -31,6 +33,24 @@ const useStyles = makeStyles((theme) => ({
       width: "175px",
     },
   },
+
+  // selectAll: {
+  //   justifyContent: "center",
+  //   paddingLeft: "15px",
+  //   color: "gray",
+  //   backgroundColor: "#fff",
+  //   borderRadius: 14,
+  //   width: 220,
+  //   minHeight: 45,
+  //   right: "15px",
+  // },
+  inputLabel: {
+    color: "gray",
+    // paddingBottom: "90px",
+    // position: "relative",
+    fontSize: "18px",
+  },
+
   heading: {
     paddingTop: 30,
     paddingBottom: 15,
@@ -45,19 +65,26 @@ const useStyles = makeStyles((theme) => ({
 
 export default function ReviewFilter() {
   const classes = useStyles();
-  const [review, setReview] = React.useState("");
+  const [review, setReview] = React.useState([]);
   const handleChange = (event) => {
+    console.log(event);
     setReview(event.target.value);
   };
+  useEffect(() => {
+    console.log(review);
+  }, [review]);
   return (
     <Grid className={classes.root} item xs={12}>
       <Typography className={classes.heading}>REVIEW SITES:</Typography>
       <FormControl className={classes.formControl}>
+        <InputLabel className={classes.inputLabel}>All</InputLabel>
         <Select
+          multiple
           className={classes.selectAll}
           value={review}
           onChange={handleChange}
           displayEmpty
+          renderValue={(selected) => selected.join(",")}
           inputProps={{ "aria-label": "Without label" }}
           IconComponent={KeyboardArrowDownIcon}
         >
@@ -65,47 +92,47 @@ export default function ReviewFilter() {
             All
           </MenuItem>
           <Divider />
-          <MenuItem className={classes.select} value={1}>
+          <MenuItem className={classes.select} value="Apartments">
             <span className="apartments"></span>
             <span>Apartments</span>
           </MenuItem>
           <Divider />
-          <MenuItem value={2}>
+          <MenuItem value="Apartment Guide">
             <span className="apartment-guide"></span>
             <span>Apartment Guide</span>
           </MenuItem>
           <Divider />
-          <MenuItem value={3}>
+          <MenuItem value="ApartmentRatings">
             <span className="apartment-ratings"></span>
             <span>ApartmentRatings</span>
           </MenuItem>
           <Divider />
-          <MenuItem value={4}>
+          <MenuItem value="Facebook">
             <span className="facebook"></span>
             <span>Facebook</span>
           </MenuItem>
           <Divider />
-          <MenuItem value={5}>
+          <MenuItem value="Google">
             <span className="google"></span>
             <span>Google</span>
           </MenuItem>
           <Divider />
-          <MenuItem value={6}>
+          <MenuItem value="Modern Message">
             <span className="modern-message"></span>
             <span>Modern Message</span>
           </MenuItem>
           <Divider />
-          <MenuItem value={7}>
+          <MenuItem value="Rent">
             <span className="rent"></span>
             <span>Rent</span>
           </MenuItem>
           <Divider />
-          <MenuItem value={8}>
+          <MenuItem value="Yellow Pages">
             <span className="yellow-pages"></span>
             <span>Yellow Pages</span>
           </MenuItem>
           <Divider />
-          <MenuItem value={9}>
+          <MenuItem value="Yelp">
             <span className="yelp"></span>
             <span>Yelp</span>
           </MenuItem>
