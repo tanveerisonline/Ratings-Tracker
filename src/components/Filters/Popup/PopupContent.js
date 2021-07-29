@@ -28,9 +28,6 @@ const useStyles = makeStyles({
     // "&::-webkit-scrollbar-thumb": {
     //   backgroundColor: "gray",
     // },
-
-    // columns: "3 auto",
-    // overflowY: "scroll",
   },
 });
 const PopupContent = () => {
