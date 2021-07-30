@@ -74,3 +74,4 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/t
 ## Technolgies Used:
 
 ### JavaScript, ReactJs, HTML & CSS, Material UI, Chart.js, Other Third-Party Libraries.
+# Applied-Rating-Tracker
