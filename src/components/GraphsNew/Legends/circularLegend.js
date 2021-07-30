@@ -9,6 +9,15 @@ const useStyles = makeStyles((theme) => ({
     fontWeight: 400,
     textTransform: "capitalize",
     marginLeft: 4,
+    [theme.breakpoints.down("md")]: {
+      fontSize: "13px",
+    },
+    [theme.breakpoints.down("xs")]: {
+      fontSize: "10px",
+    },
+    // [theme.breakpoints.down("sm")]: {
+    //   fontSize: "10px",
+    // },
   },
 }));
 export default function WrappedLegends(props) {
@@ -34,7 +43,6 @@ export default function WrappedLegends(props) {
           marginRight: 10,
           color: isDisabled?.includes(dataKey) ? "#AAA" : "#000",
         };
-
         return (
           <span
             key={dataKey}

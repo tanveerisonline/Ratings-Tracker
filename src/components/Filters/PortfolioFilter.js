@@ -7,6 +7,7 @@ import Popup from "./Popup/Popup";
 import { Dialog } from "@material-ui/core";
 const useStyles = makeStyles((theme) => ({
   root: {
+    // backgroundColor: "orange",
     marginLeft: 45,
     [theme.breakpoints.down("md")]: {
       marginLeft: "25px",
@@ -17,6 +18,7 @@ const useStyles = makeStyles((theme) => ({
   },
   textField: {
     justifyContent: "center",
+    // alignItems: "center",
     paddingLeft: "15px",
     color: "red",
     backgroundColor: "#ffffff",

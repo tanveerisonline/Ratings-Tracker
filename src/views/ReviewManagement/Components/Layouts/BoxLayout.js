@@ -62,7 +62,7 @@ export default function BoxLayout(props) {
             <img src={starIcon} alt="Img" />
           </div>
         ) : null}
-        <Box   className={white ? classes.dataTextWhite : classes.dataText}>
+        <Box className={white ? classes.dataTextWhite : classes.dataText}>
           {label}
         </Box>
       </div>

@@ -46,7 +46,8 @@ export default function ReviewTrend({
         className={classes.exam}
         container
         item
-        xs={3}
+        xs={4}
+        md={3}
         direction="column"
         justifyContent="flex-start"
         style={{ paddingTop: 12 }}
@@ -72,7 +73,7 @@ export default function ReviewTrend({
           </Grid>
         ))}
       </Grid>
-      <Grid item xs={9}>
+      <Grid item xs={8} md={9}>
         {constant?.RatingGraph == null ? (
           <Box
             flexWrap="wrap"

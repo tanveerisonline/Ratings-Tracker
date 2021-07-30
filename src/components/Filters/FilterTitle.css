@@ -3,8 +3,10 @@
   height: 70px;
   display: flex;
   flex-direction: row;
+  /* justify-content: center; */
   align-items: center;
   background-color: #cbcbd3;
+  /* background-color: red; */
 }
 .fa-filter {
   margin-left: 45px;

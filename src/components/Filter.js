@@ -118,12 +118,12 @@ const useStyles = makeStyles((theme) => ({
   formControl: {
     display: "inline-flex",
     justifyContent: "center",
-    height: 45,
+    height: 40,
     paddingLeft: "15px",
     borderRadius: 14,
     backgroundColor: "#fff",
-    width: 200,
-    marginLeft: 45,
+    width: 208,
+    marginLeft: "45px",
     [theme.breakpoints.down("md")]: {
       width: "190px",
       marginLeft: "25px",
@@ -134,9 +134,6 @@ const useStyles = makeStyles((theme) => ({
   },
   rightIcon: {
     marginLeft: 12,
-  },
-  select: {
-    marginTop: "5px",
   },
 }));
 const Filter = () => {

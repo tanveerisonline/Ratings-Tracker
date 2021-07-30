@@ -2,7 +2,6 @@ import { Box, Grid, makeStyles } from "@material-ui/core";
 import React, { useState, useEffect } from "react";
 import RollUpProgress from "./RollUpProgress";
 import StarIcon from "@material-ui/icons/Star";
-// import ProgressBar from "components/Progress/ProgressBar";
 import RatingBar from "views/ReviewManagement/Components/Layouts/RatingBar";
 import RatingStatus from "views/ReviewManagement/Components/Layouts/RatingStatus";
 const useStyles = makeStyles((theme) => ({
@@ -25,6 +24,7 @@ const useStyles = makeStyles((theme) => ({
     display: "block",
     justifyContent: "center",
     marginRight: "36px",
+    paddingTop: "15px",
   },
   indexing: {
     display: "flex",

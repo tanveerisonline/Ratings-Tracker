@@ -44,12 +44,14 @@ const useStyles = makeStyles((theme) => ({
     fontSize: 12,
     fontWeight: 800,
     marginBottom: "0px",
+    textAlign: "center",
   },
   reviews: {
     color: "#2f3f5f",
     fontSize: 12,
     fontWeight: 800,
     marginBottom: 10,
+    textAlign: "center",
   },
   rate: {
     fontSize: "24px",
@@ -117,7 +119,7 @@ export default function StarRating({ StarRatingData }) {
 
   return (
     <Grid xs={12} className={classes.root}>
-      <Grid xs={8} className={classes.percent}>
+      <Grid xs={6} sm={8} className={classes.percent}>
         <CircularProgressWithLabel />
         <Typography className={classes.overAllRating}>
           OVERALL RATING
@@ -129,7 +131,7 @@ export default function StarRating({ StarRatingData }) {
         variant="middle"
         flexItem
       />
-      <Grid xs={4} className={classes.rating}>
+      <Grid xs={6} sm={4} className={classes.rating}>
         <Typography className={classes.rated}>14</Typography>
         <Typography className={classes.reviews}> REVIEWS RECEIVED</Typography>
       </Grid>

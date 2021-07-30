@@ -69,13 +69,13 @@ export default function Index() {
     <Grid style={{ marginTop: 10 }} xs={12}>
       <div className={classes.root}>
         <Grid item container spacing={2}>
-          <Grid item xs={12} sm={12} md={6} lg={3}>
+          <Grid item xs={12} sm={6} md={6} lg={3}>
             <BoxLayout label="Star Rating" white={true}>
               <StarRating />
             </BoxLayout>
           </Grid>
 
-          <Grid item xs={12} sm={12} md={6} lg={4}>
+          <Grid item xs={12} sm={6} md={6} lg={4}>
             <BoxLayout label="Ratings Rollup">
               <RatingsRollup />
             </BoxLayout>
