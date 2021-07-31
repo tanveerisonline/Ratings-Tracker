@@ -15,7 +15,7 @@ const useStyles = makeStyles((theme) => ({
       marginLeft: "25px",
     },
     [theme.breakpoints.down("sm")]: {
-      marginLeft: "10px",
+      marginLeft: "70px",
     },
   },
   container: {
@@ -39,32 +39,21 @@ const useStyles = makeStyles((theme) => ({
     alignItems: "center",
     color: "#8f9fa3",
     cursor: "pointer",
-    // [theme.breakpoints.down("md")]: {
-    //   display: "none",
-    // },
     [theme.breakpoints.down("md")]: {
       display: "none",
     },
-
-    // display:"none"
   },
   textField: {
-    // marginLeft: theme.spacing(2),
-    // marginRight: theme.spacing(2),
     cursor: "pointer",
     display: "inline-flex",
     justifyContent: "center",
     fontSize: "13px",
     fontWeight: "600",
     paddingLeft: "15px",
-    // width: 200,
     height: 43,
-    // display: "none",
     borderRadius: 14,
     background: "#fff",
     border: "none",
-    // alignItems: "normal",
-    // paddingTop: 10,
     "&::before": {
       borderBottom: "none",
       display: "none",
@@ -72,6 +61,9 @@ const useStyles = makeStyles((theme) => ({
     "&::after": {
       borderBottom: "none",
       display: "none",
+    },
+    [theme.breakpoints.down("sm")]: {
+      border:"1px solid #000",
     },
   },
   heading: {
@@ -84,12 +76,11 @@ const useStyles = makeStyles((theme) => ({
   to: {
     marginLeft: 20,
     fontSize: 13,
-    // color: "#383e4c",
     color: "#6b6d82",
     fontWeight: 600,
     paddingTop: 12,
     paddingBottom: 12,
-    alignContent: "left",
+    alignContent: "left",    
   },
 }));
 

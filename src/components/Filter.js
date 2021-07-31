@@ -34,7 +34,7 @@ const useStyles = makeStyles((theme) => ({
       width: "190px",
     },
     [theme.breakpoints.down("sm")]: {
-      marginLeft: "10px",
+      marginLeft: "70px",
     },
     background: "#0da9de",
     marginTop: 15,
@@ -57,7 +57,8 @@ const useStyles = makeStyles((theme) => ({
       width: "190px",
     },
     [theme.breakpoints.down("sm")]: {
-      marginLeft: "10px",
+      marginLeft:"40px",
+      width:"80%"
     },
   },
   apply: {
@@ -83,7 +84,7 @@ const useStyles = makeStyles((theme) => ({
       width: "190px",
     },
     [theme.breakpoints.down("sm")]: {
-      marginLeft: "10px",
+      marginLeft: "70px",
     },
   },
   filterImg: {
@@ -106,7 +107,7 @@ const useStyles = makeStyles((theme) => ({
       width: "190px",
     },
     [theme.breakpoints.down("sm")]: {
-      marginLeft: "10px",
+      marginLeft: "70px",
     },
   },
   resetText: {
@@ -129,7 +130,9 @@ const useStyles = makeStyles((theme) => ({
       marginLeft: "25px",
     },
     [theme.breakpoints.down("sm")]: {
-      marginLeft: "10px",
+      marginLeft: "70px",
+      border:"1px solid #000",
+      
     },
   },
   rightIcon: {

@@ -16,7 +16,7 @@ const useStyles = makeStyles((theme) => ({
       marginLeft: "25px",
     },
     [theme.breakpoints.down("sm")]: {
-      marginLeft: "10px",
+      marginLeft: "70px",
     },
   },
   heading: {
@@ -31,6 +31,10 @@ const useStyles = makeStyles((theme) => ({
     backgroundColor: "#6b6d82",
     [theme.breakpoints.down("md")]: {
       width: "185px",
+    },
+    [theme.breakpoints.down("sm")]: {
+      width: "210px",
+      marginLeft:"0px",
     },
   },
 }));

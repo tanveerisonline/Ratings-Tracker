@@ -16,7 +16,7 @@ const useStyles = makeStyles((theme) => ({
       marginLeft: "25px",
     },
     [theme.breakpoints.down("sm")]: {
-      marginLeft: "10px",
+      marginLeft: "70px",
     },
   },
   formControl: {
@@ -29,6 +29,9 @@ const useStyles = makeStyles((theme) => ({
     width: 200,
     [theme.breakpoints.down("md")]: {
       width: "175px",
+    },
+    [theme.breakpoints.down("sm")]: {
+      border:"1px solid #000",
     },
   },
   heading: {

@@ -13,18 +13,22 @@ const useStyles = makeStyles((theme) => ({
       marginLeft: "25px",
     },
     [theme.breakpoints.down("sm")]: {
-      marginLeft: "10px",
+      marginLeft: "70px",
     },
   },
   textField: {
     justifyContent: "center",
-    // alignItems: "center",
     paddingLeft: "15px",
     color: "red",
     backgroundColor: "#ffffff",
     borderRadius: 14,
     width: 50,
     height: 45,
+    [theme.breakpoints.down("sm")]: {
+      border:"1px solid #000",
+      width: 100,
+      height: 40,
+    },
   },
   filBtn: {
     fontSize: 13,
